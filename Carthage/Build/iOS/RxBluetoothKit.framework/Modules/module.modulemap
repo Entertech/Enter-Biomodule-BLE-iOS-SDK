@@ -1,0 +1,4 @@
+framework module RxBluetoothKit {
+  header "RxBluetoothKit-Swift.h"
+  requires objc
+}

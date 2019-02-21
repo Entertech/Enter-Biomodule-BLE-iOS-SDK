@@ -1,0 +1,3 @@
+github "ReactiveX/RxSwift" ~> 4.0
+github "Polidea/RxBluetoothKit" == 5.0.2
+github "mxcl/PromiseKit" == 6.4.0

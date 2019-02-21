@@ -1,0 +1,6 @@
+framework module NaptimeFileProtocol {
+  umbrella header "NaptimeFileProtocol-umbrella.h"
+
+  export *
+  module * { export * }
+}
