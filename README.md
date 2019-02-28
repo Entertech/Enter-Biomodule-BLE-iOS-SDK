@@ -27,7 +27,7 @@
 工程有两部分组成：Demo + SDK framework 源码。 
 如图：
 
-![WeChate50c4099f6f610ed561dbc98695277c](media/15512508608797/WeChate50c4099f6f610ed561dbc98695277cc.png)
+![Project Structure](https://github.com/EnterTech/FlowTimeBLESDK_iOS/blob/master/img/structure.png)
 
 
 ## 安装集成
