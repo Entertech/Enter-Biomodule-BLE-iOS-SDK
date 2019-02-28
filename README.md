@@ -27,7 +27,7 @@
 工程有两部分组成：Demo + SDK framework 源码。 
 如图：
 
-![WeChate50c4099f6f610ed561dbc98695277c](media/15512508608797/WeChate50c4099f6f610ed561dbc98695277cc.png)
+![Project Structure](https://github.com/EnterTech/FlowTimeBLESDK_iOS/blob/master/img/structure.png)
 
 
 ## 安装集成
@@ -127,6 +127,12 @@ if let service = self.service as? BatteryService {
 }
 ~~~
 
+**参数说明**
+
+|参数|类型|说明|
+| :---: | :----: |:----:|
+|.battery| 枚举类型 | 对应服务特性的 UUID |
+
 >服务组合
 >有些功能需要多个服务组合起来才能满足需求。
 
@@ -161,6 +167,13 @@ commandService.write(data: Data(bytes: [instruction]), to: .send).done {
 }
 ~~~
 
+**参数说明**
+
+|参数|类型|说明|
+| :---: | :----: |:----:|
+|.data| 枚举类型 | 对应服务特性的 UUID |
+|.send| 枚举类型 | 对应服务特性的 UUID |
+
 ### 获取心率数据
 
 **说明**
@@ -187,6 +200,13 @@ commandService.write(data: Data(bytes: [instruction]), to: .send).done {
     // Failed to send 'xxx' command!")
 }
 ~~~
+
+**参数说明**
+
+|参数|类型|说明|
+| :---: | :----: |:----:|
+|.data| 枚举类型 | 对应服务特性的 UUID |
+|.send| 枚举类型 | 对应服务特性的 UUID |
 
 ### 同时获取心率和脑电数据
 
@@ -227,6 +247,13 @@ commandService.write(data: Data(bytes: [instruction]), to: .send).done {
 }
 ~~~
 
+**参数说明**
+
+|参数|类型|说明|
+| :---: | :----: |:----:|
+|.data| 枚举类型 | 对应服务特性的 UUID |
+|.send| 枚举类型 | 对应服务特性的 UUID |
+
 ### 佩戴检测
 
 **说明**
@@ -254,6 +281,13 @@ commandService.write(data: Data(bytes: [instruction]), to: .send).done {
     // Failed to send 'xxx' command!")
 }
 ~~~
+
+**参数说明**
+
+|参数|类型|说明|
+| :---: | :----: |:----:|
+|.contact| 枚举类型 | 对应服务特性的 UUID |
+|.send| 枚举类型 | 对应服务特性的 UUID |
 
 ### DFU 服务
 
