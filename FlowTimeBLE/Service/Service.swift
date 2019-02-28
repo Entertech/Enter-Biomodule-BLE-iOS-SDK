@@ -12,7 +12,7 @@ import RxBluetoothKit
 import PromiseKit
 import CoreBluetooth
 
-// MARK: - 基础协议
+// MARK: - Basic Protocol
 
 public typealias Bytes = [UInt8]
 
@@ -29,7 +29,7 @@ public class BLEService: Service {
     }
 }
 
-// MARK: - 能力协议
+// MARK: - Capability Protocol
 
 public protocol Readable: Service {
     associatedtype ReadType: CharacteristicReadType
@@ -46,7 +46,7 @@ public protocol Notifiable: Service {
     func notify(characteristic: NotifyType) -> Observable<Bytes>
 }
 
-// MARK: - 性状
+// MARK: - ability
 
 public extension Readable where Self: BLEService {
     public func read(characteristic: ReadType) -> Promise<Data> {

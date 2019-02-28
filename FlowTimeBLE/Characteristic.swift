@@ -49,10 +49,8 @@ public enum Characteristic {
     public enum Connect {
         public enum Write: String, CharacteristicWriteType {
             case userID = "0000FF11-1212-ABCD-1523-785FEABCD123"
-            case handshake = "0000FF12-1212-ABCD-1523-785FEABCD123"
         }
         public enum Notify: String, CharacteristicNotifyType {
-            case handshake = "0000FF12-1212-ABCD-1523-785FEABCD123"
             case state = "0000FF13-1212-ABCD-1523-785FEABCD123"
         }
     }
