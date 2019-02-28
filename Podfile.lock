@@ -17,7 +17,6 @@ PODS:
   - Files (2.0.1)
   - iOSDFULibrary (4.1.1):
     - Zip (~> 1.0)
-  - NaptimeFileProtocol (0.5.0)
   - RxAtomic (4.4.1)
   - RxCocoa (4.4.1):
     - RxSwift (~> 4.0)
@@ -33,7 +32,6 @@ DEPENDENCIES:
   - BlocksKit (~> 2.2)
   - Files (~> 2.0.0)
   - "iOSDFULibrary (from `git@github.com:qiubei/IOS-Pods-DFU-Library.git`, branch `master`)"
-  - "NaptimeFileProtocol (from `git@github.com:EnterTech/Naptime-FileProtocol-iOS.git`, branch `develop`)"
   - RxCocoa (~> 4.0)
   - SnapKit (~> 4.0)
   - SVProgressHUD (~> 2.2)
@@ -57,23 +55,16 @@ EXTERNAL SOURCES:
   iOSDFULibrary:
     :branch: master
     :git: "git@github.com:qiubei/IOS-Pods-DFU-Library.git"
-  NaptimeFileProtocol:
-    :branch: develop
-    :git: "git@github.com:EnterTech/Naptime-FileProtocol-iOS.git"
 
 CHECKOUT OPTIONS:
   iOSDFULibrary:
     :commit: 339dc7ef8ed56b0b3ccd1542ec03eaa6562bbc72
     :git: "git@github.com:qiubei/IOS-Pods-DFU-Library.git"
-  NaptimeFileProtocol:
-    :commit: 3062535ca47a20be4d0aa7032c7069acfad177be
-    :git: "git@github.com:EnterTech/Naptime-FileProtocol-iOS.git"
 
 SPEC CHECKSUMS:
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   Files: 2a80d8a2fafef38a7a590ef24634a829157e7305
   iOSDFULibrary: 35e8a9e23d67759d57af9924d7a808e48c04583a
-  NaptimeFileProtocol: e3f713463ab1c847f5fa9b687b5b0b338ced0e1d
   RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
   RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
   RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
@@ -83,6 +74,6 @@ SPEC CHECKSUMS:
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: 4c4d578331c8e6f830f5f62609f016db0ca4035d
+PODFILE CHECKSUM: de06295aabff154ae8327c4e2e44fc9014350a54
 
 COCOAPODS: 1.5.3

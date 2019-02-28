@@ -8,7 +8,7 @@
 
 import Foundation
 import Files
-import NaptimeFileProtocol
+//import NaptimeFileProtocol
 
 extension Date {
     var toFileName: String {
@@ -34,48 +34,48 @@ extension FileManager {
     }
 }
 
-class EEGFileManager {
-
-    static let shared = EEGFileManager()
-
-    private init() {}
-
-    private var _writer:  BrainwaveFileWriter<BrainwaveValue24>?
-
-    private (set) var fileName: String?
-
-    func create() {
-
-        DispatchQueue.file.async { [unowned self] in
-
-            let fileName = Date().toFileName
-            let fileURL = FileManager.default.fileURL(fileName: fileName)
-            self.fileName = fileName
-
-            self._writer = BrainwaveFileWriter<BrainwaveValue24>()
-            self._writer?.dataVersion = "3.0.0.0"
-            try? self._writer?.createFile(fileURL)
-        }
-    }
-
-    func save(data: Data) {
-        DispatchQueue.file.async { [unowned self] in
-            let allBytes = data.copiedBytes
-            allBytes.splitBy(3).forEach({ bytes in
-                let brainwaveData = BrainwaveData(value: BrainwaveValue24(bytes: bytes))
-                try? self._writer?.writeBrainwave(brainwaveData)
-            })
-        }
-    }
-
-    func close() {
-        DispatchQueue.file.async { [unowned self] in
-            try? self._writer?.close()
-            self._writer = nil
-            self.fileName = nil
-        }
-    }
-}
+//class EEGFileManager {
+//
+//    static let shared = EEGFileManager()
+//
+//    private init() {}
+//
+//    private var _writer:  BrainwaveFileWriter<BrainwaveValue24>?
+//
+//    private (set) var fileName: String?
+//
+//    func create() {
+//
+//        DispatchQueue.file.async { [unowned self] in
+//
+//            let fileName = Date().toFileName
+//            let fileURL = FileManager.default.fileURL(fileName: fileName)
+//            self.fileName = fileName
+//
+//            self._writer = BrainwaveFileWriter<BrainwaveValue24>()
+//            self._writer?.dataVersion = "3.0.0.0"
+//            try? self._writer?.createFile(fileURL)
+//        }
+//    }
+//
+//    func save(data: Data) {
+//        DispatchQueue.file.async { [unowned self] in
+//            let allBytes = data.copiedBytes
+//            allBytes.splitBy(3).forEach({ bytes in
+//                let brainwaveData = BrainwaveData(value: BrainwaveValue24(bytes: bytes))
+//                try? self._writer?.writeBrainwave(brainwaveData)
+//            })
+//        }
+//    }
+//
+//    func close() {
+//        DispatchQueue.file.async { [unowned self] in
+//            try? self._writer?.close()
+//            self._writer = nil
+//            self.fileName = nil
+//        }
+//    }
+//}
 
 extension Array {
     func splitBy(_ subSize: Int) -> [[Element]] {

@@ -235,9 +235,9 @@ class EEGViewController: UITableViewController {
         tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 
-    private func saveToFile(data: Data) {
-        EEGFileManager.shared.save(data: data)
-    }
+//    private func saveToFile(data: Data) {
+//        EEGFileManager.shared.save(data: data)
+//    }
 }
 
 class EEGCell: UITableViewCell {

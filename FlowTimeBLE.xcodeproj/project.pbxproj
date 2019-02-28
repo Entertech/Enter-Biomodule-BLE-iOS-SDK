@@ -16,7 +16,6 @@
 		6C143B961FA06C68009F866D /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C143B951FA06C68009F866D /* GCD.swift */; };
 		6C1642FF1FA03B09002C1438 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1642FE1FA03B09002C1438 /* AppDelegate.swift */; };
 		6C1643041FA03B09002C1438 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C1643021FA03B09002C1438 /* Main.storyboard */; };
-		6C1643061FA03B09002C1438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C1643051FA03B09002C1438 /* Assets.xcassets */; };
 		6C1643091FA03B09002C1438 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C1643071FA03B09002C1438 /* LaunchScreen.storyboard */; };
 		6C1643121FA06603002C1438 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1643111FA06603002C1438 /* ScanViewController.swift */; };
 		6C1CE81D1FB9A1F4003D4EB5 /* 1-minute-of-silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6C1CE81C1FB9A1F4003D4EB5 /* 1-minute-of-silence.mp3 */; };
@@ -42,6 +41,7 @@
 		6CFB76131FA323AE006C03A5 /* EEGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFB76121FA323AE006C03A5 /* EEGViewController.swift */; };
 		6CFB76151FA32692006C03A5 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFB76141FA32692006C03A5 /* Extension.swift */; };
 		7AB57DFAAE31A8CEC7B2E421 /* Pods_BLETool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D2137B8C5F9F5DC91E61D1 /* Pods_BLETool.framework */; };
+		B70965DC2227BEB000C6EE51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B70965DB2227BEB000C6EE51 /* Assets.xcassets */; };
 		B726F08021F9B672005A4ACF /* FlowTimeBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* FlowTimeBLE.framework */; };
 		B726F08121F9B672005A4ACF /* FlowTimeBLE.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* FlowTimeBLE.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B75785592015E13B0039B2FC /* DFU1.0.0.zip in Resources */ = {isa = PBXBuildFile; fileRef = B75785582015E13B0039B2FC /* DFU1.0.0.zip */; };
@@ -93,7 +93,6 @@
 		6C1642FB1FA03B09002C1438 /* BLETool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLETool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C1642FE1FA03B09002C1438 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C1643031FA03B09002C1438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6C1643051FA03B09002C1438 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C1643081FA03B09002C1438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C16430A1FA03B09002C1438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C1643111FA06603002C1438 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +121,7 @@
 		6CFB76101FA30025006C03A5 /* CommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandViewController.swift; sourceTree = "<group>"; };
 		6CFB76121FA323AE006C03A5 /* EEGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEGViewController.swift; sourceTree = "<group>"; };
 		6CFB76141FA32692006C03A5 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		B70965DB2227BEB000C6EE51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B75785582015E13B0039B2FC /* DFU1.0.0.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = DFU1.0.0.zip; sourceTree = "<group>"; };
 		B75901881FE0FF2A00F0890E /* DFUViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFUViewController.swift; sourceTree = "<group>"; };
 		B79493E12020702D004166E3 /* V1.0.1-120.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "V1.0.1-120.zip"; sourceTree = "<group>"; };
@@ -194,7 +194,6 @@
 				6C1643101FA06098002C1438 /* UI */,
 				6C1642FE1FA03B09002C1438 /* AppDelegate.swift */,
 				6C1643021FA03B09002C1438 /* Main.storyboard */,
-				6C1643051FA03B09002C1438 /* Assets.xcassets */,
 				6C1643071FA03B09002C1438 /* LaunchScreen.storyboard */,
 				6C16430A1FA03B09002C1438 /* Info.plist */,
 			);
@@ -224,6 +223,7 @@
 		6C1CE81B1FB9A1E8003D4EB5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B70965DB2227BEB000C6EE51 /* Assets.xcassets */,
 				6C1CE81C1FB9A1F4003D4EB5 /* 1-minute-of-silence.mp3 */,
 				B79493E12020702D004166E3 /* V1.0.1-120.zip */,
 				B75785582015E13B0039B2FC /* DFU1.0.0.zip */,
@@ -394,9 +394,9 @@
 			files = (
 				6C1643091FA03B09002C1438 /* LaunchScreen.storyboard in Resources */,
 				B79493E22020702D004166E3 /* V1.0.1-120.zip in Resources */,
-				6C1643061FA03B09002C1438 /* Assets.xcassets in Resources */,
 				B75785592015E13B0039B2FC /* DFU1.0.0.zip in Resources */,
 				6C1643041FA03B09002C1438 /* Main.storyboard in Resources */,
+				B70965DC2227BEB000C6EE51 /* Assets.xcassets in Resources */,
 				6C1CE81D1FB9A1F4003D4EB5 /* 1-minute-of-silence.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,7 +420,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-BLETool/Pods-BLETool-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Files/Files.framework",
-				"${BUILT_PRODUCTS_DIR}/NaptimeFileProtocol/NaptimeFileProtocol.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -435,7 +434,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Files.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NaptimeFileProtocol.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
