@@ -13,7 +13,7 @@ public protocol UUIDType {
     var uuid: String { get }
 }
 
-let UUID_BLE_DEVICE = "0000FF00-1212-ABCD-1523-785FEABCD123"
+let UUID_BLE_DEVICE = "0000FF10-1212-ABCD-1523-785FEABCD123"
 
 enum ServiceUUID: String, UUIDType {
     case generic = ""
