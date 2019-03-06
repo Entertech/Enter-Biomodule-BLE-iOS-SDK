@@ -143,12 +143,18 @@ if let service = self.service as? BatteryService {
 
 **说明**
 
-脑波数据心率数据需要 `Command 服务` 和 `eeg 服务` 组合起来使用。`脑电(eeg)服务` 负责监听硬件的返回数据，通过 `Command 服务` 向硬件发送 `0x01` 指令，告诉硬件开始发送采集的脑电数据。发送 `0x02` 停止采集。
+脑波数据心率数据需要 `Command 服务` 和 `eeg 服务` 组合起来使用。`脑电(eeg)服务` 负责监听硬件的返回数据，通过 `Command 服务` 向硬件发送 `0x01` 指令，告诉硬件开始发送采集的脑电数据（注意：*要想获取脑波数据一定要开启佩戴检测监听*）。发送 `0x02` 停止采集。
 
 **示例代码**
 
 ~~~swift
-// I. 开启 eeg 监听
+// I. 开启 eeg 佩戴检测（必须要开，否者会收不到脑波数据）
+self.eegService.notify(characteristic: .contact)
+            .subscribe (onNext: {
+            print("wear contact data is \($0.first!)")
+        })
+        
+// II. 开启 eeg 监听
 // eegService 可通过连接成功之后的 Connector 实例对象获得。
 self.eegService.notify(characteristic: Characteristic.EEG.data)
     .subscribe(onNext: { [weak self] data in 
@@ -160,7 +166,7 @@ self.eegService.notify(characteristic: Characteristic.EEG.data)
             // Failed to listen brainwave data.
     })
     
-// II. 向硬件发送采集指令: 1. instruction = 0x01 开始采集 2. instructio = 0x02 停止采集
+// III. 向硬件发送采集指令: 1. instruction = 0x01 开始采集 2. instructio = 0x02 停止采集
 // commandService 可通过连接成功之后的 Connector 实例对象获得。 
 commandService.write(data: Data(bytes: [instruction]), to: .send).done {
         // successed to send command
