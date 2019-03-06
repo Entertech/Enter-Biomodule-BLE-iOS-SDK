@@ -1,4 +1,4 @@
-# FlowTime Bluetooth SDK
+# Enter Biomodule BLE SDK
 
 # 目录
 
@@ -19,6 +19,9 @@
         * [DFU 服务](#DFU-服务)
 
 # SDK 说明
+## 介绍
+
+本 SDK 包含回车生物电采集模块的蓝牙连接和生物电采集控制。通过此 SDK 可以在 iOS app 里快速实现和我们的采集模块连接，并控制其进行数据的采集和停止等指令。
 
 ## 结构说明
 
