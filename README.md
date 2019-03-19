@@ -5,7 +5,8 @@
 * [SDK 说明](#SDK-说明)
     * [结构说明](#结构说明)
     * [安装集成](#安装集成)
-        * [CocoaPods](#CocoaPods)     
+        * [CocoaPods](#CocoaPods)
+        * [Carthage](#Carthage)
 * [SDK API 说明](#SDK-API-说明)
     * [设备相关 API](#设备相关-API)
         * [设备扫描](#设备扫描)
@@ -48,6 +49,15 @@ pod 'FlowTimeBLE', :git=> "git@github.com:EnterTech/FlowTimeBLESDK_iOS.git"
 2. Integrate your dependencies using frameworks: add use_frameworks! to your `Podfile`.
 3. Run `pod install`
 
+### Carthage
+
+1. add the following to your `Cartfile`
+
+~~~ruby
+github "EnterTech/Enter-Biomodule-BLE-iOS-SDK" "master"
+~~~
+
+2. Run `carthage update --platform iOS`
 
 # SDK API 说明
 
