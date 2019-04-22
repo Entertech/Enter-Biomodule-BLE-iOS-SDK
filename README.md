@@ -1,11 +1,12 @@
-# FlowTime Bluetooth SDK
+# Enter Biomodule BLE SDK
 
 # 目录
 
 * [SDK 说明](#SDK-说明)
     * [结构说明](#结构说明)
     * [安装集成](#安装集成)
-        * [CocoaPods](#CocoaPods)     
+        * [CocoaPods](#CocoaPods)
+        * [Carthage](#Carthage)
 * [SDK API 说明](#SDK-API-说明)
     * [设备相关 API](#设备相关-API)
         * [设备扫描](#设备扫描)
@@ -19,6 +20,9 @@
         * [DFU 服务](#DFU-服务)
 
 # SDK 说明
+## 介绍
+
+本 SDK 包含回车生物电采集模块的蓝牙连接和生物电采集控制。通过此 SDK 可以在 iOS app 里快速实现和我们的采集模块连接，并控制其进行数据的采集和停止等指令。
 
 ## 结构说明
 
@@ -45,6 +49,15 @@ pod 'FlowTimeBLE', :git=> "git@github.com:EnterTech/FlowTimeBLESDK_iOS.git"
 2. Integrate your dependencies using frameworks: add use_frameworks! to your `Podfile`.
 3. Run `pod install`
 
+### Carthage
+
+1. add the following to your `Cartfile`
+
+~~~ruby
+github "EnterTech/Enter-Biomodule-BLE-iOS-SDK" "master"
+~~~
+
+2. Run `carthage update --platform iOS`
 
 # SDK API 说明
 
@@ -140,12 +153,18 @@ if let service = self.service as? BatteryService {
 
 **说明**
 
-脑波数据心率数据需要 `Command 服务` 和 `eeg 服务` 组合起来使用。`脑电(eeg)服务` 负责监听硬件的返回数据，通过 `Command 服务` 向硬件发送 `0x01` 指令，告诉硬件开始发送采集的脑电数据。发送 `0x02` 停止采集。
+脑波数据心率数据需要 `Command 服务` 和 `eeg 服务` 组合起来使用。`脑电(eeg)服务` 负责监听硬件的返回数据，通过 `Command 服务` 向硬件发送 `0x01` 指令，告诉硬件开始发送采集的脑电数据（注意：*要想获取脑波数据一定要开启佩戴检测监听*）。发送 `0x02` 停止采集。
 
 **示例代码**
 
 ~~~swift
-// I. 开启 eeg 监听
+// I. 开启 eeg 佩戴检测（必须要开，否者会收不到脑波数据）
+self.eegService.notify(characteristic: .contact)
+            .subscribe (onNext: {
+            print("wear contact data is \($0.first!)")
+        })
+        
+// II. 开启 eeg 监听
 // eegService 可通过连接成功之后的 Connector 实例对象获得。
 self.eegService.notify(characteristic: Characteristic.EEG.data)
     .subscribe(onNext: { [weak self] data in 
@@ -157,7 +176,7 @@ self.eegService.notify(characteristic: Characteristic.EEG.data)
             // Failed to listen brainwave data.
     })
     
-// II. 向硬件发送采集指令: 1. instruction = 0x01 开始采集 2. instructio = 0x02 停止采集
+// III. 向硬件发送采集指令: 1. instruction = 0x01 开始采集 2. instructio = 0x02 停止采集
 // commandService 可通过连接成功之后的 Connector 实例对象获得。 
 commandService.write(data: Data(bytes: [instruction]), to: .send).done {
         // successed to send command
