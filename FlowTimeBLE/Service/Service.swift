@@ -20,7 +20,7 @@ public protocol Service {
     init(rxService: RxBluetoothKit.Service)
 }
 
-public class BLEService: Service {
+public class BLEService: NSObject, Service {
 
     public let rxService: RxBluetoothKit.Service
 

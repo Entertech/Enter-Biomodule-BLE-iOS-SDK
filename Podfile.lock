@@ -17,11 +17,9 @@ PODS:
   - Files (2.0.1)
   - iOSDFULibrary (4.1.1):
     - Zip (~> 1.0)
-  - RxAtomic (4.4.1)
-  - RxCocoa (4.4.1):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.4.1):
-    - RxAtomic (~> 4.4)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
   - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
   - SwiftyTimer (2.1.0)
@@ -42,7 +40,6 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BlocksKit
     - Files
-    - RxAtomic
     - RxCocoa
     - RxSwift
     - SnapKit
@@ -65,15 +62,14 @@ SPEC CHECKSUMS:
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   Files: 2a80d8a2fafef38a7a590ef24634a829157e7305
   iOSDFULibrary: 35e8a9e23d67759d57af9924d7a808e48c04583a
-  RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
-  RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
-  RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: de06295aabff154ae8327c4e2e44fc9014350a54
+PODFILE CHECKSUM: 35f45af7ed13346885a0121f5b33f01a0670b900
 
 COCOAPODS: 1.5.3

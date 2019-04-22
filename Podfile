@@ -24,5 +24,19 @@ post_install do |installer|
             end
         end
     end
+#    installer.pods_project.targets.each do |target|
+#        if ['SnapKit'].include? "#{target}"
+#            target.build_configurations.each do |config|
+#                config.build_settings['SWIFT_VERSION'] = '4.0'
+#            end
+#        end
+#    end
+#    installer.pods_project.targets.each do |target|
+#        if ['iOSDFULibrary'].include? "#{target}"
+#            target.build_configurations.each do |config|
+#                config.build_settings['SWIFT_VERSION'] = '4.0'
+#            end
+#        end
+#    end
 end
 

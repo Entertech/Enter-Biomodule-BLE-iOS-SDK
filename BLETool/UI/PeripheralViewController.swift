@@ -34,13 +34,30 @@ class PeripheralViewController: UITableViewController {
         connector.cancel()
     }
 
-    var connector: Connector!
+    private var isSelected = false
+    @objc
+    private func test(_ item: UIBarButtonItem) {
+        if isSelected {
+            item.title = "停止检测"
+            self.connector.commandService?.write(data: Data(bytes: [0x08]), to: .send)
+        } else {
+            item.title = "开始检测"
+            self.connector.commandService?.write(data: Data(bytes: [0x08]), to: .send)
+        }
+        isSelected = !isSelected
+    }
 
+
+    private var lastDate = Date()
+    var connector: Connector!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = peripheral.displayName
 
         tableView.tableFooterView = UIView()
+
+        let rightItem = UIBarButtonItem(title: "开始检测", style: .plain, target: self, action: #selector(self.test(_:)))
+        self.navigationItem.rightBarButtonItem = rightItem
 
         SVProgressHUD.show(withStatus: "Connecting:\n \(peripheral.displayName)")
 
@@ -49,6 +66,17 @@ class PeripheralViewController: UITableViewController {
             connector.tryConnect()
             }.done {
                 SVProgressHUD.showSuccess(withStatus: "connect succeeded")
+
+                dispatch_to_main {
+                    self.connector.eegService?.notify(characteristic: Characteristic.EEG.contact).subscribe(onNext: {
+//                        let interval = self.lastDate.timeIntervalSinceNow
+                        print("contact is \($0.first!) ")
+                    })
+                    self.connector.commandService?.write(data: Data(bytes: [0x01]), to: .send)
+                    self.connector.eegService?.notify(characteristic: .data).subscribe(onNext: {
+                        print("raw data count is \($0.count)")
+                    })
+                }
                 dispatch_to_main {
                     self.services = self.connector.allServices
                     self.tableView.reloadData()
@@ -109,6 +137,11 @@ class PeripheralViewController: UITableViewController {
             vc.commandService = connector.commandService
             vc.heartService = connector.heartService
             vc.peripheral = peripheral
+
+//            self.connector.commandService?.write(data: Data(bytes: [0x01]), to: .send)
+//            self.connector.eegService?.notify(characteristic: .data).subscribe(onNext: {
+//                print("count is \($0.count)")
+//            })
         }
 
         if let vc = segue.destination as? DFUViewController {

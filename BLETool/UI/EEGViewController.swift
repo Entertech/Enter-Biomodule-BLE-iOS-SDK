@@ -131,6 +131,8 @@ class EEGViewController: UITableViewController {
         }
     }
 
+    private var lastDate = Date()
+
     private var _eegDisposable: Disposable?
     private var _heartDisposable: Disposable?
     private var _timerDisposable: Disposable?
@@ -171,6 +173,9 @@ class EEGViewController: UITableViewController {
                     print("count is \(self.testCounter) heart rate \($0)")
                     let heartRate = $0.first!
                     self._heartLabel.text = "heart rate: \(heartRate)"
+                    let interval = self.lastDate.timeIntervalSinceNow
+                    self.lastDate = Date()
+                    print("\(interval) interval -- count \($0.first!)")
                     self.testCounter = 0
                     self.peripheral.readRSSI()
                         .observeOn(MainScheduler.asyncInstance)

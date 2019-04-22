@@ -38,8 +38,8 @@ class FileListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "fileCellIdentifier", for: indexPath)
         let fileURL = _files[indexPath.row]
         cell.textLabel?.text = fileURL.lastPathComponent
-        if let fileSize = try? FileManager.default.attributesOfItem(atPath: fileURL.path)[FileAttributeKey.size] as? UInt, let size = fileSize {
-            cell.detailTextLabel?.text = "size: " + String(size) + "B"
+        if let fileSize = try? FileManager.default.attributesOfItem(atPath: fileURL.path)[FileAttributeKey.size] as? UInt {
+            cell.detailTextLabel?.text = "size: " + String(fileSize) + "B"
         }
         return cell
     }
