@@ -39,10 +39,10 @@ class PeripheralViewController: UITableViewController {
     private func test(_ item: UIBarButtonItem) {
         if isSelected {
             item.title = "停止检测"
-            self.connector.commandService?.write(data: Data(bytes: [0x08]), to: .send)
+//            self.connector.commandService?.write(data: Data(bytes: [0x08]), to: .send)
         } else {
             item.title = "开始检测"
-            self.connector.commandService?.write(data: Data(bytes: [0x08]), to: .send)
+//            self.connector.commandService?.write(data: Data(bytes: [0x08]), to: .send)
         }
         isSelected = !isSelected
     }
@@ -72,7 +72,8 @@ class PeripheralViewController: UITableViewController {
 //                        let interval = self.lastDate.timeIntervalSinceNow
                         print("contact is \($0.first!) ")
                     })
-                    self.connector.commandService?.write(data: Data(bytes: [0x01]), to: .send)
+                    self.connector.commandService?.write(data: Data([0x01]), to: .send)
+
                     self.connector.eegService?.notify(characteristic: .data).subscribe(onNext: {
                         print("raw data count is \($0.count)")
                     })

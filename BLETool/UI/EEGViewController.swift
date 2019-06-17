@@ -139,15 +139,16 @@ class EEGViewController: UITableViewController {
 
     private func startSample() -> Observable<Data> {
         SVProgressHUD.showInfo(withStatus: "Showing only 10s of data on screen,\n otherwise the memory will bomb💥💥")
-//        EEGFileManager.shared.create()
+        EEGFileManager.shared.create()
 
         let dataPool = DataPool()
         if type != .heart  {
             _eegDisposable = self.eegService.notify(characteristic: .data)
                 .subscribe(onNext: { [weak self] in
                     var received = $0
+                    self?.saveToFile(data: Data(received))
                     received.removeFirst(2)
-                    let data = Data(bytes: received)
+                    let data = Data(received)
                     dataPool.push(data: data)
 
                     guard let `self` = self else { return }
@@ -194,7 +195,6 @@ class EEGViewController: UITableViewController {
                 if dataPool.isAvailable {
                     // 每次取 800 个字节，即 1s 的数据量
                     let data = dataPool.pop(length: 800)
-//                    self.saveToFile(data: data)
                     observer.onNext(data)
                 }
             })
@@ -211,9 +211,8 @@ class EEGViewController: UITableViewController {
         _eegDisposable?.dispose()
         _timerDisposable?.dispose()
         _heartDisposable?.dispose()
-//        let fileName = EEGFileManager.shared.fileName
-//        EEGFileManager.shared.close()
-//        SVProgressHUD.showSuccess(withStatus: "File saved: \(fileName!)")
+        EEGFileManager.shared.close()
+        SVProgressHUD.showSuccess(withStatus: "File saved !!!")
     }
 
     var dataList: [Data] = []
@@ -240,9 +239,9 @@ class EEGViewController: UITableViewController {
         tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 
-//    private func saveToFile(data: Data) {
-//        EEGFileManager.shared.save(data: data)
-//    }
+    private func saveToFile(data: Data) {
+        EEGFileManager.shared.write(data)
+    }
 }
 
 class EEGCell: UITableViewCell {

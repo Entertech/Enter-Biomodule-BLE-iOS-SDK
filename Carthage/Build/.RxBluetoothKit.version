@@ -1,9 +1,0 @@
-{
-  "commitish" : "5.0.2",
-  "iOS" : [
-    {
-      "name" : "RxBluetoothKit",
-      "hash" : "19fdc3263cac41fdd1f43c08111513f8590b3651849084b36a9bf4978a150e20"
-    }
-  ]
-}

@@ -34,6 +34,48 @@ extension FileManager {
     }
 }
 
+class EEGFileManager {
+    static let shared = EEGFileManager()
+    private init() {}
+
+    private var fileHandler: FileHandle?
+    private var fileName: String?
+    func create() {
+        DispatchQueue.file.async {
+            let dataURL = FileManager.default.dataDirectory
+            self.fileName = Date().stringWith(formateString: "yyyy-MM-dd HH:mm:ss")
+            let filePath = dataURL.path + "/\(self.fileName!).txt"
+            if self.fileHandler == nil {
+                while !FileManager.default.fileExists(atPath: filePath) {
+                    FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil)
+                }
+                self.fileHandler = try? FileHandle(forWritingTo: URL(fileURLWithPath: filePath))
+            }
+        }
+    }
+
+    func write(_ data: Data) {
+        DispatchQueue.file.async {
+            self.fileHandler?.seekToEndOfFile()
+            self.fileHandler?.write(data)
+            self.fileHandler?.synchronizeFile()
+        }
+    }
+
+    func close() {
+        DispatchQueue.file.async {
+            self.fileHandler?.closeFile()
+            self.reset()
+        }
+    }
+
+    private func reset() {
+        fileHandler = nil
+        fileName = nil
+    }
+}
+
+
 //class EEGFileManager {
 //
 //    static let shared = EEGFileManager()
