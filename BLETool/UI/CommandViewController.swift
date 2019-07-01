@@ -36,16 +36,16 @@ class CommandViewController: UIViewController {
     }
 
     @IBAction func commandAButtonTouched(_ sender: UIBarButtonItem) {
-        send(data: Data(bytes: [0x0A]))
+        send(data: Data([0x0A]))
     }
 
     @IBAction func commandBButtonTouched(_ sender: UIBarButtonItem) {
-        send(data: Data(bytes: [0x0B]))
+        send(data: Data([0x0B]))
     }
 
     @IBAction func commandRandomButtonTouched(_ sender: UIBarButtonItem) {
         let v = UInt8(arc4random() % 256)
-        send(data: Data(bytes: [v]))
+        send(data: Data([v]))
     }
 
     private func notifyIfNeeded() {
@@ -53,7 +53,7 @@ class CommandViewController: UIViewController {
 
         self.service.notify(characteristic: .receive).subscribe(onNext: { [weak self] in
             guard let `self` = self else { return }
-            let data = Data(bytes: $0)
+            let data = Data($0)
             self.received(data: data)
         }).disposed(by: disposeBag)
         isNotifing = true
