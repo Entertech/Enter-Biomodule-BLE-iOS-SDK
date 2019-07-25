@@ -43,7 +43,7 @@
 1. add the following to your `Podfile`
 
 ~~~swift
-pod 'FlowTimeBLE', :git=> "git@github.com:EnterTech/FlowTimeBLESDK_iOS.git"
+pod 'FlowTimeBLE', :git=> "git@github.com:Entertech/Enter-Biomodule-BLE-iOS-SDK.git"
 ~~~
 
 2. Integrate your dependencies using frameworks: add use_frameworks! to your `Podfile`.
