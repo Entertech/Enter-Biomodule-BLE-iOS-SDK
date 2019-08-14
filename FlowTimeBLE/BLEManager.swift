@@ -13,10 +13,10 @@ import RxSwift
 
 
 public protocol BLEStateDelegate: class {
-    func bleConnectionStateChanged(state:BLEConnectionState)
-    func bleBatteryReceived(battery:Battery)
-    func bleBrainwaveDataReceived(data: Data)
-    func bleHeartRateDataReceived(data: Data)
+    func bleConnectionStateChanged(state: BLEConnectionState, bleManager: BLEManager)
+    func bleBatteryReceived(battery: Battery, bleManager: BLEManager)
+    func bleBrainwaveDataReceived(data: Data, bleManager: BLEManager)
+    func bleHeartRateDataReceived(data: Data, bleManager: BLEManager)
 }
 
 
@@ -38,14 +38,17 @@ public class BLEManager {
     
     public weak var delegate: BLEStateDelegate?
     
+    
+    /// init method
+    ///
+    /// - Parameter
     required init() {
-        
     }
     
     /// connection
     public private(set) var state: BLEConnectionState = .disconnected {
         didSet {
-            delegate?.bleConnectionStateChanged(state: self.state)
+            delegate?.bleConnectionStateChanged(state: self.state, bleManager: self)
         }
     }
     
@@ -60,7 +63,7 @@ public class BLEManager {
             guard let battery = self.battery else {
                 return
             }
-            delegate?.bleBatteryReceived(battery: battery)
+            delegate?.bleBatteryReceived(battery: battery, bleManager: self)
         }
     }
     
@@ -309,7 +312,7 @@ public class BLEManager {
         let data = Data(_eegBuffer)
         _eegBuffer.removeAll()
         _eegLock.unlock()
-        delegate?.bleBrainwaveDataReceived(data: data)
+        delegate?.bleBrainwaveDataReceived(data: data, bleManager: self)
     }
     
     /// stop EEG
@@ -369,7 +372,7 @@ public class BLEManager {
         let data = Data(_hrBuffer)
         _hrBuffer.removeAll()
         _hrLock.unlock()
-        delegate?.bleHeartRateDataReceived(data: data)
+        delegate?.bleHeartRateDataReceived(data: data, bleManager: self)
     }
     
     // MARK: - DFU
