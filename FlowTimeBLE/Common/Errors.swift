@@ -13,4 +13,7 @@ import Foundation
 enum BLEError: Error {
     case scanFail
     case connectFail
+    case busy
+    case timeout
+    case invalid(message: String)
 }

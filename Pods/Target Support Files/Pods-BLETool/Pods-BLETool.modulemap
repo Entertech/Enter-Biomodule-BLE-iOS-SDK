@@ -1,6 +1,0 @@
-framework module Pods_BLETool {
-  umbrella header "Pods-BLETool-umbrella.h"
-
-  export *
-  module * { export * }
-}
