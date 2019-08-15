@@ -219,7 +219,7 @@ commandService.write(data: Data(bytes: [instruction]), to: .send).done {
     // Failed to send 'xxx' command!")
 }
 ~~~
-
+ 
 **参数说明**
 
 |参数|类型|说明|
