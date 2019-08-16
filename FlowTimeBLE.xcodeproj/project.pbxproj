@@ -53,6 +53,9 @@
 		B79B1FB4221BD8A8007C78C8 /* CommandModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B1FB3221BD8A8007C78C8 /* CommandModeViewController.swift */; };
 		B79E9BFD215B5C64001465D2 /* BatteryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FC7881FAABDDB00605D8A /* BatteryService.swift */; };
 		B7BCFBA120186FE800495A52 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BCFBA020186FE800495A52 /* Persistence.swift */; };
+		FA98A2B22303A47C0007A43F /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B12303A47C0007A43F /* BLEManager.swift */; };
+		FA98A2B42303ABED0007A43F /* BLEType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B32303ABED0007A43F /* BLEType.swift */; };
+		FA98A2B62303DF5B0007A43F /* GCDBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B52303DF5B0007A43F /* GCDBlocks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +134,9 @@
 		B79B1FB3221BD8A8007C78C8 /* CommandModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandModeViewController.swift; sourceTree = "<group>"; };
 		B79E9BFB215B5C1A001465D2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
 		B7BCFBA020186FE800495A52 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		FA98A2B12303A47C0007A43F /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
+		FA98A2B32303ABED0007A43F /* BLEType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEType.swift; sourceTree = "<group>"; };
+		FA98A2B52303DF5B0007A43F /* GCDBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +260,8 @@
 			children = (
 				6C3FC78E1FAABE8B00605D8A /* Common.swift */,
 				6C3FC79A1FAC418700605D8A /* Errors.swift */,
+				FA98A2B32303ABED0007A43F /* BLEType.swift */,
+				FA98A2B52303DF5B0007A43F /* GCDBlocks.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 			children = (
 				6C3FC78D1FAABE7500605D8A /* Common */,
 				6C3FC77D1FAABD5D00605D8A /* Service */,
+				FA98A2B12303A47C0007A43F /* BLEManager.swift */,
 				6CFB760E1FA2D960006C03A5 /* Characteristic.swift */,
 				6C71132A1FA975C60093099D /* Scanner.swift */,
 				6C3FC7981FAC405D00605D8A /* Connector.swift */,
@@ -417,7 +426,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BLETool/Pods-BLETool-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BLETool/Pods-BLETool-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Files/Files.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -426,8 +435,6 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
-				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
-				"${BUILT_PRODUCTS_DIR}/iOSDFULibrary/iOSDFULibrary.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -439,12 +446,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDFULibrary.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BLETool/Pods-BLETool-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BLETool/Pods-BLETool-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B726F07F21F9AE66005A4ACF /* ShellScript */ = {
@@ -515,7 +520,9 @@
 			files = (
 				6C3FC77C1FAAB93700605D8A /* Characteristic.swift in Sources */,
 				6C3FC79B1FAC418700605D8A /* Errors.swift in Sources */,
+				FA98A2B62303DF5B0007A43F /* GCDBlocks.swift in Sources */,
 				6C3FC77F1FAABD7300605D8A /* GenericAccessService.swift in Sources */,
+				FA98A2B22303A47C0007A43F /* BLEManager.swift in Sources */,
 				6C3FC7871FAABDC600605D8A /* EEGService.swift in Sources */,
 				6C3FC78F1FAABE8B00605D8A /* Common.swift in Sources */,
 				6C3FC7991FAC405D00605D8A /* Connector.swift in Sources */,
@@ -523,6 +530,7 @@
 				6C71132B1FA975C60093099D /* Scanner.swift in Sources */,
 				6C3FC78B1FAABDF700605D8A /* GenericAttributeService.swift in Sources */,
 				6C71132F1FA97CB30093099D /* Service.swift in Sources */,
+				FA98A2B42303ABED0007A43F /* BLEType.swift in Sources */,
 				6C595D631FB6A0150097C170 /* ConnectService.swift in Sources */,
 				B79E9BFD215B5C64001465D2 /* BatteryService.swift in Sources */,
 				6C3FC7831FAABDB200605D8A /* DeviceInfoService.swift in Sources */,

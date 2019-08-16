@@ -8,7 +8,7 @@ target 'BLETool' do
 
     pod 'BlocksKit', '~> 2.2'
     pod 'Then'
-    pod 'iOSDFULibrary', :git => "git@github.com:qiubei/IOS-Pods-DFU-Library.git" , :branch => "master"
+    #    pod 'iOSDFULibrary', :git => "git@github.com:qiubei/IOS-Pods-DFU-Library.git" , :branch => "master"
     pod 'SnapKit', '~> 4.0'
     pod 'SVProgressHUD', '~> 2.2'
     pod 'RxCocoa', '~> 4.0'
