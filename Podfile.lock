@@ -21,7 +21,7 @@ PODS:
   - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
   - SwiftyTimer (2.1.0)
-  - Then (2.4.0)
+  - Then (2.5.0)
 
 DEPENDENCIES:
   - BlocksKit (~> 2.2)
@@ -51,7 +51,7 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
-  Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
+  Then: 0157115e883545c77967b452fe74a1d25fb796e1
 
 PODFILE CHECKSUM: eff42f55aab298a90edaee9d51e33a3a74d00f29
 
