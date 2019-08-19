@@ -19,7 +19,7 @@ playground.xcworkspace
 Pods/
 
 # Carthage 
-Carthage/Build
+Carthage/
 
 # fastlane
 fastlane/report.xml
