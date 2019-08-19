@@ -1,6 +1,6 @@
 //
 //  ScanViewController.swift
-//  FlowTimeBLE
+//  EnterBioModuleBLE
 //
 //  Created by NyanCat on 25/10/2017.
 //  Copyright © 2017 EnterTech. All rights reserved.
@@ -11,7 +11,7 @@ import CoreBluetooth
 import SVProgressHUD
 import RxBluetoothKit
 import RxSwift
-import FlowTimeBLE
+import EnterBioModuleBLE
 
 class ScanViewController: UITableViewController {
 
@@ -89,7 +89,7 @@ class ScanViewController: UITableViewController {
             }
         }
     }
-    private let sanner: FlowTimeBLE.Scanner = Scanner()
+    private let sanner: EnterBioModuleBLE.Scanner = Scanner()
 
     private func startScan() {
         clear()

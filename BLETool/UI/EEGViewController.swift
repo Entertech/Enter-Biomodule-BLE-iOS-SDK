@@ -1,6 +1,6 @@
 //
 //  EEGViewController.swift
-//  FlowTimeBLE
+//  EnterBioModuleBLE
 //
 //  Created by NyanCat on 27/10/2017.
 //  Copyright © 2017 EnterTech. All rights reserved.
@@ -12,7 +12,7 @@ import RxBluetoothKit
 import RxSwift
 import SVProgressHUD
 import SwiftyTimer
-import FlowTimeBLE
+import EnterBioModuleBLE
 import AVFoundation
 
 class EEGViewController: UITableViewController {

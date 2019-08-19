@@ -15,6 +15,8 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - Files (2.0.1)
+  - iOSDFULibrary (4.1.1):
+    - Zip (~> 1.0)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxSwift (4.5.0)
@@ -22,10 +24,12 @@ PODS:
   - SVProgressHUD (2.2.5)
   - SwiftyTimer (2.1.0)
   - Then (2.5.0)
+  - Zip (1.1.0)
 
 DEPENDENCIES:
   - BlocksKit (~> 2.2)
   - Files (~> 2.0.0)
+  - "iOSDFULibrary (from `git@github.com:qiubei/IOS-Pods-DFU-Library.git`, branch `master`)"
   - RxCocoa (~> 4.0)
   - SnapKit (~> 4.0)
   - SVProgressHUD (~> 2.2)
@@ -42,17 +46,30 @@ SPEC REPOS:
     - SVProgressHUD
     - SwiftyTimer
     - Then
+    - Zip
+
+EXTERNAL SOURCES:
+  iOSDFULibrary:
+    :branch: master
+    :git: "git@github.com:qiubei/IOS-Pods-DFU-Library.git"
+
+CHECKOUT OPTIONS:
+  iOSDFULibrary:
+    :commit: 339dc7ef8ed56b0b3ccd1542ec03eaa6562bbc72
+    :git: "git@github.com:qiubei/IOS-Pods-DFU-Library.git"
 
 SPEC CHECKSUMS:
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   Files: 2a80d8a2fafef38a7a590ef24634a829157e7305
+  iOSDFULibrary: 35e8a9e23d67759d57af9924d7a808e48c04583a
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
   Then: 0157115e883545c77967b452fe74a1d25fb796e1
+  Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: eff42f55aab298a90edaee9d51e33a3a74d00f29
+PODFILE CHECKSUM: 4ec530e978b546d5bf3a6886475cd4c8d2b5d7d4
 
 COCOAPODS: 1.6.1

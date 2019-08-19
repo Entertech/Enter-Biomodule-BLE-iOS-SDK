@@ -1,6 +1,6 @@
 //
 //  FileShowViewController.swift
-//  FlowTimeBLE
+//  EnterBioModuleBLE
 //
 //  Created by NyanCat on 28/10/2017.
 //  Copyright © 2017 EnterTech. All rights reserved.

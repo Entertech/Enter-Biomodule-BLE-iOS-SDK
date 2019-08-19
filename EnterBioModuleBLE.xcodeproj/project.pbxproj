@@ -41,6 +41,7 @@
 		6CFB76131FA323AE006C03A5 /* EEGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFB76121FA323AE006C03A5 /* EEGViewController.swift */; };
 		6CFB76151FA32692006C03A5 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFB76141FA32692006C03A5 /* Extension.swift */; };
 		7AB57DFAAE31A8CEC7B2E421 /* Pods_BLETool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D2137B8C5F9F5DC91E61D1 /* Pods_BLETool.framework */; };
+		B6DFB7872B10D055A10A5FA6 /* Pods_EnterBioModuleBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E82A8D3E89789C64C91059 /* Pods_EnterBioModuleBLE.framework */; };
 		B70965DC2227BEB000C6EE51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B70965DB2227BEB000C6EE51 /* Assets.xcassets */; };
 		B75785592015E13B0039B2FC /* DFU1.0.0.zip in Resources */ = {isa = PBXBuildFile; fileRef = B75785582015E13B0039B2FC /* DFU1.0.0.zip */; };
 		B75901891FE0FF2A00F0890E /* DFUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75901881FE0FF2A00F0890E /* DFUViewController.swift */; };
@@ -86,6 +87,7 @@
 		00D2137B8C5F9F5DC91E61D1 /* Pods_BLETool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLETool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCED370A1F0DBBF884F4AFC /* Pods-BLETool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLETool.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLETool/Pods-BLETool.release.xcconfig"; sourceTree = "<group>"; };
 		465E8BF9BFF2B656612353A7 /* Pods-BLETool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLETool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLETool/Pods-BLETool.debug.xcconfig"; sourceTree = "<group>"; };
+		48E82A8D3E89789C64C91059 /* Pods_EnterBioModuleBLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnterBioModuleBLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C0D22B01FA41D47005EAF33 /* FileListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListViewController.swift; sourceTree = "<group>"; };
 		6C0D22B21FA41D73005EAF33 /* FileShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileShowViewController.swift; sourceTree = "<group>"; };
 		6C0D22B41FA42352005EAF33 /* DataPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPool.swift; sourceTree = "<group>"; };
@@ -134,6 +136,8 @@
 		B79B1FB3221BD8A8007C78C8 /* CommandModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandModeViewController.swift; sourceTree = "<group>"; };
 		B79E9BFB215B5C1A001465D2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
 		B7BCFBA020186FE800495A52 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		BB0092A38888400FCF225C04 /* Pods-EnterBioModuleBLE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterBioModuleBLE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EnterBioModuleBLE/Pods-EnterBioModuleBLE.debug.xcconfig"; sourceTree = "<group>"; };
+		C173FEF19926FCA8194A76FA /* Pods-EnterBioModuleBLE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterBioModuleBLE.release.xcconfig"; path = "Pods/Target Support Files/Pods-EnterBioModuleBLE/Pods-EnterBioModuleBLE.release.xcconfig"; sourceTree = "<group>"; };
 		FA98A2B12303A47C0007A43F /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		FA98A2B32303ABED0007A43F /* BLEType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEType.swift; sourceTree = "<group>"; };
 		FA98A2B52303DF5B0007A43F /* GCDBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlocks.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 			files = (
 				6C3FC7921FAAF10600605D8A /* RxSwift.framework in Frameworks */,
 				6C3FC7931FAAF10600605D8A /* RxBluetoothKit.framework in Frameworks */,
+				B6DFB7872B10D055A10A5FA6 /* Pods_EnterBioModuleBLE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +293,7 @@
 				6C3FC7911FAAF10600605D8A /* RxBluetoothKit.framework */,
 				6C3FC7901FAAF10600605D8A /* RxSwift.framework */,
 				00D2137B8C5F9F5DC91E61D1 /* Pods_BLETool.framework */,
+				48E82A8D3E89789C64C91059 /* Pods_EnterBioModuleBLE.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -297,6 +303,8 @@
 			children = (
 				465E8BF9BFF2B656612353A7 /* Pods-BLETool.debug.xcconfig */,
 				3BCED370A1F0DBBF884F4AFC /* Pods-BLETool.release.xcconfig */,
+				BB0092A38888400FCF225C04 /* Pods-EnterBioModuleBLE.debug.xcconfig */,
+				C173FEF19926FCA8194A76FA /* Pods-EnterBioModuleBLE.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -341,6 +349,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6C7113271FA9755B0093099D /* Build configuration list for PBXNativeTarget "EnterBioModuleBLE" */;
 			buildPhases = (
+				BABFBB8F28E03BA7A66E6522 /* [CP] Check Pods Manifest.lock */,
 				6C7113171FA9755B0093099D /* Sources */,
 				6C7113181FA9755B0093099D /* Frameworks */,
 				6C7113191FA9755B0093099D /* Headers */,
@@ -435,6 +444,8 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSDFULibrary/iOSDFULibrary.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -446,6 +457,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDFULibrary.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -467,6 +480,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+		BABFBB8F28E03BA7A66E6522 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EnterBioModuleBLE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		FA9391335BD778D54DC12494 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -747,6 +782,7 @@
 		};
 		6C7113251FA9755B0093099D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB0092A38888400FCF225C04 /* Pods-EnterBioModuleBLE.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -771,7 +807,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -779,6 +815,7 @@
 		};
 		6C7113261FA9755B0093099D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C173FEF19926FCA8194A76FA /* Pods-EnterBioModuleBLE.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -802,7 +839,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSION_INFO_PREFIX = "";
 			};

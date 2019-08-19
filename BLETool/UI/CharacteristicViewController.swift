@@ -1,6 +1,6 @@
 //
 //  CharacteristicViewController.swift
-//  FlowTimeBLE
+//  EnterBioModuleBLE
 //
 //  Created by NyanCat on 28/10/2017.
 //  Copyright © 2017 EnterTech. All rights reserved.
@@ -11,7 +11,7 @@ import CoreBluetooth
 import RxBluetoothKit
 import RxSwift
 import SVProgressHUD
-import FlowTimeBLE
+import EnterBioModuleBLE
 
 class CharacteristicViewController: UITableViewController {
 

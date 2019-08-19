@@ -1,6 +1,6 @@
 //
 //  Extension.swift
-//  FlowTimeBLE
+//  EnterBioModuleBLE
 //
 //  Created by NyanCat on 27/10/2017.
 //  Copyright © 2017 EnterTech. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 import RxBluetoothKit
-import FlowTimeBLE
+import EnterBioModuleBLE
 
 extension Data {
     var hexString: String {
@@ -61,7 +61,7 @@ extension BLEService: UUIDType {
     }
 }
 
-//extension FlowTimeBLE.Characteristic.DeviceInfo: Displayable {
+//extension EnterBioModuleBLE.Characteristic.DeviceInfo: Displayable {
 //    var displayName: String {
 //        switch self {
 //        case .mac:
@@ -78,7 +78,7 @@ extension BLEService: UUIDType {
 //    }
 //}
 
-//extension FlowTimeBLE.Characteristic.Battery: Displayable {
+//extension EnterBioModuleBLE.Characteristic.Battery: Displayable {
 //    var displayName: String {
 //        switch self {
 //        case .battery:
@@ -90,17 +90,17 @@ extension BLEService: UUIDType {
 extension RxBluetoothKit.Characteristic: Displayable {
     var displayName: String {
         switch self.uuid.uuidString {
-        case FlowTimeBLE.Characteristic.DeviceInfo.mac.rawValue:
+        case EnterBioModuleBLE.Characteristic.DeviceInfo.mac.rawValue:
             return "MAC Address"
-        case FlowTimeBLE.Characteristic.DeviceInfo.serial.rawValue:
+        case EnterBioModuleBLE.Characteristic.DeviceInfo.serial.rawValue:
             return "Serial No."
-        case FlowTimeBLE.Characteristic.DeviceInfo.firmwareRevision.rawValue:
+        case EnterBioModuleBLE.Characteristic.DeviceInfo.firmwareRevision.rawValue:
             return "Firmware Version"
-        case FlowTimeBLE.Characteristic.DeviceInfo.hardwareRevision.rawValue:
+        case EnterBioModuleBLE.Characteristic.DeviceInfo.hardwareRevision.rawValue:
             return "Hardware Version"
-        case FlowTimeBLE.Characteristic.DeviceInfo.manufacturer.rawValue:
+        case EnterBioModuleBLE.Characteristic.DeviceInfo.manufacturer.rawValue:
             return "Manufacturer"
-        case FlowTimeBLE.Characteristic.Battery.battery.rawValue:
+        case EnterBioModuleBLE.Characteristic.Battery.battery.rawValue:
             return "Battery"
         default:
             return "Any"

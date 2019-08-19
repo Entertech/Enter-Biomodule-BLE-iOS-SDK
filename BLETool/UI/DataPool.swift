@@ -1,6 +1,6 @@
 //
 //  DataPool.swift
-//  FlowTimeBLE
+//  EnterBioModuleBLE
 //
 //  Created by NyanCat on 28/10/2017.
 //  Copyright © 2017 EnterTech. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 
 extension DispatchQueue {
-    static let pool = DispatchQueue(label: "cn.entertech.FlowTimeBLE.pool")
+    static let pool = DispatchQueue(label: "cn.entertech.EnterBioModuleBLE.pool")
 }
 
 class DataPool {

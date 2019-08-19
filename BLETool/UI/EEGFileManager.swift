@@ -1,6 +1,6 @@
 //
 //  EEGFileManager.swift
-//  FlowTimeBLE
+//  EnterBioModuleBLE
 //
 //  Created by NyanCat on 28/10/2017.
 //  Copyright © 2017 EnterTech. All rights reserved.
@@ -19,7 +19,7 @@ extension Date {
 }
 
 extension DispatchQueue {
-    static let file = DispatchQueue(label: "cn.entertech.FlowTimeBLE.file")
+    static let file = DispatchQueue(label: "cn.entertech.EnterBioModuleBLE.file")
 }
 
 extension FileManager {

@@ -8,13 +8,18 @@ target 'BLETool' do
 
     pod 'BlocksKit', '~> 2.2'
     pod 'Then'
-    #    pod 'iOSDFULibrary', :git => "git@github.com:qiubei/IOS-Pods-DFU-Library.git" , :branch => "master"
+    pod 'iOSDFULibrary', :git => "git@github.com:qiubei/IOS-Pods-DFU-Library.git" , :branch => "master"
     pod 'SnapKit', '~> 4.0'
     pod 'SVProgressHUD', '~> 2.2'
     pod 'RxCocoa', '~> 4.0'
     pod 'SwiftyTimer', '~> 2.0'
     pod 'Files', '~> 2.0.0'
 end
+
+target 'EnterBioModuleBLE' do
+    pod 'iOSDFULibrary', :git => "git@github.com:qiubei/IOS-Pods-DFU-Library.git" , :branch => "master"
+end
+
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
