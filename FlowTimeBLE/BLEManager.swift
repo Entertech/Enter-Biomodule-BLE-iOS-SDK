@@ -104,7 +104,7 @@ public class BLEManager {
         let promise = Promise<ScannedPeripheral> { [weak self] seal in
             guard let `self` = self else { return }
             self.state = .searching
-            
+            self.disposalbe?.dispose()
             self.disposalbe = scanner.scan()
                 .buffer(timeSpan: 3.0, count: 10, scheduler: MainScheduler.asyncInstance)
                 .subscribe(onNext: { (peripherals) in
