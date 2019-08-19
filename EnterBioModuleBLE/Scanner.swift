@@ -54,7 +54,7 @@ public final class Scanner {
 
     public func stop() {
         _disposable?.dispose()
-        self.manager.manager.stopScan()
+        self.manager.centralManager.stopScan()
     }
 
     public func use(peripheral: Peripheral) {

@@ -14,7 +14,5 @@ EnterBioModuleBLE 通信库
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'FlowTimeBLE/**/*.swift'
-  s.dependency 'PromiseKit'
-  s.dependency 'RxBluetoothKit'
 
 end
