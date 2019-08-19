@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
-  s.name             = 'FlowTimeBLE'
-  s.version          = '1.0.0'
-  s.summary          = 'FlowTime BLE 通信库'
+  s.name             = 'EnterBioModuleBLE'
+  s.version          = '1.1.0'
+  s.summary          = 'EnterBioModuleBLE 通信库'
   s.description      = <<-DESC
-FlowTime BLE 通信库
+EnterBioModuleBLE 通信库
                        DESC
 
   s.homepage         = 'https://github.com/EnterTech'
