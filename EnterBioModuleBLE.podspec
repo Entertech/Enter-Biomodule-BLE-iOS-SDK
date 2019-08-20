@@ -16,6 +16,6 @@ EnterBioModuleBLE 通信库
   s.source_files = 'EnterBioModuleBLE/**/*.swift'
   s.dependency 'PromiseKit'
   s.dependency 'RxBluetoothKit'
-
+  s.dependency 'iOSDFULibrary'
 
 end
