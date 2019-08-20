@@ -16,7 +16,6 @@ EnterBioModuleBLE 通信库
   s.source_files = 'EnterBioModuleBLE/**/*.swift'
   s.dependency 'PromiseKit'
   s.dependency 'RxBluetoothKit'
-  s.dependency 'iOSDFULibrary', :git => "https://github.com/Entertech/IOS-Pods-DFU-Library.git", :tag => '1.1.1'
 
 
 end
