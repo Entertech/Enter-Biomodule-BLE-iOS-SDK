@@ -113,7 +113,7 @@ class EEGViewController: UITableViewController {
             }
 
             Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (timer) in
-                _ = self.commandService.write(data: Data([0x07]), to: .send)
+                _ = self.commandService.write(data: Data([0x08]), to: .send)
             }
         } else {
             dataList.removeAll()
@@ -134,7 +134,7 @@ class EEGViewController: UITableViewController {
             }
 
             Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (timer) in
-                _ = self.commandService.write(data: Data([0x08]), to: .send)
+                _ = self.commandService.write(data: Data([0x07]), to: .send)
             }
         }
     }
