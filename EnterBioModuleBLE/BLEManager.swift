@@ -13,19 +13,23 @@ import RxSwift
 
 
 public protocol BLEStateDelegate: class {
+    func bleConnectionStateChanged(state: BLEConnectionState, bleManager: BLEManager)
+    func bleBatteryReceived(battery: Battery, bleManager: BLEManager)
+    func bleBrainwaveDataReceived(data: Data, bleManager: BLEManager)
+    func bleHeartRateDataReceived(data: Data, bleManager: BLEManager)
 }
 
 extension BLEStateDelegate {
-    func bleConnectionStateChanged(state: BLEConnectionState, bleManager: BLEManager) {
+    public func bleConnectionStateChanged(state: BLEConnectionState, bleManager: BLEManager) {
         return
     }
-    func bleBatteryReceived(battery: Battery, bleManager: BLEManager) {
+    public func bleBatteryReceived(battery: Battery, bleManager: BLEManager) {
         return
     }
-    func bleBrainwaveDataReceived(data: Data, bleManager: BLEManager) {
+    public func bleBrainwaveDataReceived(data: Data, bleManager: BLEManager) {
         return
     }
-    func bleHeartRateDataReceived(data: Data, bleManager: BLEManager) {
+    public func bleHeartRateDataReceived(data: Data, bleManager: BLEManager) {
         return
     }
 }
