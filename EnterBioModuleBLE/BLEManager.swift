@@ -289,7 +289,7 @@ public class BLEManager {
     
     
     /// Start EEG Service
-    func startEEG() {
+    public func startEEG() {
         observers.eeg = connector?.eegService?
             .notify(characteristic: .data)
             .subscribe(onNext: { [weak self] bytes in
@@ -331,7 +331,7 @@ public class BLEManager {
     }
     
     /// stop EEG
-    func stopEEG() {
+    public func stopEEG() {
         // 结束指令
         _ = connector?.commandService?.write(data: Data([0x06]), to: .send)
         // 结束脑波监听
@@ -348,7 +348,7 @@ public class BLEManager {
     private let _hrBufferSize: Int = 2
     private let _hrLock = NSLock()
     /// start heart rate and start notify
-    func startHeartRate() {
+    public func startHeartRate() {
         observers.heart = self.connector?.heartService?
             .notify(characteristic: .data)
             .subscribe(onNext: { [weak self] bytes in
@@ -362,7 +362,7 @@ public class BLEManager {
     }
     
     /// stop heart rate
-    func stopHeartRate() {
+    public func stopHeartRate() {
         
         _ = self.connector?.commandService?.write(data: Data([0x06]), to: .send)
         
