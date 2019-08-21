@@ -34,7 +34,7 @@ extension BLEConnectionState {
 }
 
 extension BLEConnectionState {
-    var isBusy: Bool {
+    public var isBusy: Bool {
         switch self {
         case .disconnected:
             return false
