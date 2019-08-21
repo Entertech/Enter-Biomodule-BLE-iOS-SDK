@@ -19,6 +19,21 @@ public protocol BLEStateDelegate: class {
     func bleHeartRateDataReceived(data: Data, bleManager: BLEManager)
 }
 
+extension BLEStateDelegate {
+    func bleConnectionStateChanged(state: BLEConnectionState, bleManager: BLEManager) {
+        
+    }
+    func bleBatteryReceived(battery: Battery, bleManager: BLEManager) {
+        
+    }
+    func bleBrainwaveDataReceived(data: Data, bleManager: BLEManager) {
+        
+    }
+    func bleHeartRateDataReceived(data: Data, bleManager: BLEManager) {
+        
+    }
+}
+
 
 public class BLEManager {
     
@@ -42,7 +57,7 @@ public class BLEManager {
     /// init method
     ///
     /// - Parameter
-    required init() {
+    public required init() {
     }
     
     /// connection
