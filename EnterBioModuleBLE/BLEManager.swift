@@ -15,6 +15,10 @@ import RxSwift
 public protocol BLEStateDelegate: class {
     func bleConnectionStateChanged(state: BLEConnectionState, bleManager: BLEManager)
     func bleBatteryReceived(battery: Battery, bleManager: BLEManager)
+    
+}
+
+public protocol BLEBioModuleDelegate: class {
     func bleBrainwaveDataReceived(data: Data, bleManager: BLEManager)
     func bleHeartRateDataReceived(data: Data, bleManager: BLEManager)
 }
@@ -26,6 +30,10 @@ extension BLEStateDelegate {
     public func bleBatteryReceived(battery: Battery, bleManager: BLEManager) {
         return
     }
+
+}
+
+extension  BLEBioModuleDelegate {
     public func bleBrainwaveDataReceived(data: Data, bleManager: BLEManager) {
         return
     }
@@ -52,6 +60,7 @@ public class BLEManager {
     private var observers: Observers = Observers()
     
     public weak var delegate: BLEStateDelegate?
+    public weak var dataSource: BLEBioModuleDelegate?
     
     
     /// init method
@@ -327,7 +336,7 @@ public class BLEManager {
         let data = Data(_eegBuffer)
         _eegBuffer.removeAll()
         _eegLock.unlock()
-        delegate?.bleBrainwaveDataReceived(data: data, bleManager: self)
+        dataSource?.bleBrainwaveDataReceived(data: data, bleManager: self)
     }
     
     /// stop EEG
@@ -387,7 +396,7 @@ public class BLEManager {
         let data = Data(_hrBuffer)
         _hrBuffer.removeAll()
         _hrLock.unlock()
-        delegate?.bleHeartRateDataReceived(data: data, bleManager: self)
+        dataSource?.bleHeartRateDataReceived(data: data, bleManager: self)
     }
     
 //    // MARK: - DFU
