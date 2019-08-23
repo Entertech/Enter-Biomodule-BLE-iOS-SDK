@@ -18,7 +18,7 @@ public protocol BLEStateDelegate: class {
     
 }
 
-public protocol BLEBioModuleDelegate: class {
+public protocol BLEBioModuleDataSource: class {
     func bleBrainwaveDataReceived(data: Data, bleManager: BLEManager)
     func bleHeartRateDataReceived(data: Data, bleManager: BLEManager)
 }
@@ -33,7 +33,7 @@ extension BLEStateDelegate {
 
 }
 
-extension  BLEBioModuleDelegate {
+extension  BLEBioModuleDataSource {
     public func bleBrainwaveDataReceived(data: Data, bleManager: BLEManager) {
         return
     }
@@ -60,7 +60,7 @@ public class BLEManager {
     private var observers: Observers = Observers()
     
     public weak var delegate: BLEStateDelegate?
-    public weak var dataSource: BLEBioModuleDelegate?
+    public weak var dataSource: BLEBioModuleDataSource?
     
     
     /// init method
