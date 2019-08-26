@@ -385,7 +385,7 @@ manager.stopEEG()
 
 实现订阅协议 BLEBioModuleDataSource, 获取EEG数据
 ~~~swift 
-// 关闭脑电数据订阅
+// 实现代理
 manager.dataSource = self
 
 /// eeg数据获取的代理方法
@@ -406,7 +406,7 @@ manager.stopHeartRate()
 
 实现订阅协议 BLEBioModuleDataSource, 获取心率数据
 ~~~swift 
-// 关闭脑电数据订阅
+// 实现代理
 manager.dataSource = self
 
 /// 心率获取的代理方法
