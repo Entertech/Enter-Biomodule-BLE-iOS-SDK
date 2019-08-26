@@ -98,7 +98,7 @@ public class BLEManager {
     private var disposalbe: Disposable?
     
     // MARK: - connect logic
-    /// Scan peripheral and connect
+    /// Scan peripheral with 3 second and connect
     ///
     /// - Parameters:
     ///   - completion: 完成回调

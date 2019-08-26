@@ -57,6 +57,7 @@
 		FA98A2B22303A47C0007A43F /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B12303A47C0007A43F /* BLEManager.swift */; };
 		FA98A2B42303ABED0007A43F /* BLEType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B32303ABED0007A43F /* BLEType.swift */; };
 		FA98A2B62303DF5B0007A43F /* GCDBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B52303DF5B0007A43F /* GCDBlocks.swift */; };
+		FAEB170023137AD2002CEAC1 /* SDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB16FF23137AD2002CEAC1 /* SDKService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		FA98A2B12303A47C0007A43F /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		FA98A2B32303ABED0007A43F /* BLEType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEType.swift; sourceTree = "<group>"; };
 		FA98A2B52303DF5B0007A43F /* GCDBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlocks.swift; sourceTree = "<group>"; };
+		FAEB16FF23137AD2002CEAC1 /* SDKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			children = (
 				6C1CE81B1FB9A1E8003D4EB5 /* Resources */,
 				6C143B941FA06C51009F866D /* Global */,
+				FAEB16FE2313798A002CEAC1 /* Service */,
 				6C1643101FA06098002C1438 /* UI */,
 				6C1642FE1FA03B09002C1438 /* AppDelegate.swift */,
 				6C1643021FA03B09002C1438 /* Main.storyboard */,
@@ -307,6 +310,14 @@
 				C173FEF19926FCA8194A76FA /* Pods-EnterBioModuleBLE.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FAEB16FE2313798A002CEAC1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FAEB16FF23137AD2002CEAC1 /* SDKService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,9 +486,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxBluetoothKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputPaths = (
 			);
@@ -548,6 +556,7 @@
 				6C0D22B51FA42352005EAF33 /* DataPool.swift in Sources */,
 				6C0D22B91FA447C5005EAF33 /* CharacteristicViewController.swift in Sources */,
 				B79493E420209D26004166E3 /* DFUPacketFilesViewController.swift in Sources */,
+				FAEB170023137AD2002CEAC1 /* SDKService.swift in Sources */,
 				B79B1FB2221BD23F007C78C8 /* Instruction.swift in Sources */,
 				6C1643121FA06603002C1438 /* ScanViewController.swift in Sources */,
 			);

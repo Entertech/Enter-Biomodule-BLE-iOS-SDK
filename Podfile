@@ -14,6 +14,7 @@ target 'BLETool' do
     pod 'RxCocoa', '~> 4.0'
     pod 'SwiftyTimer', '~> 2.0'
     pod 'Files', '~> 2.0.0'
+    pod 'PromiseKit', '~> 6.10.0'
 end
 
 target 'EnterBioModuleBLE' do

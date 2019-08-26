@@ -18,6 +18,10 @@
         * [同时获取心率和脑电数据](#同时获取心率和脑电数据)
         * [佩戴检测](#佩戴检测)
         * [DFU 服务](#DFU-服务)
+    * [整合接口BLEManager](#整合接口BLEManager)
+        * [蓝牙连接](#蓝牙连接)
+        * [脑电服务订阅](#脑电服务订阅)
+        * [心率数据订阅](#心率数据订阅)
 
 # SDK 说明
 ## 介绍
@@ -111,6 +115,7 @@ firstly {
 ~~~swift
 connector.cancel()
 ~~~
+
 
 > 蓝牙服务说明
 > 服务一般有三类应用：单个普通服务、服务的组合以及 DFU 服务。
@@ -334,4 +339,85 @@ let initiator = DFUServiceInitiator(centralManager: self.cManager, target: self.
     // 将 DFUFirmware 对象给 DFUServiceInitiator 对象开始固件更新。
     let _ = initiator.with(firmware: firmware!).start()
 ~~~
+
+
+> 为了能够简单快捷的调用以上硬件连接接口和服务接口，我们将以上介绍的接口做了整合，可根据自己需求选择使用
+## 整合接口BLEManager
+
+### 蓝牙连接
+
+~~~swift 
+// 扫描周围设备3秒，取信号最强的一个进行连接, 同时将开启电量服务
+let manager = BLEManager()
+manager.scanAndConnect { completed in
+    // your code
+}
+~~~
+
+~~~swift 
+// 断开链接
+manager.disconnect()
+~~~
+
+实现订阅协议 BLEStateDelegate, 获取连接状态，获取电量
+~~~swift 
+manager.delegate = self
+
+/// 数据连接的代理方法
+func bleConnectionStateChanged(state: BLEConnectionState, bleManager: BLEManager) {}
+
+/// 电量获取的代理方法
+func bleBatteryReceived(battery: Battery, bleManager: BLEManager) {}
+~~~
+
+
+### 脑电服务订阅
+
+~~~swift 
+// 订阅脑电数据，并打开脱落检测
+manager.startEEG()
+~~~
+
+~~~swift 
+// 关闭脑电数据订阅
+manager.stopEEG()
+~~~
+
+实现订阅协议 BLEBioModuleDataSource, 获取EEG数据
+~~~swift 
+// 关闭脑电数据订阅
+manager.dataSource = self
+
+/// eeg数据获取的代理方法
+func bleBrainwaveDataReceived(data: Data, bleManager: BLEManager){}
+~~~
+
+### 心率数据订阅
+
+~~~swift 
+// 关闭脑电数据订阅
+manager.startHeartRate()
+~~~
+
+~~~swift 
+// 关闭脑电数据订阅
+manager.stopHeartRate()
+~~~
+
+实现订阅协议 BLEBioModuleDataSource, 获取心率数据
+~~~swift 
+// 关闭脑电数据订阅
+manager.dataSource = self
+
+/// 心率获取的代理方法
+func bleHeartRateDataReceived(data: Data, bleManager: BLEManager){}
+~~~
+
+
+
+
+
+
+
+
 

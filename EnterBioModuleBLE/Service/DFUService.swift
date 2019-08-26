@@ -21,6 +21,8 @@ extension DFUService: ServiceTypable {
         return .dfu
     }
 }
+
+// TODO: - DFU
 //
 //public class DFU: DFUProgressDelegate, DFUServiceDelegate {
 //    var fileURL: URL!
