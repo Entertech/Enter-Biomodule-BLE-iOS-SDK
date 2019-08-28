@@ -18,7 +18,7 @@ target 'BLETool' do
 end
 
 target 'EnterBioModuleBLE' do
-    pod 'iOSDFULibrary', :git => "git@github.com:Entertech/IOS-Pods-DFU-Library.git" , :branch => "master"
+#    pod 'iOSDFULibrary', :git => "git@github.com:Entertech/IOS-Pods-DFU-Library.git" , :branch => "master"
     pod 'RxSwift', '~> 4.5'
     pod 'RxBluetoothKit', '~> 5.0.2'
     pod 'PromiseKit', '~> 6.10.0'
