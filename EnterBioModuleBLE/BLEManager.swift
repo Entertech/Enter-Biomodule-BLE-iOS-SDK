@@ -399,20 +399,20 @@ public class BLEManager {
         dataSource?.bleHeartRateDataReceived(data: data, bleManager: self)
     }
     
-//    // MARK: - DFU
-//    private lazy var dfu: DFU = {
-//        return DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.centralManager)
-//    }()
-//    
-//    /// DFU 方法
-//    ///
-//    /// - Parameter fileURL: 固件文件 URL，必须是本地 URL
-//    /// - Throws: 如果设备未连接会抛出错误
-//    public func dfu(fileURL: URL) throws {
-//        guard self.connector?.peripheral != nil else { throw BLEError.invalid(message: "设备未连接") }
-//        
-//        dfu.fileURL = fileURL
-//        dfu.fire()
-//    }
-//    
+    // MARK: - DFU
+    private lazy var dfu: DFU = {
+        return DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.centralManager)
+    }()
+    
+    /// DFU 方法
+    ///
+    /// - Parameter fileURL: 固件文件 URL，必须是本地 URL
+    /// - Throws: 如果设备未连接会抛出错误
+    public func dfu(fileURL: URL) throws {
+        guard self.connector?.peripheral != nil else { throw BLEError.invalid(message: "设备未连接") }
+        
+        dfu.fileURL = fileURL
+        dfu.fire()
+    }
+    
 }

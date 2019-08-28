@@ -40,7 +40,7 @@ PODS:
 DEPENDENCIES:
   - BlocksKit (~> 2.2)
   - Files (~> 2.0.0)
-  - "iOSDFULibrary (from `git@github.com:qiubei/IOS-Pods-DFU-Library.git`, branch `master`)"
+  - "iOSDFULibrary (from `git@github.com:Entertech/IOS-Pods-DFU-Library.git`, branch `master`)"
   - PromiseKit (~> 6.10.0)
   - RxBluetoothKit (~> 5.0.2)
   - RxCocoa (~> 4.0)
@@ -67,12 +67,12 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   iOSDFULibrary:
     :branch: master
-    :git: "git@github.com:qiubei/IOS-Pods-DFU-Library.git"
+    :git: "git@github.com:Entertech/IOS-Pods-DFU-Library.git"
 
 CHECKOUT OPTIONS:
   iOSDFULibrary:
     :commit: 339dc7ef8ed56b0b3ccd1542ec03eaa6562bbc72
-    :git: "git@github.com:qiubei/IOS-Pods-DFU-Library.git"
+    :git: "git@github.com:Entertech/IOS-Pods-DFU-Library.git"
 
 SPEC CHECKSUMS:
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
@@ -88,6 +88,6 @@ SPEC CHECKSUMS:
   Then: 0157115e883545c77967b452fe74a1d25fb796e1
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: cab2caed8b1616137b12793b3fd401583da34f82
+PODFILE CHECKSUM: 16539a098045ac7c8ae60f1c3215967a1ae26078
 
 COCOAPODS: 1.6.1
