@@ -16,6 +16,6 @@ EnterBioModuleBLE 通信库
   s.source_files = 'EnterBioModuleBLE/**/*.swift'
   s.dependency 'PromiseKit'
   s.dependency 'RxBluetoothKit'
-  s.dependency 'iOSDFULibrary'
+  s.dependency 'iOSDFULibrary' :git=> 'git@github.com:Entertech/Enter-Biomodule-BLE-iOS-SDK.git'
 
 end
