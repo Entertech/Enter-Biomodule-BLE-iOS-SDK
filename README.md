@@ -395,7 +395,7 @@ func bleBrainwaveDataReceived(data: Data, bleManager: BLEManager){}
 ### 心率数据订阅
 
 ~~~swift 
-// 关闭脑电数据订阅
+// 开启脑电数据订阅
 manager.startHeartRate()
 ~~~
 
