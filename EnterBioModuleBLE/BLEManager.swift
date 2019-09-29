@@ -58,7 +58,6 @@ public class BLEManager {
     }
     
     private var observers: Observers = Observers()
-    
     public weak var delegate: BLEStateDelegate?
     public weak var dataSource: BLEBioModuleDataSource?
     
@@ -69,14 +68,14 @@ public class BLEManager {
     public required init() {
     }
     
-    /// connection
+    /// connection state
     public private(set) var state: BLEConnectionState = .disconnected {
         didSet {
             delegate?.bleConnectionStateChanged(state: self.state, bleManager: self)
         }
     }
     
-    /// device
+    /// device info
     public private(set) var deviceInfo: BLEDeviceInfo = BLEDeviceInfo(name: "Flowtime",
                                                                        hardware: "0.0.0",
                                                                        firmware: "0.0.0",
@@ -101,7 +100,7 @@ public class BLEManager {
     /// Scan peripheral with 3 second and connect
     ///
     /// - Parameters:
-    ///   - completion: 完成回调
+    ///   - completion: complete block
     public func scanAndConnect(completion: Connector.ConnectResultBlock?) throws {
         if self.state.isBusy {
             throw BLEError.busy

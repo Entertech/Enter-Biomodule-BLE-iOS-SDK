@@ -1,62 +1,49 @@
 PODS:
-  - BlocksKit (2.2.5):
-    - BlocksKit/All (= 2.2.5)
-  - BlocksKit/All (2.2.5):
-    - BlocksKit/Core
-    - BlocksKit/DynamicDelegate
-    - BlocksKit/MessageUI
-    - BlocksKit/UIKit
-  - BlocksKit/Core (2.2.5)
-  - BlocksKit/DynamicDelegate (2.2.5)
-  - BlocksKit/MessageUI (2.2.5):
-    - BlocksKit/Core
-    - BlocksKit/DynamicDelegate
-  - BlocksKit/UIKit (2.2.5):
-    - BlocksKit/Core
-    - BlocksKit/DynamicDelegate
-  - Files (2.0.1)
+  - Files (2.2.1)
   - iOSDFULibrary (4.1.1):
     - Zip (~> 1.0)
-  - PromiseKit (6.10.0):
-    - PromiseKit/CorePromise (= 6.10.0)
-    - PromiseKit/Foundation (= 6.10.0)
-    - PromiseKit/UIKit (= 6.10.0)
-  - PromiseKit/CorePromise (6.10.0)
-  - PromiseKit/Foundation (6.10.0):
+  - PromiseKit (6.11.0):
+    - PromiseKit/CorePromise (= 6.11.0)
+    - PromiseKit/Foundation (= 6.11.0)
+    - PromiseKit/UIKit (= 6.11.0)
+  - PromiseKit/CorePromise (6.11.0)
+  - PromiseKit/Foundation (6.11.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.10.0):
+  - PromiseKit/UIKit (6.11.0):
     - PromiseKit/CorePromise
-  - RxBluetoothKit (5.0.2):
-    - RxSwift (~> 4.0)
-  - RxCocoa (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxSwift (4.5.0)
+  - RxBluetoothKit (5.3.0):
+    - RxSwift (~> 5.0)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
   - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
   - SwiftyTimer (2.1.0)
-  - Then (2.5.0)
+  - Then (2.6.0)
   - Zip (1.1.0)
 
 DEPENDENCIES:
-  - BlocksKit (~> 2.2)
-  - Files (~> 2.0.0)
+  - Files (~> 2.2.1)
   - "iOSDFULibrary (from `git@github.com:Entertech/IOS-Pods-DFU-Library.git`, branch `master`)"
-  - PromiseKit (~> 6.10.0)
-  - RxBluetoothKit (~> 5.0.2)
-  - RxCocoa (~> 4.0)
-  - RxSwift (~> 4.5)
-  - SnapKit (~> 4.0)
+  - PromiseKit
+  - RxBluetoothKit (~> 5.3.0)
+  - RxCocoa (~> 5.0)
+  - RxSwift (~> 5.0)
+  - SnapKit
   - SVProgressHUD (~> 2.2)
   - SwiftyTimer (~> 2.0)
   - Then
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - BlocksKit
     - Files
     - PromiseKit
     - RxBluetoothKit
     - RxCocoa
+    - RxRelay
     - RxSwift
     - SnapKit
     - SVProgressHUD
@@ -75,19 +62,19 @@ CHECKOUT OPTIONS:
     :git: "git@github.com:Entertech/IOS-Pods-DFU-Library.git"
 
 SPEC CHECKSUMS:
-  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  Files: 2a80d8a2fafef38a7a590ef24634a829157e7305
+  Files: 18a88ede4f1e339a73adaca7272af15fa32ba69f
   iOSDFULibrary: 35e8a9e23d67759d57af9924d7a808e48c04583a
-  PromiseKit: 1fdaeb6c0a94a5114fcb814ff3d772b86886ad4e
-  RxBluetoothKit: 3c5f29177dcc9e53960493b055e3ef2954d523a0
-  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
+  RxBluetoothKit: 0e781978e8a0df70ac3c611dcf44800b76c69f8a
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
-  Then: 0157115e883545c77967b452fe74a1d25fb796e1
+  Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: 1745f0f4190a112a9252631792aae8b9de108723
+PODFILE CHECKSUM: 9718fcf6f9757a63ef3b7b51a364a43b7cac0bf2
 
 COCOAPODS: 1.6.1

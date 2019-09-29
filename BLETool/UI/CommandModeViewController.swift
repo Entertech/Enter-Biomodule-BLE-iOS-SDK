@@ -11,8 +11,9 @@ import SnapKit
 import Then
 import EnterBioModuleBLE
 import RxBluetoothKit
-import BlocksKit
 import SVProgressHUD
+import RxSwift
+import RxCocoa
 
 class CommandModeViewController: UIViewController {
 
@@ -20,7 +21,7 @@ class CommandModeViewController: UIViewController {
     var commandService: CommandService!
     var heartService: HeartService!
     var peripheral: Peripheral!
-
+    private let disposeBag  = DisposeBag()
     private var type = CommandModeType.eeg
     private let eegButton = UIButton().then {
         $0.setTitle("EEG", for: .normal)
@@ -69,32 +70,36 @@ class CommandModeViewController: UIViewController {
     }
 
     private func addEvents() {
-        eegButton.bk_(whenTapped: {
+        eegButton.rx.tap.bind { [weak self] in
+            guard let self = self else  {return}
             if self.eegService == nil || self.commandService == nil {
                 SVProgressHUD.showError(withStatus: "sorry! the servic is no use")
                 return
             }
             self.type = .eeg
             self.performSegue(withIdentifier: "toEEG", sender: self)
-        })
-
-        heartButton.bk_(whenTapped: {
+        }.disposed(by: disposeBag)
+        
+        heartButton.rx.tap.bind { [weak self] in
+            guard let self = self else {return}
             if self.heartService == nil || self.commandService == nil {
                 SVProgressHUD.showError(withStatus: "sorry! the service is no use")
                 return
             }
             self.type = .heart
             self.performSegue(withIdentifier: "toEEG", sender: self)
-        })
+        }.disposed(by: disposeBag)
 
-        mixButton.bk_(whenTapped: {
+        mixButton.rx.tap.bind { [weak self] in
+            guard let self = self else {return}
             if self.eegService == nil || self.heartService == nil || self.commandService == nil {
                 SVProgressHUD.showError(withStatus: "sorry! the service is no use")
                 return
             }
             self.type = .mix
             self.performSegue(withIdentifier: "toEEG", sender: self)
-        })
+        }.disposed(by: disposeBag)
+
     }
 
     private func layout() {
