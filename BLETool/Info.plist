@@ -19,12 +19,12 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.1</string>
 	<key>CFBundleVersion</key>
-	<string>16</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>访问和连接蓝牙设备</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>访问和连接蓝牙设备</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>访问和连接蓝牙设备</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>导出文本文件需要访问您的图片库</string>

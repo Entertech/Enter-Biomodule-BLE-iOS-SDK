@@ -9,8 +9,8 @@ target 'BLETool' do
     pod 'iOSDFULibrary', :git => "git@github.com:Entertech/IOS-Pods-DFU-Library.git" , :branch => "master"
     pod 'SnapKit'
     pod 'SVProgressHUD', '~> 2.2'
-    pod 'RxCocoa', '~> 5.0'
-    pod 'RxSwift', '~> 5.0'
+    pod 'RxCocoa', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
+    pod 'RxSwift', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
     pod 'SwiftyTimer', '~> 2.0'
     pod 'Files', '~> 2.2.1'
     pod 'PromiseKit'
@@ -18,7 +18,7 @@ end
 
 target 'EnterBioModuleBLE' do
 #    pod 'iOSDFULibrary', :git => "git@github.com:Entertech/IOS-Pods-DFU-Library.git" , :branch => "master"
-    pod 'RxSwift', '~> 5.0'
+    pod 'RxSwift', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
     pod 'RxBluetoothKit', '~> 5.3.0'
     pod 'PromiseKit'
 end

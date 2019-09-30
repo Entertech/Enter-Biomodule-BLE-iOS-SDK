@@ -33,7 +33,7 @@
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "icon-40@2x.png",
+      "filename" : "icon-40@2x-1.png",
       "scale" : "2x"
     },
     {
@@ -147,7 +147,7 @@
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "icon-1024.png",
+      "filename" : "Flowtime Tool logo.png",
       "scale" : "1x"
     }
   ],
