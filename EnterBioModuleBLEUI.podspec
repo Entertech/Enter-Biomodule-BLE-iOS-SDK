@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.license          = 'LICENSE'
     s.source           = { :git => 'git@github.com:Entertech/Enter-Biomodule-BLE-iOS-SDK.git', :tag => s.version.to_s }
   
-    s.ios.deployment_target = '9.0'
+    s.ios.deployment_target = '10.0'
   
     s.source_files = 'EnterBioModuleBLEUI/**/*.swift'
     s.dependency 'EnterBioModuleBLE'
