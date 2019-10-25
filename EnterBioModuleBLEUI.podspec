@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
     s.version          = '1.1.4'
     s.summary          = 'EnterBioModuleBLE 通信库'
     s.description      = <<-DESC
-  EnterBioModuleBLE 通信库
+  EnterBioModuleBLE 通信库UI库
                          DESC
   
     s.homepage         = 'https://github.com/EnterTech'
