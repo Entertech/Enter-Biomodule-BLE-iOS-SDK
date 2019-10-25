@@ -23,6 +23,18 @@ target 'EnterBioModuleBLE' do
     pod 'PromiseKit'
 end
 
+target 'EnterBioModuleBLEUI' do
+    pod 'SnapKit'
+    pod 'iOSDFULibrary', :git => "git@github.com:Entertech/IOS-Pods-DFU-Library.git" , :branch => "master"
+end
+
+target 'BluetoothConnectingUIDemo' do
+    pod 'SnapKit'
+    pod 'RxSwift', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
+    pod 'RxBluetoothKit', '~> 5.3.0'
+    pod 'PromiseKit'
+end
+
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|

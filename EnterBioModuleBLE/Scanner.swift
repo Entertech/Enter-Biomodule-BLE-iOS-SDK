@@ -18,7 +18,7 @@ extension DispatchQueue {
 
 public final class Scanner {
 
-    var manager: CentralManager
+    public var manager: CentralManager
     private let _disposeBag = DisposeBag()
 
     private var _observer: Observable<Peripheral>?

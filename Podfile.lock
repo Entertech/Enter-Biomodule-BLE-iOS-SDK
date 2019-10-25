@@ -38,7 +38,7 @@ DEPENDENCIES:
   - Then
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Files
     - PromiseKit
     - RxBluetoothKit
@@ -85,6 +85,6 @@ SPEC CHECKSUMS:
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: 61bcd5c8d5f87178e2fae8e57b31b508b4a36ab1
+PODFILE CHECKSUM: ba580ac6218120fae062e2e49ed649f50078e46f
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.3

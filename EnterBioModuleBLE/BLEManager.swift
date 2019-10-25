@@ -72,6 +72,18 @@ public class BLEManager {
     public private(set) var state: BLEConnectionState = .disconnected {
         didSet {
             delegate?.bleConnectionStateChanged(state: self.state, bleManager: self)
+            var value = 0
+            switch state {
+            case .disconnected:
+                value = 0
+            case .searching:
+                value = 1
+            case .connecting:
+                value = 2
+            case .connected(_):
+                value =  3
+            }
+            NotificationCenter.default.post(name: NSNotification.Name("BLEConnectionStateNotify"), object: nil, userInfo: ["value":value])
         }
     }
     
@@ -87,6 +99,8 @@ public class BLEManager {
                 return
             }
             delegate?.bleBatteryReceived(battery: battery, bleManager: self)
+            NotificationCenter.default.post(name: NSNotification.Name("BatteryNotify"), object: nil, userInfo: ["value":battery])
+            
         }
     }
     
@@ -101,22 +115,65 @@ public class BLEManager {
     ///
     /// - Parameters:
     ///   - completion: complete block
-    public func scanAndConnect(completion: Connector.ConnectResultBlock?) throws {
+    public func scanAndConnect(_ mac:String? = nil, completion: Connector.ConnectResultBlock?) throws {
         if self.state.isBusy {
             throw BLEError.busy
         }
-        searchPeripheral()
-            .then { [unowned self] in
-                self.connect(peripheral: $0.peripheral)
-            }.done {
+        if let mac = mac  {
+            searchPeripheral(for: mac)
+                .then { [unowned self] in
+                self.connect(peripherals: $0, mac: mac)
+            }.done{
                 completion?(true)
             }.catch { _ in
                 completion?(false)
+            }
+        } else {
+            searchPeripheral()
+                .then { [unowned self] in
+                    self.connect(peripheral: $0.peripheral)
+                }.done {
+                    completion?(true)
+                }.catch { _ in
+                    completion?(false)
+                }
         }
+        
     }
     
     public func disconnect() {
         reset()
+    }
+    
+    
+    /// Scan peripheral
+    ///
+    /// - Returns: peripheral which closer
+    private func searchPeripheral(for mac:String) -> Promise<[ScannedPeripheral]> {
+        let promise = Promise<[ScannedPeripheral]> { [weak self] seal in
+            guard let `self` = self else { return }
+            self.state = .searching
+            self.disposalbe?.dispose()
+            self.disposalbe = scanner.scan()
+                .buffer(timeSpan: 3.0, count: 10, scheduler: MainScheduler.asyncInstance)
+                .subscribe(onNext: { (peripherals) in
+                    self.state = .connecting
+                    
+                    if peripherals.count > 0 {
+                        seal.fulfill(peripherals)
+                        self.disposalbe?.dispose()
+                    } else {
+                        self.state = .disconnected
+                        seal.reject(BLEError.timeout)
+                        self.disposalbe?.dispose()
+                    }
+                }, onError: { (error) in
+                    self.state = .disconnected
+                    seal.reject(error)
+                    self.disposalbe?.dispose()
+                })
+        }
+        return promise
     }
     
     
@@ -157,6 +214,69 @@ public class BLEManager {
     ///
     /// - Parameter peripheral: scaned peripheral
     /// - Returns: Promise
+    private func connect(peripherals: [ScannedPeripheral], mac: String) -> Promise<Void> {
+        state = .connecting
+        let group = DispatchGroup.init()
+        
+        for e in peripherals {
+            var sameAndConnect: (Bool, Bool) = (false, false)
+            self.connector?.cancel()
+            self.connector = Connector(peripheral: e.peripheral)
+            self.connector!.tryConnect().done(on: DispatchQueue.init(label: "connect")) {
+                self.connector!.deviceInfoService?.read(characteristic: .mac).done(on:DispatchQueue.init(label: "connect")) { data -> Void in
+                let macRead = data.copiedBytes.reversed().map { String(format: "%02X", $0) }.joined(separator: ":")
+                    if macRead == mac {
+                        sameAndConnect = (true, true)
+                    } else  {
+                        sameAndConnect = (false, true)
+                    }
+                }.catch { _ in
+                    sameAndConnect = (false, true)
+                }
+            }.catch { (_) in
+            }
+            
+            group.enter()
+            DispatchQueue.global().async {
+                var sleepCount = 0
+                while (!sameAndConnect.1 && sleepCount < 10) {
+                    Thread.sleep(forTimeInterval: 0.2)
+                    sleepCount += 1
+                }
+                group.leave()
+                
+            }
+            group.wait()
+            if sameAndConnect.0 {
+                let promise = Promise<Void> {[unowned self] seal in
+                    self.readBattery()
+                    self.readDeviceInfo()
+                    self.state = .connected(.allWrong)
+                    self.listenConnection()
+                    self.listenWear()
+                    self.listenBattery()
+                    seal.fulfill(())
+ 
+                }
+                
+                return promise
+            } else {
+                disconnect()
+            }
+
+        }
+        let promise = Promise<Void> { seal in
+            seal.fulfill(())
+        }
+        
+        return promise
+    }
+    
+    
+    /// Connect BLE and start all service
+    ///
+    /// - Parameter peripheral: scaned peripheral
+    /// - Returns: Promise
     private func connect(peripheral: Peripheral) -> Promise<Void> {
         state = .connecting
         connector = Connector(peripheral: peripheral)
@@ -177,6 +297,7 @@ public class BLEManager {
         }
         return promise
     }
+    
     
     
     /// Peripheral listener
@@ -396,6 +517,27 @@ public class BLEManager {
         _hrBuffer.removeAll()
         _hrLock.unlock()
         dataSource?.bleHeartRateDataReceived(data: data, bleManager: self)
+    }
+    
+    public func isBluetoothOpenAndAllow() -> Bool {
+        var isOpenAndAllow = false
+        switch scanner.manager.state {
+        
+        case .unknown:
+            isOpenAndAllow = true
+        case .resetting:
+            break
+        case .unsupported:
+            break
+        case .unauthorized:
+            break
+        case .poweredOff:
+            break
+        case .poweredOn:
+            isOpenAndAllow = true
+ 
+        }
+        return isOpenAndAllow
     }
     
 //    // MARK: - DFU

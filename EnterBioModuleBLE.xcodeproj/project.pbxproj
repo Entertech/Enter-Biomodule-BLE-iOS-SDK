@@ -41,6 +41,8 @@
 		6CFB76131FA323AE006C03A5 /* EEGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFB76121FA323AE006C03A5 /* EEGViewController.swift */; };
 		6CFB76151FA32692006C03A5 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFB76141FA32692006C03A5 /* Extension.swift */; };
 		7AB57DFAAE31A8CEC7B2E421 /* Pods_BLETool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D2137B8C5F9F5DC91E61D1 /* Pods_BLETool.framework */; };
+		A1D9ACA94FE4CBED218F11CA /* Pods_BluetoothConnectingUIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71AB32E03095AAA9C34C4F8 /* Pods_BluetoothConnectingUIDemo.framework */; };
+		B4DD2927050BB6EF9B6462E0 /* Pods_EnterBioModuleBLEUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49557575913A371A89AB9A5 /* Pods_EnterBioModuleBLEUI.framework */; };
 		B6DFB7872B10D055A10A5FA6 /* Pods_EnterBioModuleBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E82A8D3E89789C64C91059 /* Pods_EnterBioModuleBLE.framework */; };
 		B70965DC2227BEB000C6EE51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B70965DB2227BEB000C6EE51 /* Assets.xcassets */; };
 		B75785592015E13B0039B2FC /* DFU1.0.0.zip in Resources */ = {isa = PBXBuildFile; fileRef = B75785582015E13B0039B2FC /* DFU1.0.0.zip */; };
@@ -52,11 +54,38 @@
 		B79B1FB4221BD8A8007C78C8 /* CommandModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B1FB3221BD8A8007C78C8 /* CommandModeViewController.swift */; };
 		B79E9BFD215B5C64001465D2 /* BatteryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3FC7881FAABDDB00605D8A /* BatteryService.swift */; };
 		B7BCFBA120186FE800495A52 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BCFBA020186FE800495A52 /* Persistence.swift */; };
+		FA3E7A11235FFACB00AD6397 /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E7A10235FFACB00AD6397 /* BatteryView.swift */; };
+		FA3E7A13235FFE8100AD6397 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA3E7A12235FFE8100AD6397 /* loading.gif */; };
+		FA3E7A162360607000AD6397 /* FirmwareUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E7A152360607000AD6397 /* FirmwareUpdateViewController.swift */; };
 		FA6F56A6230A59C800B39D3B /* EnterBioModuleBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */; };
 		FA6F56A7230A59C800B39D3B /* EnterBioModuleBLE.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA8D5B07235DB5450075892F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8D5B06235DB5450075892F /* Media.xcassets */; };
+		FA8D5B0F235E969E0075892F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B0E235E969E0075892F /* AppDelegate.swift */; };
+		FA8D5B11235E969E0075892F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B10235E969E0075892F /* SceneDelegate.swift */; };
+		FA8D5B13235E969E0075892F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B12235E969E0075892F /* ViewController.swift */; };
+		FA8D5B16235E969E0075892F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8D5B14235E969E0075892F /* Main.storyboard */; };
+		FA8D5B18235E969F0075892F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8D5B17235E969F0075892F /* Assets.xcassets */; };
+		FA8D5B1B235E969F0075892F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8D5B19235E969F0075892F /* LaunchScreen.storyboard */; };
+		FA8D5B20235E976C0075892F /* EnterBioModuleBLEUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA6273234DB3CF00CFFD91 /* EnterBioModuleBLEUI.framework */; };
+		FA8D5B21235E976C0075892F /* EnterBioModuleBLEUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FABA6273234DB3CF00CFFD91 /* EnterBioModuleBLEUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA8D5B27235EE8D60075892F /* BLEManagerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B26235EE8D60075892F /* BLEManagerClass.swift */; };
+		FA8D5B2A235F053D0075892F /* BLEConnectTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B29235F053D0075892F /* BLEConnectTipViewController.swift */; };
+		FA8D5B2B235F05C50075892F /* EnterBioModuleBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */; };
+		FA8D5B2C235F05C50075892F /* EnterBioModuleBLE.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA8D5B34235FE2E40075892F /* ExtensionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B33235FE2E40075892F /* ExtensionService.swift */; };
+		FA8D5B38235FF2AF0075892F /* BLEStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B37235FF2AF0075892F /* BLEStateViewController.swift */; };
+		FA92318E23619CF900A50C64 /* 1.2.1.zip in Resources */ = {isa = PBXBuildFile; fileRef = FA92318D23619CF900A50C64 /* 1.2.1.zip */; };
+		FA9231902362881500A50C64 /* CenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA92318F2362881500A50C64 /* CenterTableViewCell.swift */; };
 		FA98A2B22303A47C0007A43F /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B12303A47C0007A43F /* BLEManager.swift */; };
 		FA98A2B42303ABED0007A43F /* BLEType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B32303ABED0007A43F /* BLEType.swift */; };
 		FA98A2B62303DF5B0007A43F /* GCDBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B52303DF5B0007A43F /* GCDBlocks.swift */; };
+		FABA6285234DB3CF00CFFD91 /* EnterBioModuleBLEUI.h in Headers */ = {isa = PBXBuildFile; fileRef = FABA6275234DB3CF00CFFD91 /* EnterBioModuleBLEUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FABA6288234DB3CF00CFFD91 /* EnterBioModuleBLEUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA6273234DB3CF00CFFD91 /* EnterBioModuleBLEUI.framework */; };
+		FABA6289234DB3CF00CFFD91 /* EnterBioModuleBLEUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FABA6273234DB3CF00CFFD91 /* EnterBioModuleBLEUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FABA6293234DB61000CFFD91 /* DeviceConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA6291234DB61000CFFD91 /* DeviceConnectionViewController.swift */; };
+		FABA6298234DBC6300CFFD91 /* BLETipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA6296234DBC6300CFFD91 /* BLETipViewController.swift */; };
+		FABA62A1234DC33200CFFD91 /* BLEConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA62A0234DC33200CFFD91 /* BLEConnectViewController.swift */; };
+		FABA62A6234DC44800CFFD91 /* EnterBioModuleBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */; };
 		FAEB170023137AD2002CEAC1 /* SDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB16FF23137AD2002CEAC1 /* SDKService.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +97,27 @@
 			remoteGlobalIDString = 6C71131B1FA9755B0093099D;
 			remoteInfo = EnterBioModuleBLE;
 		};
+		FA8D5B22235E976C0075892F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C1642F31FA03B09002C1438 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FABA6272234DB3CF00CFFD91;
+			remoteInfo = EnterBioModuleBLEUI;
+		};
+		FA8D5B2D235F05C50075892F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C1642F31FA03B09002C1438 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C71131B1FA9755B0093099D;
+			remoteInfo = EnterBioModuleBLE;
+		};
+		FABA6286234DB3CF00CFFD91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C1642F31FA03B09002C1438 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FABA6272234DB3CF00CFFD91;
+			remoteInfo = EnterBioModuleBLEUI;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,7 +127,20 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				FABA6289234DB3CF00CFFD91 /* EnterBioModuleBLEUI.framework in Embed Frameworks */,
 				FA6F56A7230A59C800B39D3B /* EnterBioModuleBLE.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA8D5B24235E976C0075892F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA8D5B2C235F05C50075892F /* EnterBioModuleBLE.framework in Embed Frameworks */,
+				FA8D5B21235E976C0075892F /* EnterBioModuleBLEUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +152,7 @@
 		3BCED370A1F0DBBF884F4AFC /* Pods-BLETool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLETool.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLETool/Pods-BLETool.release.xcconfig"; sourceTree = "<group>"; };
 		465E8BF9BFF2B656612353A7 /* Pods-BLETool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLETool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLETool/Pods-BLETool.debug.xcconfig"; sourceTree = "<group>"; };
 		48E82A8D3E89789C64C91059 /* Pods_EnterBioModuleBLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnterBioModuleBLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61461FC359AACCCE6A1577C5 /* Pods-EnterBioModuleBLEUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterBioModuleBLEUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EnterBioModuleBLEUI/Pods-EnterBioModuleBLEUI.debug.xcconfig"; sourceTree = "<group>"; };
 		6C0D22B01FA41D47005EAF33 /* FileListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListViewController.swift; sourceTree = "<group>"; };
 		6C0D22B21FA41D73005EAF33 /* FileShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileShowViewController.swift; sourceTree = "<group>"; };
 		6C0D22B41FA42352005EAF33 /* DataPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPool.swift; sourceTree = "<group>"; };
@@ -127,7 +191,9 @@
 		6CFB76101FA30025006C03A5 /* CommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandViewController.swift; sourceTree = "<group>"; };
 		6CFB76121FA323AE006C03A5 /* EEGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEGViewController.swift; sourceTree = "<group>"; };
 		6CFB76141FA32692006C03A5 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		99660090545FD7A566A318C5 /* Pods-EnterBioModuleBLEUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterBioModuleBLEUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-EnterBioModuleBLEUI/Pods-EnterBioModuleBLEUI.release.xcconfig"; sourceTree = "<group>"; };
 		B70965DB2227BEB000C6EE51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B71AB32E03095AAA9C34C4F8 /* Pods_BluetoothConnectingUIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluetoothConnectingUIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75785582015E13B0039B2FC /* DFU1.0.0.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = DFU1.0.0.zip; sourceTree = "<group>"; };
 		B75901881FE0FF2A00F0890E /* DFUViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFUViewController.swift; sourceTree = "<group>"; };
 		B79493E12020702D004166E3 /* V1.0.1-120.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "V1.0.1-120.zip"; sourceTree = "<group>"; };
@@ -138,10 +204,37 @@
 		B79E9BFB215B5C1A001465D2 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
 		B7BCFBA020186FE800495A52 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		BB0092A38888400FCF225C04 /* Pods-EnterBioModuleBLE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterBioModuleBLE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EnterBioModuleBLE/Pods-EnterBioModuleBLE.debug.xcconfig"; sourceTree = "<group>"; };
+		BE8D710C209EE9BA2CCFE0FE /* Pods-BluetoothConnectingUIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothConnectingUIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BluetoothConnectingUIDemo/Pods-BluetoothConnectingUIDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C173FEF19926FCA8194A76FA /* Pods-EnterBioModuleBLE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterBioModuleBLE.release.xcconfig"; path = "Pods/Target Support Files/Pods-EnterBioModuleBLE/Pods-EnterBioModuleBLE.release.xcconfig"; sourceTree = "<group>"; };
+		D53889428428D886464A4013 /* Pods-BluetoothConnectingUIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothConnectingUIDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BluetoothConnectingUIDemo/Pods-BluetoothConnectingUIDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E49557575913A371A89AB9A5 /* Pods_EnterBioModuleBLEUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnterBioModuleBLEUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3E7A10235FFACB00AD6397 /* BatteryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
+		FA3E7A12235FFE8100AD6397 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		FA3E7A152360607000AD6397 /* FirmwareUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirmwareUpdateViewController.swift; sourceTree = "<group>"; };
+		FA8D5B06235DB5450075892F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		FA8D5B0C235E969E0075892F /* BluetoothConnectingUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothConnectingUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8D5B0E235E969E0075892F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA8D5B10235E969E0075892F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FA8D5B12235E969E0075892F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA8D5B15235E969E0075892F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA8D5B17235E969F0075892F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA8D5B1A235E969F0075892F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA8D5B1C235E969F0075892F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA8D5B26235EE8D60075892F /* BLEManagerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManagerClass.swift; sourceTree = "<group>"; };
+		FA8D5B29235F053D0075892F /* BLEConnectTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEConnectTipViewController.swift; sourceTree = "<group>"; };
+		FA8D5B33235FE2E40075892F /* ExtensionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionService.swift; sourceTree = "<group>"; };
+		FA8D5B37235FF2AF0075892F /* BLEStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEStateViewController.swift; sourceTree = "<group>"; };
+		FA92318D23619CF900A50C64 /* 1.2.1.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = 1.2.1.zip; sourceTree = "<group>"; };
+		FA92318F2362881500A50C64 /* CenterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterTableViewCell.swift; sourceTree = "<group>"; };
 		FA98A2B12303A47C0007A43F /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		FA98A2B32303ABED0007A43F /* BLEType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEType.swift; sourceTree = "<group>"; };
 		FA98A2B52303DF5B0007A43F /* GCDBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlocks.swift; sourceTree = "<group>"; };
+		FABA6273234DB3CF00CFFD91 /* EnterBioModuleBLEUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EnterBioModuleBLEUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABA6275234DB3CF00CFFD91 /* EnterBioModuleBLEUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterBioModuleBLEUI.h; sourceTree = "<group>"; };
+		FABA6276234DB3CF00CFFD91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FABA6291234DB61000CFFD91 /* DeviceConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConnectionViewController.swift; sourceTree = "<group>"; };
+		FABA6296234DBC6300CFFD91 /* BLETipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLETipViewController.swift; sourceTree = "<group>"; };
+		FABA62A0234DC33200CFFD91 /* BLEConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEConnectViewController.swift; sourceTree = "<group>"; };
 		FAEB16FF23137AD2002CEAC1 /* SDKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +245,7 @@
 			files = (
 				FA6F56A6230A59C800B39D3B /* EnterBioModuleBLE.framework in Frameworks */,
 				7AB57DFAAE31A8CEC7B2E421 /* Pods_BLETool.framework in Frameworks */,
+				FABA6288234DB3CF00CFFD91 /* EnterBioModuleBLEUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +256,25 @@
 				6C3FC7921FAAF10600605D8A /* RxSwift.framework in Frameworks */,
 				6C3FC7931FAAF10600605D8A /* RxBluetoothKit.framework in Frameworks */,
 				B6DFB7872B10D055A10A5FA6 /* Pods_EnterBioModuleBLE.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA8D5B09235E969E0075892F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8D5B20235E976C0075892F /* EnterBioModuleBLEUI.framework in Frameworks */,
+				FA8D5B2B235F05C50075892F /* EnterBioModuleBLE.framework in Frameworks */,
+				A1D9ACA94FE4CBED218F11CA /* Pods_BluetoothConnectingUIDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABA6270234DB3CF00CFFD91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABA62A6234DC44800CFFD91 /* EnterBioModuleBLE.framework in Frameworks */,
+				B4DD2927050BB6EF9B6462E0 /* Pods_EnterBioModuleBLEUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +297,8 @@
 			children = (
 				6C1642FD1FA03B09002C1438 /* BLETool */,
 				6C71131D1FA9755B0093099D /* EnterBioModuleBLE */,
+				FABA6274234DB3CF00CFFD91 /* EnterBioModuleBLEUI */,
+				FA8D5B0D235E969E0075892F /* BluetoothConnectingUIDemo */,
 				6C1642FC1FA03B09002C1438 /* Products */,
 				BDF37AF999B672F982338A68 /* Pods */,
 				A9270B81DB032DBDF56008A7 /* Frameworks */,
@@ -195,6 +310,8 @@
 			children = (
 				6C1642FB1FA03B09002C1438 /* BLETool.app */,
 				6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */,
+				FABA6273234DB3CF00CFFD91 /* EnterBioModuleBLEUI.framework */,
+				FA8D5B0C235E969E0075892F /* BluetoothConnectingUIDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -297,6 +414,8 @@
 				6C3FC7901FAAF10600605D8A /* RxSwift.framework */,
 				00D2137B8C5F9F5DC91E61D1 /* Pods_BLETool.framework */,
 				48E82A8D3E89789C64C91059 /* Pods_EnterBioModuleBLE.framework */,
+				E49557575913A371A89AB9A5 /* Pods_EnterBioModuleBLEUI.framework */,
+				B71AB32E03095AAA9C34C4F8 /* Pods_BluetoothConnectingUIDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -308,8 +427,96 @@
 				3BCED370A1F0DBBF884F4AFC /* Pods-BLETool.release.xcconfig */,
 				BB0092A38888400FCF225C04 /* Pods-EnterBioModuleBLE.debug.xcconfig */,
 				C173FEF19926FCA8194A76FA /* Pods-EnterBioModuleBLE.release.xcconfig */,
+				61461FC359AACCCE6A1577C5 /* Pods-EnterBioModuleBLEUI.debug.xcconfig */,
+				99660090545FD7A566A318C5 /* Pods-EnterBioModuleBLEUI.release.xcconfig */,
+				D53889428428D886464A4013 /* Pods-BluetoothConnectingUIDemo.debug.xcconfig */,
+				BE8D710C209EE9BA2CCFE0FE /* Pods-BluetoothConnectingUIDemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA3E7A0F235FFAC200AD6397 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E7A12235FFE8100AD6397 /* loading.gif */,
+				FA3E7A10235FFACB00AD6397 /* BatteryView.swift */,
+				FA92318F2362881500A50C64 /* CenterTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		FA3E7A142360606400AD6397 /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E7A152360607000AD6397 /* FirmwareUpdateViewController.swift */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
+		FA8D5B0D235E969E0075892F /* BluetoothConnectingUIDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FA8D5B0E235E969E0075892F /* AppDelegate.swift */,
+				FA8D5B10235E969E0075892F /* SceneDelegate.swift */,
+				FA8D5B12235E969E0075892F /* ViewController.swift */,
+				FA8D5B14235E969E0075892F /* Main.storyboard */,
+				FA92318D23619CF900A50C64 /* 1.2.1.zip */,
+				FA8D5B17235E969F0075892F /* Assets.xcassets */,
+				FA8D5B19235E969F0075892F /* LaunchScreen.storyboard */,
+				FA8D5B1C235E969F0075892F /* Info.plist */,
+			);
+			path = BluetoothConnectingUIDemo;
+			sourceTree = "<group>";
+		};
+		FA8D5B25235EE8860075892F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FA8D5B26235EE8D60075892F /* BLEManagerClass.swift */,
+				FA8D5B33235FE2E40075892F /* ExtensionService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FABA6274234DB3CF00CFFD91 /* EnterBioModuleBLEUI */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E7A142360606400AD6397 /* Update */,
+				FA8D5B25235EE8860075892F /* Service */,
+				FABA629D234DC11300CFFD91 /* Navigation */,
+				FABA6295234DBBEE00CFFD91 /* CheckBLE */,
+				FABA6290234DB56C00CFFD91 /* DeviceConnection */,
+				FABA6275234DB3CF00CFFD91 /* EnterBioModuleBLEUI.h */,
+				FABA6276234DB3CF00CFFD91 /* Info.plist */,
+				FA8D5B06235DB5450075892F /* Media.xcassets */,
+			);
+			path = EnterBioModuleBLEUI;
+			sourceTree = "<group>";
+		};
+		FABA6290234DB56C00CFFD91 /* DeviceConnection */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E7A0F235FFAC200AD6397 /* view */,
+				FABA6291234DB61000CFFD91 /* DeviceConnectionViewController.swift */,
+				FA8D5B29235F053D0075892F /* BLEConnectTipViewController.swift */,
+				FA8D5B37235FF2AF0075892F /* BLEStateViewController.swift */,
+			);
+			path = DeviceConnection;
+			sourceTree = "<group>";
+		};
+		FABA6295234DBBEE00CFFD91 /* CheckBLE */ = {
+			isa = PBXGroup;
+			children = (
+				FABA6296234DBC6300CFFD91 /* BLETipViewController.swift */,
+			);
+			path = CheckBLE;
+			sourceTree = "<group>";
+		};
+		FABA629D234DC11300CFFD91 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				FABA62A0234DC33200CFFD91 /* BLEConnectViewController.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		FAEB16FE2313798A002CEAC1 /* Service */ = {
@@ -328,6 +535,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C7113201FA9755B0093099D /* FlowTimeBLE.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABA626E234DB3CF00CFFD91 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABA6285234DB3CF00CFFD91 /* EnterBioModuleBLEUI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +565,7 @@
 			);
 			dependencies = (
 				FA6F56A9230A59C800B39D3B /* PBXTargetDependency */,
+				FABA6287234DB3CF00CFFD91 /* PBXTargetDependency */,
 			);
 			name = BLETool;
 			productName = NaptimeBLE;
@@ -375,13 +591,55 @@
 			productReference = 6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		FA8D5B0B235E969E0075892F /* BluetoothConnectingUIDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA8D5B1D235E969F0075892F /* Build configuration list for PBXNativeTarget "BluetoothConnectingUIDemo" */;
+			buildPhases = (
+				9AA4837627DA367079C8C016 /* [CP] Check Pods Manifest.lock */,
+				FA8D5B08235E969E0075892F /* Sources */,
+				FA8D5B09235E969E0075892F /* Frameworks */,
+				FA8D5B0A235E969E0075892F /* Resources */,
+				FA8D5B24235E976C0075892F /* Embed Frameworks */,
+				9A289B93687171564D305BA4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA8D5B23235E976C0075892F /* PBXTargetDependency */,
+				FA8D5B2E235F05C50075892F /* PBXTargetDependency */,
+			);
+			name = BluetoothConnectingUIDemo;
+			productName = BluetoothConnectingUIDemo;
+			productReference = FA8D5B0C235E969E0075892F /* BluetoothConnectingUIDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FABA6272234DB3CF00CFFD91 /* EnterBioModuleBLEUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FABA628E234DB3CF00CFFD91 /* Build configuration list for PBXNativeTarget "EnterBioModuleBLEUI" */;
+			buildPhases = (
+				FC9C2B86055F090D7CBEEA1A /* [CP] Check Pods Manifest.lock */,
+				FABA626E234DB3CF00CFFD91 /* Headers */,
+				FABA626F234DB3CF00CFFD91 /* Sources */,
+				FABA6270234DB3CF00CFFD91 /* Frameworks */,
+				FABA6271234DB3CF00CFFD91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EnterBioModuleBLEUI;
+			productName = EnterBioModuleBLEUI;
+			productReference = FABA6273234DB3CF00CFFD91 /* EnterBioModuleBLEUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		6C1642F31FA03B09002C1438 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = EnterTech;
 				TargetAttributes = {
@@ -393,6 +651,15 @@
 					6C71131B1FA9755B0093099D = {
 						CreatedOnToolsVersion = 9.0.1;
 						LastSwiftMigration = "";
+						ProvisioningStyle = Manual;
+					};
+					FA8D5B0B235E969E0075892F = {
+						CreatedOnToolsVersion = 11.1;
+						ProvisioningStyle = Automatic;
+					};
+					FABA6272234DB3CF00CFFD91 = {
+						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -412,6 +679,8 @@
 			targets = (
 				6C1642FA1FA03B09002C1438 /* BLETool */,
 				6C71131B1FA9755B0093099D /* EnterBioModuleBLE */,
+				FABA6272234DB3CF00CFFD91 /* EnterBioModuleBLEUI */,
+				FA8D5B0B235E969E0075892F /* BluetoothConnectingUIDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -434,6 +703,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA8D5B0A235E969E0075892F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8D5B1B235E969F0075892F /* LaunchScreen.storyboard in Resources */,
+				FA8D5B18235E969F0075892F /* Assets.xcassets in Resources */,
+				FA92318E23619CF900A50C64 /* 1.2.1.zip in Resources */,
+				FA8D5B16235E969E0075892F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABA6271234DB3CF00CFFD91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8D5B07235DB5450075892F /* Media.xcassets in Resources */,
+				FA3E7A13235FFE8100AD6397 /* loading.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +767,56 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BLETool/Pods-BLETool-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A289B93687171564D305BA4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BluetoothConnectingUIDemo/Pods-BluetoothConnectingUIDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBluetoothKit/RxBluetoothKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSDFULibrary/iOSDFULibrary.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBluetoothKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDFULibrary.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BluetoothConnectingUIDemo/Pods-BluetoothConnectingUIDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AA4837627DA367079C8C016 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BluetoothConnectingUIDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B726F07F21F9AE66005A4ACF /* ShellScript */ = {
@@ -527,6 +866,28 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BLETool-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC9C2B86055F090D7CBEEA1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EnterBioModuleBLEUI-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -588,6 +949,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA8D5B08235E969E0075892F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8D5B13235E969E0075892F /* ViewController.swift in Sources */,
+				FA8D5B0F235E969E0075892F /* AppDelegate.swift in Sources */,
+				FA8D5B11235E969E0075892F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABA626F234DB3CF00CFFD91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8D5B38235FF2AF0075892F /* BLEStateViewController.swift in Sources */,
+				FABA6298234DBC6300CFFD91 /* BLETipViewController.swift in Sources */,
+				FA3E7A11235FFACB00AD6397 /* BatteryView.swift in Sources */,
+				FA8D5B34235FE2E40075892F /* ExtensionService.swift in Sources */,
+				FA3E7A162360607000AD6397 /* FirmwareUpdateViewController.swift in Sources */,
+				FA8D5B27235EE8D60075892F /* BLEManagerClass.swift in Sources */,
+				FA9231902362881500A50C64 /* CenterTableViewCell.swift in Sources */,
+				FA8D5B2A235F053D0075892F /* BLEConnectTipViewController.swift in Sources */,
+				FABA6293234DB61000CFFD91 /* DeviceConnectionViewController.swift in Sources */,
+				FABA62A1234DC33200CFFD91 /* BLEConnectViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -595,6 +983,21 @@
 			isa = PBXTargetDependency;
 			target = 6C71131B1FA9755B0093099D /* EnterBioModuleBLE */;
 			targetProxy = FA6F56A8230A59C800B39D3B /* PBXContainerItemProxy */;
+		};
+		FA8D5B23235E976C0075892F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FABA6272234DB3CF00CFFD91 /* EnterBioModuleBLEUI */;
+			targetProxy = FA8D5B22235E976C0075892F /* PBXContainerItemProxy */;
+		};
+		FA8D5B2E235F05C50075892F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C71131B1FA9755B0093099D /* EnterBioModuleBLE */;
+			targetProxy = FA8D5B2D235F05C50075892F /* PBXContainerItemProxy */;
+		};
+		FABA6287234DB3CF00CFFD91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FABA6272234DB3CF00CFFD91 /* EnterBioModuleBLEUI */;
+			targetProxy = FABA6286234DB3CF00CFFD91 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -611,6 +1014,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C1643081FA03B09002C1438 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FA8D5B14235E969E0075892F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA8D5B15235E969E0075892F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FA8D5B19235E969F0075892F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA8D5B1A235E969F0075892F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -800,6 +1219,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 16;
 				DEFINES_MODULE = YES;
@@ -813,12 +1233,13 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EnterBioModuleBLE/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.entertech.EnterBioModuleBLE;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -847,12 +1268,116 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EnterBioModuleBLE/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.entertech.EnterBioModuleBLE;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FA8D5B1E235E969F0075892F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D53889428428D886464A4013 /* Pods-BluetoothConnectingUIDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5EVD5KXKJ4;
+				INFOPLIST_FILE = BluetoothConnectingUIDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.entertech.BluetoothConnectingUIDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA8D5B1F235E969F0075892F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE8D710C209EE9BA2CCFE0FE /* Pods-BluetoothConnectingUIDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5EVD5KXKJ4;
+				INFOPLIST_FILE = BluetoothConnectingUIDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.entertech.BluetoothConnectingUIDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FABA628A234DB3CF00CFFD91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61461FC359AACCCE6A1577C5 /* Pods-EnterBioModuleBLEUI.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5EVD5KXKJ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = EnterBioModuleBLEUI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.entertech.EnterBioModuleBLEUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FABA628B234DB3CF00CFFD91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99660090545FD7A566A318C5 /* Pods-EnterBioModuleBLEUI.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5EVD5KXKJ4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = EnterBioModuleBLEUI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.entertech.EnterBioModuleBLEUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSION_INFO_PREFIX = "";
@@ -885,6 +1410,24 @@
 			buildConfigurations = (
 				6C7113251FA9755B0093099D /* Debug */,
 				6C7113261FA9755B0093099D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA8D5B1D235E969F0075892F /* Build configuration list for PBXNativeTarget "BluetoothConnectingUIDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA8D5B1E235E969F0075892F /* Debug */,
+				FA8D5B1F235E969F0075892F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FABA628E234DB3CF00CFFD91 /* Build configuration list for PBXNativeTarget "EnterBioModuleBLEUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABA628A234DB3CF00CFFD91 /* Debug */,
+				FABA628B234DB3CF00CFFD91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

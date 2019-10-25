@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EnterBioModuleBLE'
-  s.version          = '1.1.3'
+  s.version          = '1.1.4'
   s.summary          = 'EnterBioModuleBLE 通信库'
   s.description      = <<-DESC
 EnterBioModuleBLE 通信库
@@ -16,6 +16,5 @@ EnterBioModuleBLE 通信库
   s.source_files = 'EnterBioModuleBLE/**/*.swift'
   s.dependency 'PromiseKit'
   s.dependency 'RxBluetoothKit'
-  s.dependency 'iOSDFULibrary'
 
 end
