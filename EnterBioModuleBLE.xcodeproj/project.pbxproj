@@ -75,6 +75,7 @@
 		FA8D5B34235FE2E40075892F /* ExtensionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B33235FE2E40075892F /* ExtensionService.swift */; };
 		FA8D5B38235FF2AF0075892F /* BLEStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B37235FF2AF0075892F /* BLEStateViewController.swift */; };
 		FA9231902362881500A50C64 /* CenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA92318F2362881500A50C64 /* CenterTableViewCell.swift */; };
+		FA923192236ACEB200A50C64 /* FindDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA923191236ACEB200A50C64 /* FindDeviceViewController.swift */; };
 		FA98A2B22303A47C0007A43F /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B12303A47C0007A43F /* BLEManager.swift */; };
 		FA98A2B42303ABED0007A43F /* BLEType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B32303ABED0007A43F /* BLEType.swift */; };
 		FA98A2B62303DF5B0007A43F /* GCDBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B52303DF5B0007A43F /* GCDBlocks.swift */; };
@@ -224,6 +225,7 @@
 		FA8D5B33235FE2E40075892F /* ExtensionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionService.swift; sourceTree = "<group>"; };
 		FA8D5B37235FF2AF0075892F /* BLEStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEStateViewController.swift; sourceTree = "<group>"; };
 		FA92318F2362881500A50C64 /* CenterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterTableViewCell.swift; sourceTree = "<group>"; };
+		FA923191236ACEB200A50C64 /* FindDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDeviceViewController.swift; sourceTree = "<group>"; };
 		FA98A2B12303A47C0007A43F /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		FA98A2B32303ABED0007A43F /* BLEType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEType.swift; sourceTree = "<group>"; };
 		FA98A2B52303DF5B0007A43F /* GCDBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlocks.swift; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 				FABA6291234DB61000CFFD91 /* DeviceConnectionViewController.swift */,
 				FA8D5B29235F053D0075892F /* BLEConnectTipViewController.swift */,
 				FA8D5B37235FF2AF0075892F /* BLEStateViewController.swift */,
+				FA923191236ACEB200A50C64 /* FindDeviceViewController.swift */,
 			);
 			path = DeviceConnection;
 			sourceTree = "<group>";
@@ -965,6 +968,7 @@
 				FA8D5B34235FE2E40075892F /* ExtensionService.swift in Sources */,
 				FA3E7A162360607000AD6397 /* FirmwareUpdateViewController.swift in Sources */,
 				FA8D5B27235EE8D60075892F /* BLEManagerClass.swift in Sources */,
+				FA923192236ACEB200A50C64 /* FindDeviceViewController.swift in Sources */,
 				FA9231902362881500A50C64 /* CenterTableViewCell.swift in Sources */,
 				FA8D5B2A235F053D0075892F /* BLEConnectTipViewController.swift in Sources */,
 				FABA6293234DB61000CFFD91 /* DeviceConnectionViewController.swift in Sources */,
@@ -1320,6 +1324,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 61461FC359AACCCE6A1577C5 /* Pods-EnterBioModuleBLEUI.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1353,6 +1358,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99660090545FD7A566A318C5 /* Pods-EnterBioModuleBLEUI.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";

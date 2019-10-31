@@ -32,7 +32,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     private var reconnectBtn: UIButton?
     private var batteryView: BatteryView?
     private let tipLabel = UILabel()
-    private var index: Int = 0
+    private var index: Int = 0 //蓝牙数组里的第几个对象
     
     /// 是否通过mac地址连接
     private var mac:String?{
@@ -75,7 +75,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(stateNotification(_:)), name: NSNotification.Name("BLEConnectionStateNotify"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(batteryNotification(_:)), name: NSNotification.Name("BatteryNotify"), object: nil)
+
         if ble!.state == .disconnected {
             self.connect()
         } else if ble!.state.isConnected {
@@ -168,7 +168,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     private func connect() {
-
+        NotificationCenter.default.addObserver(self, selector: #selector(batteryNotification(_:)), name: NSNotification.Name("BatteryNotify"), object: nil)
         if let mac = mac, isMac {
             do {
                 try ble?.scanAndConnect(mac) { (flag) in
@@ -251,10 +251,16 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if ble!.state.isConnected {
-            if isMac {
+            if let _ = mac, isMac {
                 return 3
             }
             return 2
+        }
+        if ble!.state == .disconnected {
+            if let _ = mac, isMac  {
+                return 2
+            }
+            
         }
         return 1
     }
@@ -286,7 +292,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
         if let reuseView = tableView.dequeueReusableCell(withIdentifier: identifier) {
             cell = reuseView
         } else {
-            if indexPath.section == 2 {
+            if indexPath.section == 2 || indexPath.section == 1 {
                 cell = UITableViewCell(style: .default, reuseIdentifier: identifier)
             } else {
                 cell = UITableViewCell(style: .value1, reuseIdentifier: identifier)
@@ -321,6 +327,10 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
                 cell.accessoryType = .none
                 cell.detailTextLabel?.text = ble!.deviceInfo.mac
                 cell.detailTextLabel?.textColor = .lightGray
+            case (1, 0):
+                cell.textLabel?.textColor = .red
+                cell.textLabel?.text = "删除设备"
+                cell.textLabel?.textAlignment = .center
             default:
                 break
             }
@@ -381,10 +391,25 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.section == 0 && indexPath.row == 1 {
-            if let _ = tipLabel.superview {
-                let updateVC = FirmwareUpdateViewController(ble: ble)
-                self.navigationController?.pushViewController(updateVC, animated: true)
+        
+        if indexPath.section == 0 {
+            if indexPath.row == 1 {
+                if let _ = tipLabel.superview {
+                    let updateVC = FirmwareUpdateViewController(ble: ble)
+                    self.navigationController?.pushViewController(updateVC, animated: true)
+                }
+            } else if indexPath.row == 0 {
+                if tableView.cellForRow(at: indexPath)!.reuseIdentifier == "com.entertech.ble.disconnected.\(indexPath.row)" {
+                    let tipVC = FindDeviceViewController()
+                    self.navigationController?.pushViewController(tipVC, animated: true)
+                }
+            }
+        } else if indexPath.section == 1 {
+            if tableView.cellForRow(at: indexPath)!.reuseIdentifier == "com.entertech.ble.disconnected.\(indexPath.row)" {
+                mac = nil
+                ble?.disconnect()
+            } else {
+                //TODO:- Check device
             }
         } else if indexPath.section == 2 && indexPath.row == 0 {
             mac = nil
@@ -401,7 +426,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        if section == 1 {
+        if section == 1 && ble!.state.isConnected {
             return "点击后已连接的设备指示灯将会闪烁 2 次。"
         }
         return ""
@@ -423,11 +448,17 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
         if let data = notification.userInfo!["value"] as? Int {
             switch data {
             case 0://  disconnected
-                showReconnectView()
-                tableView?.reloadData()
+                DispatchQueue.main.async {
+                    self.showReconnectView()
+                    self.tableView?.reloadData()
+                }
+
             case 1, 2://  searching
-                setConnectionAnimation()
-                tableView?.reloadData()
+                DispatchQueue.main.async {
+                    self.setConnectionAnimation()
+                    self.tableView?.reloadData()
+                }
+
             case 3://  connected
                 //showBattery()
                 break
