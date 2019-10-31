@@ -74,7 +74,6 @@
 		FA8D5B2C235F05C50075892F /* EnterBioModuleBLE.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA8D5B34235FE2E40075892F /* ExtensionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B33235FE2E40075892F /* ExtensionService.swift */; };
 		FA8D5B38235FF2AF0075892F /* BLEStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B37235FF2AF0075892F /* BLEStateViewController.swift */; };
-		FA92318E23619CF900A50C64 /* 1.2.1.zip in Resources */ = {isa = PBXBuildFile; fileRef = FA92318D23619CF900A50C64 /* 1.2.1.zip */; };
 		FA9231902362881500A50C64 /* CenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA92318F2362881500A50C64 /* CenterTableViewCell.swift */; };
 		FA98A2B22303A47C0007A43F /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B12303A47C0007A43F /* BLEManager.swift */; };
 		FA98A2B42303ABED0007A43F /* BLEType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98A2B32303ABED0007A43F /* BLEType.swift */; };
@@ -224,7 +223,6 @@
 		FA8D5B29235F053D0075892F /* BLEConnectTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEConnectTipViewController.swift; sourceTree = "<group>"; };
 		FA8D5B33235FE2E40075892F /* ExtensionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionService.swift; sourceTree = "<group>"; };
 		FA8D5B37235FF2AF0075892F /* BLEStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEStateViewController.swift; sourceTree = "<group>"; };
-		FA92318D23619CF900A50C64 /* 1.2.1.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = 1.2.1.zip; sourceTree = "<group>"; };
 		FA92318F2362881500A50C64 /* CenterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterTableViewCell.swift; sourceTree = "<group>"; };
 		FA98A2B12303A47C0007A43F /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		FA98A2B32303ABED0007A43F /* BLEType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEType.swift; sourceTree = "<group>"; };
@@ -460,7 +458,6 @@
 				FA8D5B10235E969E0075892F /* SceneDelegate.swift */,
 				FA8D5B12235E969E0075892F /* ViewController.swift */,
 				FA8D5B14235E969E0075892F /* Main.storyboard */,
-				FA92318D23619CF900A50C64 /* 1.2.1.zip */,
 				FA8D5B17235E969F0075892F /* Assets.xcassets */,
 				FA8D5B19235E969F0075892F /* LaunchScreen.storyboard */,
 				FA8D5B1C235E969F0075892F /* Info.plist */,
@@ -712,7 +709,6 @@
 			files = (
 				FA8D5B1B235E969F0075892F /* LaunchScreen.storyboard in Resources */,
 				FA8D5B18235E969F0075892F /* Assets.xcassets in Resources */,
-				FA92318E23619CF900A50C64 /* 1.2.1.zip in Resources */,
 				FA8D5B16235E969E0075892F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
