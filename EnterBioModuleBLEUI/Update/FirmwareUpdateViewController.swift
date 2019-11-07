@@ -186,11 +186,12 @@ class FirmwareUpdateViewController: UIViewController {
             self.navigationItem.leftBarButtonItem?.isEnabled = false
             
         case UpdateState.completed.rawValue:
-            setNotes(note: "请手动重启设备, 返回上层页面重新连接")
+            setNotes(note: "返回上层页面重新连接")
             titleLabel.text = "升级成功"
             titleImageView.image = UIImage.loadImage(name: "img_success")
             updateNotesLabel.textAlignment = .center
             ble?.disconnect()
+            
             
         default:
             break

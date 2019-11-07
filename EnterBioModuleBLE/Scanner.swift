@@ -25,11 +25,12 @@ public final class Scanner {
     private var _disposable: Disposable?
 
     private var _usingPeripheral: Peripheral?
+    private var _bleId = 0
 
     public init() {
         manager = CentralManager(queue: .ble,
                                  options: [CBCentralManagerOptionShowPowerAlertKey: true as AnyObject,
-                                           CBCentralManagerOptionRestoreIdentifierKey: "naptime.ble.id" as AnyObject])
+                                           CBCentralManagerOptionRestoreIdentifierKey: "entertech.ble.\(_bleId)" as AnyObject])
     }
 
     public func scan() -> Observable<ScannedPeripheral> {
@@ -54,7 +55,15 @@ public final class Scanner {
 
     public func stop() {
         _disposable?.dispose()
-        self.manager.centralManager.stopScan()
+        self.manager.manager.stopScan()
+    }
+    
+    public func reCreateManager() {
+        _disposable?.dispose()
+        _bleId += 1
+        self.manager = CentralManager(queue: .ble,
+        options: [CBCentralManagerOptionShowPowerAlertKey: true as AnyObject,
+                  CBCentralManagerOptionRestoreIdentifierKey: "entertech.ble.\(_bleId)" as AnyObject])
     }
 
     public func use(peripheral: Peripheral) {

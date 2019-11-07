@@ -76,6 +76,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(stateNotification(_:)), name: NSNotification.Name("BLEConnectionStateNotify"), object: nil)
 
+        tableView?.reloadData()
         if ble!.state == .disconnected {
             self.connect()
         } else if ble!.state.isConnected {
@@ -314,18 +315,18 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
                     tipLabel.removeFromSuperview()
                 }
                 cell.textLabel?.text = "硬件版本"
-                cell.detailTextLabel?.text = ble!.deviceInfo.hardware
+                cell.detailTextLabel?.text = "0.0.0"
                 cell.detailTextLabel?.textColor = .lightGray
                 cell.accessoryType = .none
             case (0, 2):
                 cell.textLabel?.text = "固件版本"
-                cell.detailTextLabel?.text = ble!.deviceInfo.firmware
+                cell.detailTextLabel?.text = "0.0.0"
                 cell.detailTextLabel?.textColor = .lightGray
                 cell.accessoryType = .none
             case (0, 3):
                 cell.textLabel?.text = "蓝牙地址"
                 cell.accessoryType = .none
-                cell.detailTextLabel?.text = ble!.deviceInfo.mac
+                cell.detailTextLabel?.text = "00.00.00.00.00.00"
                 cell.detailTextLabel?.textColor = .lightGray
             case (1, 0):
                 cell.textLabel?.textColor = .red
@@ -334,15 +335,41 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
             default:
                 break
             }
+        } else if ble!.state == .searching || ble!.state == .connecting {
+            switch (indexPath.section, indexPath.row) {
+            case (0, 0):
+                cell.textLabel?.text = "硬件版本"
+                cell.detailTextLabel?.text = "0.0.0"
+                cell.detailTextLabel?.textColor = .lightGray
+                cell.accessoryType = .none
+            case (0, 1):
+                if let _ = tipLabel.superview {
+                    tipLabel.snp.removeConstraints()
+                    tipLabel.removeFromSuperview()
+                }
+                cell.textLabel?.text = "固件版本"
+                cell.detailTextLabel?.text = "0.0.0"
+                cell.detailTextLabel?.textColor = .lightGray
+                cell.accessoryType = .none
+            case (0, 2):
+                cell.textLabel?.text = "蓝牙地址"
+                cell.accessoryType = .none
+                cell.detailTextLabel?.text = "00.00.00.00.00.00"
+                cell.detailTextLabel?.textColor = .lightGray
+            default:
+                break
+            }
         } else  {
             switch (indexPath.section, indexPath.row) {
             case (0, 0):
                 cell.textLabel?.text = "硬件版本"
                 cell.detailTextLabel?.text = ble!.deviceInfo.hardware
+                cell.detailTextLabel?.textColor = .lightGray
                 cell.accessoryType = .none
             case (0, 1):
                 cell.textLabel?.text = "固件版本"
                 cell.detailTextLabel?.text = ble!.deviceInfo.firmware
+                cell.detailTextLabel?.textColor = .lightGray
                 cell.accessoryType = .none
                 if let version = BLEManagerClass.shared.firmwareVersion, ble!.deviceInfo.firmware != "0.0.0"{
                     let serviceVerNum = Int(version.replacingOccurrences(of: ".", with: ""))
@@ -350,7 +377,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
                     if let sVer = serviceVerNum,  let cVer = currentVerNum, cVer < sVer {
                         cell.accessoryType = .disclosureIndicator
                         if let _ = tipLabel.superview {
-                            
+ 
                         } else {
                             cell.contentView.addSubview(tipLabel)
                             tipLabel.snp.makeConstraints {
@@ -366,6 +393,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
                 cell.textLabel?.text = "蓝牙地址"
                 cell.accessoryType = .none
                 cell.detailTextLabel?.text = ble!.deviceInfo.mac
+                cell.detailTextLabel?.textColor = .lightGray
             default:
                 break
             }
@@ -410,6 +438,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
                 ble?.disconnect()
             } else {
                 //TODO:- Check device
+                ble?.checkDevice()
             }
         } else if indexPath.section == 2 && indexPath.row == 0 {
             mac = nil

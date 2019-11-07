@@ -409,6 +409,7 @@ public class BLEManager {
         unlistenConnection()
         connector?.cancel()
         connector = nil
+        scanner.reCreateManager()
         state = .disconnected
         deviceInfo = BLEDeviceInfo()
     }
@@ -436,6 +437,10 @@ public class BLEManager {
         delay(seconds: 0.2, block: {
             _ = self.connector?.commandService?.write(data: Data([0x07]), to: .send)
         })
+    }
+    
+    public func checkDevice() {
+        _ = self.connector?.commandService?.write(data: Data([0x79]), to: .send)
     }
     
     /// Brain data buffer
