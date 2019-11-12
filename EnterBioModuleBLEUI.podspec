@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
     s.homepage         = 'https://github.com/EnterTech'
     s.author           = { 'Like' => 'ke.liful@gmail.com' }
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
-    s.source           = { :git => 'git@github.com:Entertech/Enter-Biomodule-BLE-iOS-SDK.git', :tag => s.version.to_s }
+    s.source           = { :git => 'https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK.git', :tag => s.version.to_s }
   
     s.ios.deployment_target = '10.0'
   
