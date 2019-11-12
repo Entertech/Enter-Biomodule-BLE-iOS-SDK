@@ -7,8 +7,8 @@ EnterBioModuleBLE 通信库
                        DESC
 
   s.homepage         = 'https://github.com/EnterTech'
-  s.author           = { 'halo_yd' => 'haloqiubei@gmail.com' }
-  s.license          = 'LICENSE'
+  s.author           = { 'Like' => 'ke.liful@gmail.com' }
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.source           = { :git => 'git@github.com:Entertech/Enter-Biomodule-BLE-iOS-SDK.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
