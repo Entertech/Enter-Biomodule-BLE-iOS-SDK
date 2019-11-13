@@ -1,6 +1,6 @@
 PODS:
   - Files (2.2.1)
-  - iOSDFULibrary (4.1.1):
+  - FixedDFUService (4.1.2):
     - Zip (~> 1.0)
   - PromiseKit (6.11.0):
     - PromiseKit/CorePromise (= 6.11.0)
@@ -27,7 +27,7 @@ PODS:
 
 DEPENDENCIES:
   - Files (~> 2.2.1)
-  - "iOSDFULibrary (from `git@github.com:Entertech/IOS-Pods-DFU-Library.git`, branch `master`)"
+  - FixedDFUService
   - PromiseKit
   - RxBluetoothKit (~> 5.3.0)
   - "RxCocoa (from `git@github.com:ReactiveX/RxSwift.git`, branch `master`)"
@@ -40,6 +40,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Files
+    - FixedDFUService
     - PromiseKit
     - RxBluetoothKit
     - RxRelay
@@ -50,9 +51,6 @@ SPEC REPOS:
     - Zip
 
 EXTERNAL SOURCES:
-  iOSDFULibrary:
-    :branch: master
-    :git: "git@github.com:Entertech/IOS-Pods-DFU-Library.git"
   RxCocoa:
     :branch: master
     :git: "git@github.com:ReactiveX/RxSwift.git"
@@ -61,9 +59,6 @@ EXTERNAL SOURCES:
     :git: "git@github.com:ReactiveX/RxSwift.git"
 
 CHECKOUT OPTIONS:
-  iOSDFULibrary:
-    :commit: 339dc7ef8ed56b0b3ccd1542ec03eaa6562bbc72
-    :git: "git@github.com:Entertech/IOS-Pods-DFU-Library.git"
   RxCocoa:
     :commit: 9b31a15520306b073cb9d46456f64826c1d6dcab
     :git: "git@github.com:ReactiveX/RxSwift.git"
@@ -73,7 +68,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Files: 18a88ede4f1e339a73adaca7272af15fa32ba69f
-  iOSDFULibrary: 35e8a9e23d67759d57af9924d7a808e48c04583a
+  FixedDFUService: 5ef0cf653c846c5784c2d6e29e2c35b3820a6672
   PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
   RxBluetoothKit: 0e781978e8a0df70ac3c611dcf44800b76c69f8a
   RxCocoa: dcceba42244a647ac976575f1b85b48030478ef1
@@ -85,6 +80,6 @@ SPEC CHECKSUMS:
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: ba580ac6218120fae062e2e49ed649f50078e46f
+PODFILE CHECKSUM: 55930e52469537950b077c2b4ad3a05e13f088d8
 
 COCOAPODS: 1.8.3

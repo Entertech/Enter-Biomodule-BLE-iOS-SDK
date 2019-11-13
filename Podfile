@@ -6,7 +6,7 @@ use_frameworks!
 
 target 'BLETool' do
     pod 'Then'
-    pod 'iOSDFULibrary', :git => "git@github.com:Entertech/IOS-Pods-DFU-Library.git" , :branch => "master"
+    pod 'FixedDFUService'
     pod 'SnapKit'
     pod 'SVProgressHUD', '~> 2.2'
     pod 'RxCocoa', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
@@ -25,7 +25,7 @@ end
 
 target 'EnterBioModuleBLEUI' do
     pod 'SnapKit'
-    pod 'iOSDFULibrary', :git => "git@github.com:Entertech/IOS-Pods-DFU-Library.git" , :branch => "master"
+    pod 'FixedDFUService'
 end
 
 target 'BluetoothConnectingUIDemo' do

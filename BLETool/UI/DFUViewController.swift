@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import iOSDFULibrary
+import FixedDFUService
 import CoreBluetooth
 import RxBluetoothKit
 import SVProgressHUD

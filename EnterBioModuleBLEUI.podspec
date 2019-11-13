@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
     s.source_files = 'EnterBioModuleBLEUI/**/*.swift'
     s.dependency 'EnterBioModuleBLE'
     s.dependency 'SnapKit'
+    s.dependency 'FixedDFUService'
   
   end
   

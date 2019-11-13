@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreBluetooth
-import iOSDFULibrary
+import FixedDFUService
 import EnterBioModuleBLE
 
 internal class BLEManagerClass {
@@ -75,7 +75,7 @@ class DFU: DFUServiceDelegate, DFUProgressDelegate {
         _ = initiator.with(firmware: firmware!).start()
     }
 
-    func dfuStateDidChange(to state: iOSDFULibrary.DFUState) {
+    func dfuStateDidChange(to state: FixedDFUService.DFUState) {
         print("dfu state: \(state.description())")
         switch state {
         case .connecting:
