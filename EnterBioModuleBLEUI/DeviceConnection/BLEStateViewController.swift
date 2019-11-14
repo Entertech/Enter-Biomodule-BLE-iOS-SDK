@@ -463,7 +463,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     
     //MARK:- Method
     private func setNavigationItem() {
-        let backItem = UIBarButtonItem(image: UIImage(named: "icon_back", in: Bundle(identifier: "cn.entertech.EnterBioModuleBLEUI"), compatibleWith: nil), style: .plain, target: self, action: #selector(backAction))
+        let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back"), style: .plain, target: self, action: #selector(backAction))
         self.navigationItem.leftBarButtonItem = backItem
         self.navigationItem.title = "设备连接"
     }

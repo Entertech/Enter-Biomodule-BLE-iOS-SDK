@@ -30,7 +30,8 @@ extension UIColor {
 
 extension UIImage {
     static func loadImage(name: String) -> UIImage? {
-        return UIImage(named: name, in: Bundle(identifier: "cn.entertech.EnterBioModuleBLEUI"), compatibleWith: nil)
+        //return UIImage(named: name, in: Bundle(identifier: "cn.entertech.EnterBioModuleBLEUI"), compatibleWith: nil)
+        return UIImage(named: name, in: Bundle(identifier: "org.cocoapods.EnterBioModuleBLEUI"), compatibleWith: nil)
     }
 }
 
@@ -38,7 +39,8 @@ extension UIImage {
     /// GIF
     class func resolveGifImage(gif: String) -> [UIImage]{
         var images:[UIImage] = []
-        let gifPath = Bundle.init(identifier: "cn.entertech.EnterBioModuleBLEUI")?.path(forResource: gif, ofType: "gif")
+        //let gifPath = Bundle.init(identifier: "cn.entertech.EnterBioModuleBLEUI")?.path(forResource: gif, ofType: "gif")
+        let gifPath = Bundle.init(identifier: "org.cocoapods.EnterBioModuleBLEUI")?.path(forResource: gif, ofType: "gif")
         if gifPath != nil{
             if let gifData = try? Data(contentsOf: URL.init(fileURLWithPath: gifPath!)){
                 let gifDataSource = CGImageSourceCreateWithData(gifData as CFData, nil)

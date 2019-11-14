@@ -60,7 +60,7 @@
 		FA6F56A6230A59C800B39D3B /* EnterBioModuleBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */; };
 		FA6F56A7230A59C800B39D3B /* EnterBioModuleBLE.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA7724042373B844003A11F2 /* dfutest1.zip in Resources */ = {isa = PBXBuildFile; fileRef = FA7724032373B844003A11F2 /* dfutest1.zip */; };
-		FA8D5B07235DB5450075892F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8D5B06235DB5450075892F /* Media.xcassets */; };
+		FA8D5B07235DB5450075892F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8D5B06235DB5450075892F /* Assets.xcassets */; };
 		FA8D5B0F235E969E0075892F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B0E235E969E0075892F /* AppDelegate.swift */; };
 		FA8D5B11235E969E0075892F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B10235E969E0075892F /* SceneDelegate.swift */; };
 		FA8D5B13235E969E0075892F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B12235E969E0075892F /* ViewController.swift */; };
@@ -213,7 +213,7 @@
 		FA3E7A12235FFE8100AD6397 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		FA3E7A152360607000AD6397 /* FirmwareUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirmwareUpdateViewController.swift; sourceTree = "<group>"; };
 		FA7724032373B844003A11F2 /* dfutest1.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = dfutest1.zip; sourceTree = "<group>"; };
-		FA8D5B06235DB5450075892F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		FA8D5B06235DB5450075892F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA8D5B0C235E969E0075892F /* BluetoothConnectingUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothConnectingUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8D5B0E235E969E0075892F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8D5B10235E969E0075892F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -489,7 +489,7 @@
 				FABA6290234DB56C00CFFD91 /* DeviceConnection */,
 				FABA6275234DB3CF00CFFD91 /* EnterBioModuleBLEUI.h */,
 				FABA6276234DB3CF00CFFD91 /* Info.plist */,
-				FA8D5B06235DB5450075892F /* Media.xcassets */,
+				FA8D5B06235DB5450075892F /* Assets.xcassets */,
 			);
 			path = EnterBioModuleBLEUI;
 			sourceTree = "<group>";
@@ -724,7 +724,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA8D5B07235DB5450075892F /* Media.xcassets in Resources */,
+				FA8D5B07235DB5450075892F /* Assets.xcassets in Resources */,
 				FA3E7A13235FFE8100AD6397 /* loading.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

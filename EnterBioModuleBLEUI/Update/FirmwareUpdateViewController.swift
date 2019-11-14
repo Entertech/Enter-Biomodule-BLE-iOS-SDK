@@ -208,7 +208,7 @@ class FirmwareUpdateViewController: UIViewController {
     }
     
     private func setNavigationItem() {
-        let backItem = UIBarButtonItem(image: UIImage(named: "icon_back_white", in: Bundle(identifier: "cn.entertech.EnterBioModuleBLEUI"), compatibleWith: nil), style: .plain, target: self, action: #selector(backAction))
+        let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back_white"), style: .plain, target: self, action: #selector(backAction))
         self.navigationItem.leftBarButtonItem = backItem
         let naviLabel = UILabel()
         naviLabel.text = "固件升级"

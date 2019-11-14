@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '11.0'
     s.swift_version = '5'
     s.source_files = 'EnterBioModuleBLEUI/**/*.swift'
+    s.resources = "EnterBioModuleBLEUI/**/*.xcassets"
     s.dependency 'EnterBioModuleBLE'
     s.dependency 'SnapKit'
     s.dependency 'FixedDFUService'
