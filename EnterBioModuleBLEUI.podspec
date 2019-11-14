@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'EnterBioModuleBLEUI'
-    s.version          = '1.2.0'
+    s.version          = '1.2.1'
     s.summary          = 'EnterBioModuleBLE 通信库UI'
     s.description      = <<-DESC
   EnterBioModuleBLE 通信库UI库
