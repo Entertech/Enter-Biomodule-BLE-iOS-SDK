@@ -440,7 +440,6 @@
 		FA3E7A0F235FFAC200AD6397 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				FA3E7A12235FFE8100AD6397 /* loading.gif */,
 				FA3E7A10235FFACB00AD6397 /* BatteryView.swift */,
 				FA92318F2362881500A50C64 /* CenterTableViewCell.swift */,
 			);
@@ -489,6 +488,7 @@
 				FABA6290234DB56C00CFFD91 /* DeviceConnection */,
 				FABA6275234DB3CF00CFFD91 /* EnterBioModuleBLEUI.h */,
 				FABA6276234DB3CF00CFFD91 /* Info.plist */,
+				FA3E7A12235FFE8100AD6397 /* loading.gif */,
 				FA8D5B06235DB5450075892F /* Assets.xcassets */,
 			);
 			path = EnterBioModuleBLEUI;
