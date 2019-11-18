@@ -201,7 +201,7 @@ class FirmwareUpdateViewController: UIViewController {
     
     private func firmwareUpdate(url: URL) {
         do {
-            try dfu(fileURL: url)
+            try ble?.dfu(fileURL: url) //dfu(fileURL: url)
         } catch {
             print(error.localizedDescription)
         }
@@ -246,20 +246,6 @@ class FirmwareUpdateViewController: UIViewController {
 
     }
     
-    // MARK: - DFU
-    private lazy var dfu: DFU = {
-        return DFU(peripheral: ble!.connector!.peripheral.peripheral, manager: ble!.connector!.peripheral.manager.manager)
-    }()
-    
-    /// DFU 方法
-    ///
-    /// - Parameter fileURL: 固件文件 URL，必须是本地 URL
-    /// - Throws: 如果设备未连接会抛出错误
-    public func dfu(fileURL: URL) throws {
-        guard ble!.connector?.peripheral != nil else { throw EnterError.invalid(message: "") }
-        
-        dfu.fileURL = fileURL
-        dfu.fire()
-    }
+
     
 }

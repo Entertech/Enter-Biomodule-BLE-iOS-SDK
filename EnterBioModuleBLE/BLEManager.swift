@@ -10,6 +10,8 @@ import Foundation
 import PromiseKit
 import RxBluetoothKit
 import RxSwift
+import FixedDFUService
+import CoreBluetooth
 
 
 public protocol BLEStateDelegate: class {
@@ -545,20 +547,90 @@ public class BLEManager {
         return isOpenAndAllow
     }
     
-//    // MARK: - DFU
-//    private lazy var dfu: DFU = {
-//        return DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.centralManager)
-//    }()
-//    
-//    /// DFU 方法
-//    ///
-//    /// - Parameter fileURL: 固件文件 URL，必须是本地 URL
-//    /// - Throws: 如果设备未连接会抛出错误
-//    public func dfu(fileURL: URL) throws {
-//        guard self.connector?.peripheral != nil else { throw BLEError.invalid(message: "设备未连接") }
-//        
-//        dfu.fileURL = fileURL
-//        dfu.fire()
-//    }
+    // MARK: - DFU
+    private lazy var dfu: DFU = {
+        return DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.manager)
+    }()
     
+    /// DFU 方法
+    ///
+    /// - Parameter fileURL: 固件文件 URL，必须是本地 URL
+    /// - Throws: 如果设备未连接会抛出错误
+    public func dfu(fileURL: URL) throws {
+        guard self.connector?.peripheral != nil else { throw BLEError.invalid(message: "设备未连接") }
+        
+        dfu.fileURL = fileURL
+        dfu.fire()
+    }
+    
+}
+
+
+
+
+// Device Firmware Upgrade
+public class DFU: DFUServiceDelegate, DFUProgressDelegate {
+
+    public var fileURL: URL!
+
+    private let peripheral: CBPeripheral
+    private let manager: CBCentralManager
+
+    public init(peripheral: CBPeripheral, manager: CBCentralManager) {
+        self.peripheral = peripheral
+        self.manager = manager
+    }
+
+    private (set) var state: DFUState = .none {
+        didSet {
+            //NotificationName.dfuStateChanged.emit([NotificationKey.dfuStateKey.rawValue: state])
+            NotificationCenter.default.post(name: ExtensionService.bleStateChanged, object: nil, userInfo: ["dfuStateKey":state])
+        }
+    }
+
+    public func fire() {
+        let initiator = DFUServiceInitiator(centralManager: manager, target: peripheral)
+        initiator.delegate = self
+        initiator.progressDelegate = self
+        initiator.enableUnsafeExperimentalButtonlessServiceInSecureDfu = true
+        let firmware = DFUFirmware(urlToZipFile: fileURL, type: .application)
+
+        _ = initiator.with(firmware: firmware!).start()
+    }
+
+    public func dfuStateDidChange(to state: FixedDFUService.DFUState) {
+        print("dfu state: \(state.description())")
+        switch state {
+        case .connecting:
+            self.state = .prepared
+        case .starting:
+            self.state = .prepared
+        case .enablingDfuMode:
+            self.state = .prepared
+        case .uploading:
+            self.state = .prepared
+        case .validating:
+            self.state = .prepared
+        case .disconnecting:
+            break
+        case .completed:
+            self.state = .succeeded
+        case .aborted:
+            self.state = .failed
+        }
+    }
+
+    public func dfuError(_ error: DFUError, didOccurWithMessage message: String) {
+        self.state = .failed
+    }
+
+    public func dfuProgressDidChange(for part: Int, outOf totalParts: Int, to progress: Int, currentSpeedBytesPerSecond: Double, avgSpeedBytesPerSecond: Double) {
+        self.state = .upgrading(progress: UInt8(progress))
+    }
+}
+
+class ExtensionService: NSObject {
+    
+    static let bleStateChanged = NSNotification.Name(rawValue: "dfuStateChanged")
+
 }

@@ -34,6 +34,21 @@ extension BLEConnectionState {
     }
 }
 
+///// DFU 各阶段状态
+/////
+///// - none: 无状态
+///// - prepared: 设备准备
+///// - upgrading: 正在升级（含进度）
+///// - succeeded: 升级成功
+///// - failed: 升级失败
+public enum DFUState {
+    case none
+    case prepared
+    case upgrading(progress: UInt8)
+    case succeeded
+    case failed
+}
+
 extension BLEConnectionState {
     public var isBusy: Bool {
         switch self {

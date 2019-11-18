@@ -9,7 +9,8 @@
 import UIKit
 
 class BLEConnectTipViewController: UIViewController {
-
+    
+    private var isFirstTime = true
     //MARK:- Public
     public var cornerRadius: CGFloat = 8 {
         didSet {
@@ -54,6 +55,20 @@ class BLEConnectTipViewController: UIViewController {
         if let color = BLEManagerClass.shared.mainColor {
             
             self.mainColor = color
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !isFirstTime {
+            if BLEManagerClass.shared.bleList.count == 1 {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.navigationController?.popViewController(animated: true)
+            }
+            
+        } else {
+            isFirstTime = false
         }
     }
     

@@ -17,7 +17,7 @@ target 'BLETool' do
 end
 
 target 'EnterBioModuleBLE' do
-#    pod 'iOSDFULibrary', :git => "git@github.com:Entertech/IOS-Pods-DFU-Library.git" , :branch => "master"
+    pod 'FixedDFUService'
     pod 'RxSwift', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
     pod 'RxBluetoothKit', '~> 5.3.0'
     pod 'PromiseKit'
@@ -25,7 +25,7 @@ end
 
 target 'EnterBioModuleBLEUI' do
     pod 'SnapKit'
-    pod 'FixedDFUService'
+
 end
 
 target 'BluetoothConnectingUIDemo' do

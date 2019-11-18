@@ -6,8 +6,6 @@
     * [结构说明](#结构说明)
     * [安装集成](#安装集成)
         * [CocoaPods](#CocoaPods)
-        * [Carthage](#Carthage)
-        * [集成提示](#集成提示)
     * [整合接口BLEManager](#整合接口BLEManager)
         * [蓝牙连接](#蓝牙连接)
         * [脑电服务订阅](#脑电服务订阅)
@@ -37,32 +35,13 @@
 1. add the following to your `Podfile`
 
 ~~~swift
-pod 'EnterBioModuleBLE', :git=> "git@github.com:Entertech/Enter-Biomodule-BLE-iOS-SDK.git"
+pod 'EnterBioModuleBLE'
 pod 'EnterBioModuleBLEUI' #(根据需求添加)
 ~~~
 
-2. Integrate your dependencies using frameworks: add use_frameworks! to your `Podfile`.
-3. Run `pod install`
+1. Integrate your dependencies using frameworks: add use_frameworks! to your `Podfile`.
+2. Run `pod install`
 
-### Carthage
-
-1. add the following to your `Cartfile`
-
-~~~ruby
-github "EnterTech/Enter-Biomodule-BLE-iOS-SDK" "master"
-~~~
-
-2. Run `carthage update --platform iOS`
-
-### 集成提示
-
-> 因为`EnterBioModuleBLEUI`库依赖一个私有库, 在引用时请添加
-
-```swift
-target yourTarget do
-    pod 'iOSDFULibrary', :git => "git@github.com:Entertech/IOS-Pods-DFU-Library.git" , :branch => "master"
-end
-```
 
 ## 快速接入
 
