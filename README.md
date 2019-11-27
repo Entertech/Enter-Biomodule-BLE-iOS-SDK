@@ -167,6 +167,8 @@ self.present(connection, animated: true, completion: nil)
 
 ## 固件升级UI
 
+本UI为可选,固件需要升级时,可如下配置使用我们的升级UI
+
 ### 参数 
 
 | 参数              | 类型    | 默认值  | 说明                                                       |

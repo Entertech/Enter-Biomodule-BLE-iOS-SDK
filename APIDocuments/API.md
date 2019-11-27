@@ -78,6 +78,35 @@ connector.cancel()
 这类服务直接通过服务的特性（Characteristic）的属性（property）如：read 或 notify 可获取硬件返回的信息。
 
 e.g. `电池信息服务`
+**电池电压转电量计算公式**
+
+```
+已知电压为x（单位：V）
+
+
+【1】剩余电量百分比q（单位：%；取值范围：0~100）表达式：
+
+	q =  a1*exp(-((x-b1)/c1)^2) + a2*exp(-((x-b2)/c2)^2) + a3*exp(-((x-b3)/c3)^2)	# 高斯拟合曲线
+
+	q = max([min([q, 100]), 0])	# 取值范围限制在0~100
+
+	其中参数值如下:
+       		a1 =       99.84
+       		b1 =       4.244
+       		c1 =      0.3781
+       		a2 =       21.38
+       		b2 =       3.953
+       		c2 =      0.1685
+       		a3 =       15.21
+       		b3 =       3.813
+       		c3 =     0.09208
+
+
+【2】剩余使用时长t（单位：min）表达式：
+
+	t = 4.52*q
+```
+
 **示例代码**
 
 ~~~swift
@@ -86,6 +115,7 @@ if let service = self.service as? BatteryService {
     service.read(characteristic: .battery).done { data in
         // there is only one byte in data.
         // read batery from data.copiedBytes[0]
+        // 此处得到电压, 计算电量请参考上述公式
     }.catch { _ in
         // Failed to read value!
     }
@@ -94,9 +124,12 @@ if let service = self.service as? BatteryService {
 
 **参数说明**
 
-|参数|类型|说明|
-| :---: | :----: |:----:|
-|.battery| 枚举类型 | 对应服务特性的 UUID |
+|       参数        |   类型   |      说明       |
+| :---------------: | :------: | :-------------: |
+|     .battery      | 枚举类型 | 电池电压的 UUID |
+| .hardwareRevision | 枚举类型 | 硬件版本的 UUID |
+| .firmwareRevision | 枚举类型 | 固件版本的 UUID |
+|       .mac        | 枚举类型 | MAC地址的 UUID  |
 
 >服务组合
 >有些功能需要多个服务组合起来才能满足需求。
@@ -140,10 +173,10 @@ commandService.write(data: Data(bytes: [instruction]), to: .send).done {
 
 **参数说明**
 
-|参数|类型|说明|
-| :---: | :----: |:----:|
-|.data| 枚举类型 | 对应服务特性的 UUID |
-|.send| 枚举类型 | 对应服务特性的 UUID |
+|   参数      |         类型         |                        说明                           |
+| :---: | :----------: |   :-------------------------------------------:   |
+|   .data   | 枚举类型 | 对应服务特性的 UUID |
+|   .send   | 枚举类型 | 对应服务特性的 UUID |
 
 ### 获取心率数据
 
@@ -208,7 +241,7 @@ self.eegService.notify(characteristic: Characteristic.EEG.data)
             // Failed to listen brainwave data.
     })
    
-// III. 向硬件发送采集指令: 1. instruction = 0x05 开始采集 2. instructio = 0x05 停止采集 
+// III. 向硬件发送采集指令: 1. instruction = 0x05 开始采集 2. instructio = 0x06 停止采集 
 // commandService 可通过连接成功之后的 Connector 实例对象获得。
 commandService.write(data: Data(bytes: [instruction]), to: .send).done {
         // successed to send command
@@ -229,12 +262,12 @@ commandService.write(data: Data(bytes: [instruction]), to: .send).done {
 
 **说明**
 
-要查看硬件的电极点是否与皮肤接触好，我们通过 `eeg 服务` 的 contact 特性（Characteristic）。但是要 contact 的 notify 有数据，需要开启脑波数据。需要通过 `Command 服务` 向硬件发送 `0x01` 指令，告诉硬件开始发送采集的脑电数据。发送 `0x02` 停止采集。
+ 要查看硬件的电极点是否与皮肤接触好，我们通过 `eeg 服务` 的 contact 特性（Characteristic）,发送·`0x07`开启脱落监测。但是要 contact 的 notify 有数据，需要开启脑波数据。
 
 **示例代码**
 
 ~~~swift
-// I. 开启佩戴检测监听
+// I. 开启佩戴检测监听,佩戴监测与 eeg 服务绑定, 发送参数 .contact开启
 self.eegService.notify(characteristic: .contact)
             .observeOn(MainScheduler())
             .subscribe(onNext: { data in
@@ -243,7 +276,7 @@ self.eegService.notify(characteristic: .contact)
                 // Failed to listen wearing state.
             }).disposed(by: _disposeBag)
 
-// II. 向硬件发送采集指令: 1. instruction = 0x01 开始采集 2. instructio = 0x02 停止采集
+// II. 向硬件发送采集指令: 1. instruction = 0x07
 // commandService 可通过连接成功之后的 Connector 实例对象获得。 
 commandService.write(data: Data(bytes: [instruction]), to: .send).done {
         // successed to send command
@@ -255,35 +288,56 @@ commandService.write(data: Data(bytes: [instruction]), to: .send).done {
 
 **参数说明**
 
-|参数|类型|说明|
-| :---: | :----: |:----:|
-|.contact| 枚举类型 | 对应服务特性的 UUID |
-|.send| 枚举类型 | 对应服务特性的 UUID |
+|   参数   |   类型   |        说明         |
+| :------: | :------: | :-----------------: |
+| .contact | 枚举类型 | 对应服务特性的 UUID |
+|  .send   | 枚举类型 | 对应服务特性的 UUID |
 
 ### DFU 服务
 
 **说明**
 
-DFU（Device Firmware Update）固件更新，固件更新是单独的一个服务，通过第三方库 iOSDFULibrary 实现（注意：如果没有引用，可通过 `cocoapods` 引入，地址要与 Demo 一致）。
+DFU（Device Firmware Update）固件更新，固件更新是单独的一个服务
 
 **DFU 步骤**
 
-1. 连接设备。
-2. 准备好要更新的固件包。
-3. 创建 DFUServiceInitiator 对象。（可设置代理查看更新过程和状态）
-4. 根据固件包设置 DFUFirmware 对象。
-5. 将 DFUFirmware 对象给 DFUServiceInitiator 对象开始固件更新。
+1. 设置好url地址
+2. 通过传入url地址升级
+3. 创建监听`dfuStateChanged`
+4. 获取升级回调
 
 ~~~swift
-// 创建 DFUServiceInitiator 对象
-let initiator = DFUServiceInitiator(centralManager: self.cManager, target: self.peripheral)
-    // 设置代理监听更新过程
-    initiator.delegate = self
-    initiator.progressDelegate = self
-    initiator.enableUnsafeExperimentalButtonlessServiceInSecureDfu = true
-    // 根据固件包设置 DFUFirmware 对象。 url 为要更新的固件更新包路径。
-    let firmware = DFUFirmware(urlToZipFile: url, type: DFUFirmwareType.application)
-    // 将 DFUFirmware 对象给 DFUServiceInitiator 对象开始固件更新。
-    let _ = initiator.with(firmware: firmware!).start()
+// 创建监听
+NotificationCenter.default.addObserver(self, selector: #selector(didFirmwareUpdateStateChanged(_:)), name: NSNotification.Name(rawValue: "dfuStateChanged"), object: nil)
+
+// 传入固件 url
+do {
+        // bleManger是BleManager的实例
+        try bleManager.dfu(fileURL: url) 
+} catch {
+        print(error.localizedDescription)
+}
+// 实现监听方法,完成回调
+@objc private func didFirmwareUpdateStateChanged(_ notification: Notification) {
+        if let info = notification.userInfo,
+            let state = info["dfuStateKey"] as? DFUState {
+
+            switch state {
+
+            case .none:
+                break
+            case .prepared:
+                break
+            case .upgrading(let progress):
+                break
+            case .succeeded:
+                break
+            case .failed:
+                break
+
+            }
+        }
+
+    }
 ~~~
 
