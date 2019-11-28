@@ -141,14 +141,12 @@ func bleHeartRateDataReceived(data: Data, bleManager: BLEManager){}
 
 ### 参数
 
-| 参数              | 类型    | 默认值  | 说明                                                       |
-| ----------------- | ------- | ------- | ---------------------------------------------------------- |
-| cornerRadius      | CGFloat | 8       | 控件圆角                                                   |
-| mainColor         | UIColor | #0064FF | 主色调                                                     |
-| isConnectByMac    | Bool    | false   | true时, 第一次连接设备会记录mac地址,后续连接会判断是否匹配 |
-| firmwareVersion   | String  | "0.0.1" | 如果您拥有新固件,连接后会判断新固件版本是否比当前当高      |
-| firmwareURL       | URL     | nil     | 放入沙盒的固件位置                                         |
-| firmwareUpdateLog | String  | ""      | 更新内容说明                                               |
+| 参数           | 类型    | 默认值  | 说明                                                       |
+| -------------- | ------- | ------- | ---------------------------------------------------------- |
+| cornerRadius   | CGFloat | 8       | 控件圆角                                                   |
+| mainColor      | UIColor | #0064FF | 主色调                                                     |
+| isConnectByMac | Bool    | false   | true时, 第一次连接设备会记录mac地址,后续连接会判断是否匹配 |
+
 
 ### 集成方式
 
@@ -161,6 +159,12 @@ connection.isConnectByMac = true // mac地址连接
 self.present(connection, animated: true, completion: nil)
 ~~~
 
+| 参数        | 类型            | 说明               |
+| ----------- | --------------- | ------------------ |
+| bleManager  | BLEManager      | 蓝牙管理模块的实例 |
+| bleManagers | BLEManager 数组 | 用于多设备连接     |
+
+
 ### 图示
 
 ![连接](img/IMG_0830.PNG)
@@ -171,11 +175,11 @@ self.present(connection, animated: true, completion: nil)
 
 ### 参数 
 
-| 参数              | 类型    | 默认值  | 说明                                                       |
-| ----------------- | ------- | ------- | ---------------------------------------------------------- |
-| firmwareVersion   | String  | "0.0.1" | 如果您拥有新固件,连接后会判断新固件版本是否比当前当高      |
-| firmwareURL       | URL     | nil     | 放入沙盒的固件位置                                         |
-| firmwareUpdateLog | String  | ""      | 更新内容说明                                               |
+| 参数              | 类型   | 默认值  | 说明                                                  |
+| ----------------- | ------ | ------- | ----------------------------------------------------- |
+| firmwareVersion   | String | "0.0.1" | 如果您拥有新固件,连接后会判断新固件版本是否比当前当高 |
+| firmwareURL       | URL    | nil     | 放入沙盒的固件位置                                    |
+| firmwareUpdateLog | String | ""      | 更新内容说明                                          |
 
 ### 集成方式
 
