@@ -161,7 +161,7 @@
 		6C0D22B81FA447C5005EAF33 /* CharacteristicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicViewController.swift; sourceTree = "<group>"; };
 		6C0D22BA1FA46933005EAF33 /* BLENavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLENavigationController.swift; sourceTree = "<group>"; };
 		6C143B951FA06C68009F866D /* GCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
-		6C1642FB1FA03B09002C1438 /* BLETool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLETool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C1642FB1FA03B09002C1438 /* EnterBioModuleBLEDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnterBioModuleBLEDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C1642FE1FA03B09002C1438 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C1643031FA03B09002C1438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C1643081FA03B09002C1438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -297,10 +297,8 @@
 		6C1642F21FA03B09002C1438 = {
 			isa = PBXGroup;
 			children = (
-				6C1642FD1FA03B09002C1438 /* BLETool */,
-				6C71131D1FA9755B0093099D /* EnterBioModuleBLE */,
-				FABA6274234DB3CF00CFFD91 /* EnterBioModuleBLEUI */,
-				FA8D5B0D235E969E0075892F /* BluetoothConnectingUIDemo */,
+				FAA85EE123950A9F00FED715 /* UI */,
+				FAA85EE0239509C200FED715 /* EnterBioModuleBLESDK */,
 				6C1642FC1FA03B09002C1438 /* Products */,
 				BDF37AF999B672F982338A68 /* Pods */,
 				A9270B81DB032DBDF56008A7 /* Frameworks */,
@@ -310,7 +308,7 @@
 		6C1642FC1FA03B09002C1438 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6C1642FB1FA03B09002C1438 /* BLETool.app */,
+				6C1642FB1FA03B09002C1438 /* EnterBioModuleBLEDemo.app */,
 				6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */,
 				FABA6273234DB3CF00CFFD91 /* EnterBioModuleBLEUI.framework */,
 				FA8D5B0C235E969E0075892F /* BluetoothConnectingUIDemo.app */,
@@ -318,7 +316,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6C1642FD1FA03B09002C1438 /* BLETool */ = {
+		6C1642FD1FA03B09002C1438 /* EnterBioModuleBLEDemo */ = {
 			isa = PBXGroup;
 			children = (
 				6C1CE81B1FB9A1E8003D4EB5 /* Resources */,
@@ -330,7 +328,7 @@
 				6C1643071FA03B09002C1438 /* LaunchScreen.storyboard */,
 				6C16430A1FA03B09002C1438 /* Info.plist */,
 			);
-			path = BLETool;
+			path = EnterBioModuleBLEDemo;
 			sourceTree = "<group>";
 		};
 		6C1643101FA06098002C1438 /* UI */ = {
@@ -478,6 +476,24 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		FAA85EE0239509C200FED715 /* EnterBioModuleBLESDK */ = {
+			isa = PBXGroup;
+			children = (
+				6C1642FD1FA03B09002C1438 /* EnterBioModuleBLEDemo */,
+				6C71131D1FA9755B0093099D /* EnterBioModuleBLE */,
+			);
+			path = EnterBioModuleBLESDK;
+			sourceTree = "<group>";
+		};
+		FAA85EE123950A9F00FED715 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FABA6274234DB3CF00CFFD91 /* EnterBioModuleBLEUI */,
+				FA8D5B0D235E969E0075892F /* BluetoothConnectingUIDemo */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		FABA6274234DB3CF00CFFD91 /* EnterBioModuleBLEUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,9 +568,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6C1642FA1FA03B09002C1438 /* BLETool */ = {
+		6C1642FA1FA03B09002C1438 /* EnterBioModuleBLEDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6C16430D1FA03B09002C1438 /* Build configuration list for PBXNativeTarget "BLETool" */;
+			buildConfigurationList = 6C16430D1FA03B09002C1438 /* Build configuration list for PBXNativeTarget "EnterBioModuleBLEDemo" */;
 			buildPhases = (
 				FA9391335BD778D54DC12494 /* [CP] Check Pods Manifest.lock */,
 				6C1642F71FA03B09002C1438 /* Sources */,
@@ -570,9 +586,9 @@
 				FA6F56A9230A59C800B39D3B /* PBXTargetDependency */,
 				FABA6287234DB3CF00CFFD91 /* PBXTargetDependency */,
 			);
-			name = BLETool;
+			name = EnterBioModuleBLEDemo;
 			productName = NaptimeBLE;
-			productReference = 6C1642FB1FA03B09002C1438 /* BLETool.app */;
+			productReference = 6C1642FB1FA03B09002C1438 /* EnterBioModuleBLEDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6C71131B1FA9755B0093099D /* EnterBioModuleBLE */ = {
@@ -680,7 +696,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6C1642FA1FA03B09002C1438 /* BLETool */,
+				6C1642FA1FA03B09002C1438 /* EnterBioModuleBLEDemo */,
 				6C71131B1FA9755B0093099D /* EnterBioModuleBLE */,
 				FABA6272234DB3CF00CFFD91 /* EnterBioModuleBLEUI */,
 				FA8D5B0B235E969E0075892F /* BluetoothConnectingUIDemo */,
@@ -1173,11 +1189,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = BLETool/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/EnterBioModuleBLESDK/EnterBioModuleBLEDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.entertech.tool.flowtimeble;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EnterBioModuleBLEDemo;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = FlowtimeBLE_tool_dev;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -1202,11 +1218,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = BLETool/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/EnterBioModuleBLESDK/EnterBioModuleBLEDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.entertech.tool.flowtimeble;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EnterBioModuleBLEDemo;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = FlowtimeBLE_tool_dis;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -1235,7 +1251,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/EnterBioModuleBLE/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EnterBioModuleBLESDK/EnterBioModuleBLE/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1271,7 +1287,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/EnterBioModuleBLE/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EnterBioModuleBLESDK/EnterBioModuleBLE/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1295,7 +1311,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5EVD5KXKJ4;
-				INFOPLIST_FILE = BluetoothConnectingUIDemo/Info.plist;
+				INFOPLIST_FILE = UI/BluetoothConnectingUIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -1315,7 +1331,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5EVD5KXKJ4;
-				INFOPLIST_FILE = BluetoothConnectingUIDemo/Info.plist;
+				INFOPLIST_FILE = UI/BluetoothConnectingUIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_FAST_MATH = YES;
@@ -1342,7 +1358,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EnterBioModuleBLEUI/Info.plist;
+				INFOPLIST_FILE = UI/EnterBioModuleBLEUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1377,7 +1393,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EnterBioModuleBLEUI/Info.plist;
+				INFOPLIST_FILE = UI/EnterBioModuleBLEUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1406,7 +1422,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6C16430D1FA03B09002C1438 /* Build configuration list for PBXNativeTarget "BLETool" */ = {
+		6C16430D1FA03B09002C1438 /* Build configuration list for PBXNativeTarget "EnterBioModuleBLEDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6C16430E1FA03B09002C1438 /* Debug */,
