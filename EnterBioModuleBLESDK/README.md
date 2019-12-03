@@ -15,5 +15,5 @@
 
 ![Project Structure](/img/3.png)
 
-- 查看SDK请点击此处[基础蓝牙模块SDK](EnterBioModuleBLEUI/)
-- 查看Demo请点击此处[蓝牙连接采集Demo](EnterBioModuleBLEUIDemo/)
+- 查看SDK请点击此处[基础蓝牙模块SDK](EnterBioModuleBLE/)
+- 查看Demo请点击此处[蓝牙连接采集Demo](EnterBioModuleBLEDemo/)
