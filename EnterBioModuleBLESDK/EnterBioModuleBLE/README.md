@@ -8,7 +8,10 @@
   - [API说明](#api%e8%af%b4%e6%98%8e)
   - [Demo](#demo)
 
+## 接入环境
 
+- Xcode 11
+- Swift 5.0
 
 ## 快速接入
 
