@@ -37,13 +37,13 @@ Xcode 11, iOS 13
 
 管理界面（只有多设备才有）
 
-![管理界面](../../img/IMG_0834.PNG)
+<img src="https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK/blob/master/img/IMG_0834.PNG" width="300">
 
 提示界面
 
-![管理界面](../../img/IMG_0836.PNG)
+<img src="https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK/blob/master/img/IMG_0836.PNG" width="300">
 
 连接界面
 
-![连接界面](../../img/IMG_0835.PNG)
+<img src="https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK/blob/master/img/IMG_0835.PNG" width="300">
 
