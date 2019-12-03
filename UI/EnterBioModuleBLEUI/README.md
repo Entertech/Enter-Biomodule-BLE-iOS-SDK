@@ -49,7 +49,7 @@ self.present(connection, animated: true, completion: nil)
 
 ### 图示
 
-![连接](/img/IMG_0830.PNG)
+<img src="https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK/blob/master/img/IMG_0830.PNG" width="300">
 
 ## 固件升级UI
 
@@ -76,8 +76,8 @@ connection.firmwareUpdateLog = "1.请在此输入日志信息。\n2.更新内容
 
 当设置升级固件时, 连接蓝牙后会有升级提示。
 
-![升级提示](/img/IMG_0832.PNG)
+<img src="https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK/blob/master/img/IMG_0832.PNG" width="300">
 
 点击升级提示后, 转到升级界面。
 
-![升级界面](/img/IMG_0831.PNG)
+<img src="https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK/blob/master/img/IMG_0831.PNG" width="300">
