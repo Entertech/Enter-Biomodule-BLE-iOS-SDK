@@ -110,7 +110,7 @@ class FirmwareUpdateViewController: UIViewController {
             $0.bottom.equalTo(titleImageView.snp_bottomMargin)
         }
         
-        progressView.animationImages = UIImage.resolveGifImage(gif: "loading")
+        progressView.animationImages = UIImage.resolveGifImage(gif: "loading", any: self.classForCoder)
         progressView.animationDuration = 2
         progressView.animationRepeatCount = Int.max
         
@@ -162,7 +162,7 @@ class FirmwareUpdateViewController: UIViewController {
         switch state {
             
         case UpdateState.show.rawValue:
-            titleImageView.image = UIImage.loadImage(name: "img_firmware")
+            titleImageView.image = UIImage.loadImage(name: "img_firmware", any: self.classForCoder)
             titleLabel.text = "固件升级"
             updateNotesLabel.textAlignment = .center
             setNotes(note: BLEManagerClass.shared.firmwareUpdateLog)
@@ -170,7 +170,7 @@ class FirmwareUpdateViewController: UIViewController {
             updateBtn.isHidden = false
             
         case UpdateState.faild.rawValue:
-            titleImageView.image = UIImage.loadImage(name: "img_fail")
+            titleImageView.image = UIImage.loadImage(name: "img_fail", any: self.classForCoder)
             titleLabel.text = "升级失败"
             setNotes(note: "请返回重新连接设备后再次尝试")
             updateNotesLabel.textAlignment = .center
@@ -188,7 +188,7 @@ class FirmwareUpdateViewController: UIViewController {
         case UpdateState.completed.rawValue:
             setNotes(note: "返回上层页面重新连接")
             titleLabel.text = "升级成功"
-            titleImageView.image = UIImage.loadImage(name: "img_success")
+            titleImageView.image = UIImage.loadImage(name: "img_success", any: self.classForCoder)
             updateNotesLabel.textAlignment = .center
             ble?.disconnect()
             
@@ -208,7 +208,7 @@ class FirmwareUpdateViewController: UIViewController {
     }
     
     private func setNavigationItem() {
-        let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back_white"), style: .plain, target: self, action: #selector(backAction))
+        let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back_white", any: classForCoder), style: .plain, target: self, action: #selector(backAction))
         self.navigationItem.leftBarButtonItem = backItem
         let naviLabel = UILabel()
         naviLabel.text = "固件升级"

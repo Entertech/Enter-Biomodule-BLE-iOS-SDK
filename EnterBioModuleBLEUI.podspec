@@ -13,8 +13,8 @@ Pod::Spec.new do |s|
   
     s.ios.deployment_target = '11.0'
     s.swift_version = '5'
-    s.source_files = 'EnterBioModuleBLEUI/**/*.swift'
-    s.resources = "EnterBioModuleBLEUI/**/*.{xcassets,gif}"
+    s.source_files = 'UI/EnterBioModuleBLEUI/**/*.swift'
+    s.resources = "UI/EnterBioModuleBLEUI/**/*.{xcassets,gif}"
     s.dependency 'EnterBioModuleBLE', '1.2.4'
     s.dependency 'SnapKit'
  

@@ -108,7 +108,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         animationView = UIImageView()
-        animationView?.animationImages = UIImage.resolveGifImage(gif: "loading")
+        animationView?.animationImages = UIImage.resolveGifImage(gif: "loading", any: self.classForCoder)
         animationView?.animationDuration = 2
         animationView?.animationRepeatCount = Int.max
         
@@ -463,7 +463,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     
     //MARK:- Method
     private func setNavigationItem() {
-        let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back"), style: .plain, target: self, action: #selector(backAction))
+        let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back", any: self.classForCoder), style: .plain, target: self, action: #selector(backAction))
         self.navigationItem.leftBarButtonItem = backItem
         self.navigationItem.title = "设备连接"
     }

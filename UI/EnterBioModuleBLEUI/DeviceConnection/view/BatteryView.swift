@@ -42,8 +42,8 @@ class BatteryView: UIView {
         _circleForeLayer.strokeColor = UIColor.white.cgColor
         _circleForeLayer.fillColor = UIColor.clear.cgColor
         _circleForeLayer.lineCap = convertToCAShapeLayerLineCap("round")
-        
-        _powerIcon.contentMode = .scaleAspectFit
+        _powerIcon = UIImageView(image: UIImage.loadImage(name: "icon_flowtime_disconnected_white", any: self.classForCoder))
+        _powerIcon?.contentMode = .scaleAspectFit
         
         _powerLabel.textColor = UIColor.white
         _powerLabel.font = UIFont.systemFont(ofSize: 32, weight: .semibold)
@@ -51,7 +51,7 @@ class BatteryView: UIView {
         _continuousLabel.textColor = UIColor.white
         _continuousLabel.font = UIFont.systemFont(ofSize: 12)
         
-        self.addSubview(_powerIcon)
+        self.addSubview(_powerIcon!)
         self.addSubview(_powerLabel)
         self.addSubview(_continuousLabel)
 
@@ -61,7 +61,7 @@ class BatteryView: UIView {
     }
 
     func layout() {
-        _powerIcon.snp.makeConstraints {
+        _powerIcon?.snp.makeConstraints {
             $0.centerX.equalTo(self)
             $0.top.equalTo(self).offset(20)
             $0.width.equalTo(36)
@@ -112,18 +112,18 @@ class BatteryView: UIView {
         animation.isRemovedOnCompletion = true
         _circleForeLayer.add(animation, forKey: "strokeAnimation")
 
-        _powerIcon.image = { () -> UIImage in
+        _powerIcon?.image = { () -> UIImage in
             switch percent {
             case 0..<0.1:
-                return UIImage.loadImage(name: "icon_battery_10_white")!
+                return UIImage.loadImage(name: "icon_battery_10_white", any: classForCoder)!
             case 0.1..<0.4:
-                return UIImage.loadImage(name: "icon_battery_40_white")!
+                return UIImage.loadImage(name: "icon_battery_40_white", any: classForCoder)!
             case 0.4..<0.6:
-                return UIImage.loadImage(name: "icon_battery_60_white")!
+                return UIImage.loadImage(name: "icon_battery_60_white", any: classForCoder)!
             case 0.6..<0.8:
-                return UIImage.loadImage(name: "icon_battery_80_white")!
+                return UIImage.loadImage(name: "icon_battery_80_white", any: classForCoder)!
             default:
-                return UIImage.loadImage(name: "icon_battery_100_white")!
+                return UIImage.loadImage(name: "icon_battery_100_white", any: classForCoder)!
             }
         }()
     }
@@ -144,7 +144,7 @@ class BatteryView: UIView {
         return context.path!
     }
 
-    private let _powerIcon: UIImageView = UIImageView(image: UIImage.loadImage(name: "icon_flowtime_disconnected_white"))
+    private var _powerIcon: UIImageView?
         
     
     private let _powerLabel: UILabel = UILabel()

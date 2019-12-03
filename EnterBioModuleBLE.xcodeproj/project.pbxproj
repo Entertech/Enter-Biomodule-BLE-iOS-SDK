@@ -452,7 +452,7 @@
 			path = Update;
 			sourceTree = "<group>";
 		};
-		FA8D5B0D235E969E0075892F /* BluetoothConnectingUIDemo */ = {
+		FA8D5B0D235E969E0075892F /* EnterBioModuleBLEUIDemo */ = {
 			isa = PBXGroup;
 			children = (
 				FA7724032373B844003A11F2 /* dfutest1.zip */,
@@ -464,7 +464,7 @@
 				FA8D5B19235E969F0075892F /* LaunchScreen.storyboard */,
 				FA8D5B1C235E969F0075892F /* Info.plist */,
 			);
-			path = BluetoothConnectingUIDemo;
+			path = EnterBioModuleBLEUIDemo;
 			sourceTree = "<group>";
 		};
 		FA8D5B25235EE8860075892F /* Service */ = {
@@ -489,7 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				FABA6274234DB3CF00CFFD91 /* EnterBioModuleBLEUI */,
-				FA8D5B0D235E969E0075892F /* BluetoothConnectingUIDemo */,
+				FA8D5B0D235E969E0075892F /* EnterBioModuleBLEUIDemo */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1311,7 +1311,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5EVD5KXKJ4;
-				INFOPLIST_FILE = UI/BluetoothConnectingUIDemo/Info.plist;
+				INFOPLIST_FILE = UI/EnterBioModuleBLEUIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -1331,7 +1331,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5EVD5KXKJ4;
-				INFOPLIST_FILE = UI/BluetoothConnectingUIDemo/Info.plist;
+				INFOPLIST_FILE = UI/EnterBioModuleBLEUIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_FAST_MATH = YES;

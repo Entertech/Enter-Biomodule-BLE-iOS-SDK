@@ -43,7 +43,7 @@ class BLETipViewController: UIViewController {
         
         
         let firstImgView = UIImageView()
-        firstImgView.image = UIImage.loadImage(name: "img_control")
+        firstImgView.image = UIImage.loadImage(name: "img_control", any: self.classForCoder)
         self.view.addSubview(firstImgView)
         firstImgView.snp.makeConstraints {
             $0.top.equalTo(firstLabel.snp.bottom).offset(8)
@@ -78,7 +78,7 @@ class BLETipViewController: UIViewController {
         
         
         let secondImgView = UIImageView()
-        secondImgView.image = UIImage.loadImage(name: "img_switch")
+        secondImgView.image = UIImage.loadImage(name: "img_switch", any: classForCoder)
         self.view.addSubview(secondImgView)
         secondImgView.snp.makeConstraints {
             $0.top.equalTo(toSetting.snp.bottom).offset(8)
@@ -98,7 +98,7 @@ class BLETipViewController: UIViewController {
     }
     
     private func setNavigationItem() {
-        let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back"), style: .plain, target: self, action: #selector(backAction))
+        let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back", any: classForCoder), style: .plain, target: self, action: #selector(backAction))
         self.navigationItem.leftBarButtonItem = backItem
         self.navigationItem.title = ""
     }

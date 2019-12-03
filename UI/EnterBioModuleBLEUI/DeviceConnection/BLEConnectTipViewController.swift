@@ -92,7 +92,7 @@ class BLEConnectTipViewController: UIViewController {
         }
         
         imageView = UIImageView()
-        imageView?.image = UIImage.loadImage(name: "icon_chatu")
+        imageView?.image = UIImage.loadImage(name: "icon_chatu", any: self.classForCoder)
         self.view.addSubview(imageView!)
         imageView?.snp.makeConstraints {
             $0.center.equalTo(self.imageBackground!.snp.center)
@@ -144,7 +144,7 @@ class BLEConnectTipViewController: UIViewController {
     }
     
     private func setNavigationItem() {
-        let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back"), style: .plain, target: self, action: #selector(backAction))
+        let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back", any: self.classForCoder), style: .plain, target: self, action: #selector(backAction))
         self.navigationItem.leftBarButtonItem = backItem
         self.navigationItem.title = "设备连接"
     }

@@ -13,7 +13,7 @@ EnterBioModuleBLE 通信库
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'EnterBioModuleBLE/**/*.swift'
+  s.source_files = 'EnterBioModuleBLESDK/EnterBioModuleBLE/**/*.swift'
   s.dependency 'PromiseKit'
   s.dependency 'RxBluetoothKit'
   s.dependency 'FixedDFUService'

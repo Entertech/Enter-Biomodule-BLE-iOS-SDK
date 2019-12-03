@@ -60,10 +60,16 @@ class DeviceConnectionViewController: UIViewController, UITableViewDelegate, UIT
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView?.reloadData()
-    
+        
     }
     
     func setUI() {
+        if #available(iOS 13.0, *) {
+            self.view.backgroundColor = .systemBackground
+        } else {
+            // Fallback on earlier versions
+            self.view.backgroundColor = .white
+        }
         tableView = UITableView(frame: CGRect.zero, style: .grouped)
         tableView?.delegate = self
         tableView?.dataSource = self
@@ -111,7 +117,7 @@ class DeviceConnectionViewController: UIViewController, UITableViewDelegate, UIT
 
     
     private func setNavigationItem() {
-        let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back"), style: .plain, target: self, action: #selector(backAction))
+        let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back", any: classForCoder), style: .plain, target: self, action: #selector(backAction))
         self.navigationItem.leftBarButtonItem = backItem
         self.navigationItem.title = "设备连接"
     }

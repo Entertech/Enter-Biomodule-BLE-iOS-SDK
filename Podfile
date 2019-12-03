@@ -25,7 +25,6 @@ end
 
 target 'EnterBioModuleBLEUI' do
     pod 'SnapKit'
-
 end
 
 target 'BluetoothConnectingUIDemo' do
