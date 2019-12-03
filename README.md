@@ -50,11 +50,11 @@ pod 'EnterBioModuleBLEUI'
 1. 在`Podfile`中添加 `add use_frameworks!`。
 2. 运行 `pod install`。
 
-## 蓝牙SDK
+## BLE基础SDK
 
 > 提供模块连接及数据采集功能。
 
-详细请参见[蓝牙SDK](EnterBioModuleBLESDK/)
+详细请参见[BLE基础SDK](EnterBioModuleBLESDK/)
 
 ## 蓝牙UI
 
