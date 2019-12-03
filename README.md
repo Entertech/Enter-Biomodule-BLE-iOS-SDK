@@ -23,7 +23,7 @@ SDK 包含回车生物电采集模块的蓝牙连接和生物电采集控制。�
 工程有两部分组成：UI + SDK 。 
 如图：
 
-![Project Structure](/img/1.png)
+<img src="https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK/blob/master/img/1.png?raw=true" width="600">
 
 ## 安装集成
 
