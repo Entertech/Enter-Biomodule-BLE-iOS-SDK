@@ -10,5 +10,10 @@
 
 ## 组件
 
+此UI库有两部分组成：UI + Demo 。 
+如图：
+
+![Project Structure](/img/2.png)
+
 - 查看蓝牙管理UI SDK请点击此处[标准蓝牙连接管理UI SDK](EnterBioModuleBLEUI/)
 - 查看Demo请点击此处[UIDemo](EnterBioModuleBLEUIDemo/)

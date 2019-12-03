@@ -14,16 +14,16 @@
 
 ## 介绍
 
-本 SDK 包含回车生物电采集模块的蓝牙连接和生物电采集控制。通过此 SDK 可以在 iOS app 里快速实现和我们的采集模块连接，并控制其进行数据的采集和停止等指令。SDK包含UI模块`EnterBioModuleBLEUI`提供了蓝牙连接的UI和通过蓝牙升级固件的UI。
+SDK 包含回车生物电采集模块的蓝牙连接和生物电采集控制。通过此 SDK 可以在 iOS app 里快速实现和我们的采集模块连接，并控制其进行数据的采集和停止等指令。UI模块提供了蓝牙连接的UI和通过蓝牙升级固件的UI。
 
 ## 结构说明
 
 > 运行 Demo 需要 `pod install` 
  
-工程有两部分组成：Demo + SDK framework 源码。 
+工程有两部分组成：UI + SDK 。 
 如图：
 
-![Project Structure](/img/structure.png)
+![Project Structure](/img/1.png)
 
 ## 安装集成
 
@@ -58,6 +58,6 @@ pod 'EnterBioModuleBLEUI'
 
 ## 蓝牙UI
 
->  提供标准的蓝牙连接及固件升级UI。
+> 提供标准的蓝牙连接及固件升级UI。
 
 详细请参见[蓝牙UI](UI/)
