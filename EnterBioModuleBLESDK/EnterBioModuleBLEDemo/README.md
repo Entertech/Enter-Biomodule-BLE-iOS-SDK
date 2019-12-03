@@ -37,12 +37,13 @@ Xcode 11, iOS 11
 
 扫描
 
-![扫描界面](../../img/IMG_0837.PNG)
+<img src="https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK/blob/master/img/IMG_0837.PNG" width="300">
 
 管理界面
 
-![管理界面](../../img/IMG_0838.PNG)
+<img src="https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK/blob/master/img/IMG_0838.PNG" width="300">
 
 采集界面
 
-![采集界面](../../img/IMG_0839.PNG)
+
+<img src="https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK/blob/master/img/IMG_0839.PNG" width="300">
