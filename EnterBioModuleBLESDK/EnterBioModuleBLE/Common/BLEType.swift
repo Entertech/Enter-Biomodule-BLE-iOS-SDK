@@ -19,7 +19,7 @@ public enum BLEConnectionState {
     case disconnected
     case searching
     case connecting
-    case connected(BLEWearState)
+    case connected(UInt8)
 }
 
 extension BLEConnectionState {
@@ -66,7 +66,7 @@ extension BLEConnectionState: Equatable {
         case (.disconnected, .disconnected), (.searching, .searching), (.connecting, .connecting):
             return true
         case (let .connected(wear1), let .connected(wear2)):
-            return wear1.rawValue == wear2.rawValue
+            return wear1 == wear2
         default:
             return false
         }
@@ -79,21 +79,6 @@ extension BLEConnectionState: Equatable {
 /// - referenceWrong: 参考电极不正常
 /// - activeWrong: 活动电极不正常
 /// - normal: 佩戴正常
-
-//TODO: - 完善佩戴数值信息
-public enum BLEWearState: UInt8 {
-    case allWrong = 0x18
-    case referenceWrong = 0x10
-    case activeWrong = 0x08
-    case normal = 0x00
-}
-
-extension BLEWearState {
-    /// 是否佩戴正常
-    public var isOK: Bool {
-        return self == .normal
-    }
-}
 
 /// 电量信息
 public struct Battery {

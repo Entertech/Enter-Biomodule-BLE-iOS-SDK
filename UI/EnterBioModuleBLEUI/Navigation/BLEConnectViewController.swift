@@ -64,8 +64,14 @@ public class BLEConnectViewController: UINavigationController, UIGestureRecogniz
         } else {
             BLEManagerClass.shared.bleList.removeAll()
             BLEManagerClass.shared.bleList.append(bleManager)
-            let deviceConnectionVC = BLEConnectTipViewController(index: 0)
-            super.init(rootViewController: deviceConnectionVC)
+            if manager.state.isConnected {
+                let bleView = BLEStateViewController(index: 0, cornerRadius, mainColor)
+                super.init(rootViewController: bleView)
+            } else {
+                let deviceConnectionVC = BLEConnectTipViewController(index: 0)
+                super.init(rootViewController: deviceConnectionVC)
+            }
+
         }
         self.interactivePopGestureRecognizer?.delegate = self
         self.modalPresentationStyle = .fullScreen

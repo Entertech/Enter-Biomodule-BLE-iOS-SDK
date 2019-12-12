@@ -253,7 +253,7 @@ public class BLEManager {
                 let promise = Promise<Void> {[unowned self] seal in
                     self.readBattery()
                     self.readDeviceInfo()
-                    self.state = .connected(.allWrong)
+                    self.state = .connected(0x0f)
                     self.listenConnection()
                     self.listenWear()
                     self.listenBattery()
@@ -287,7 +287,7 @@ public class BLEManager {
                 .done {
                     self.readBattery()
                     self.readDeviceInfo()
-                    self.state = .connected(.allWrong)
+                    self.state = .connected(0x0f)
                     self.listenConnection()
                     self.listenWear()
                     self.listenBattery()
@@ -308,7 +308,7 @@ public class BLEManager {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] isConnected in
                 guard let `self` = self else { return }
-                self.state = isConnected ? .connected(.allWrong) : .disconnected
+                self.state = isConnected ? .connected(0x0f) : .disconnected
                 if !isConnected {
                     self.reset()
                 }
@@ -323,11 +323,24 @@ public class BLEManager {
         observers.connection = nil
     }
     
+    // https://shimo.im/docs/80f5ce5b32ee49eb/read
+    /*************o表示***********************************/
+    /**********四个电极从左至右分别对应的未接触数据为***********/
+    /*******0x10,  0x08,  0x20, 0x40***********************/
+    /*******如第1,2个未接触为 xxoo = 0x18***************/
     /// This service tell us if the device is wore
     private func listenWear() {
         observers.wearing = connector?.eegService?.notify(characteristic: .contact)
             .subscribe(onNext: { [unowned self] in
-                guard let value = $0.first, let wearState = BLEWearState(rawValue: value), self.state.isConnected else { return }
+                guard let value = $0.first, self.state.isConnected else { return }
+                // 因为数据不是从左到右显示,为了方便理解数据,这里除以8,以二进制1111进行表示
+                // 比如xoox转化为 1001 , 实际返回数据为9
+                var wearState: UInt8 = 0
+                let temp = value / 8
+                wearState = temp >> 3 & 1 == 1 ? 1 : 0
+                wearState = temp >> 2 & 1 == 1 ? wearState | 2 : wearState
+                wearState = temp >> 1 & 1 == 1 ? wearState | 4 : wearState
+                wearState = temp == 1 ? wearState | 8 : wearState
                 self.state = .connected(wearState)
             })
     }
@@ -435,10 +448,6 @@ public class BLEManager {
         
         _ = connector?.commandService?.write(data: Data([0x05]), to: .send)
         
-        // 默认开启脱落检测
-        delay(seconds: 0.2, block: {
-            _ = self.connector?.commandService?.write(data: Data([0x07]), to: .send)
-        })
     }
     
     public func checkDevice() {

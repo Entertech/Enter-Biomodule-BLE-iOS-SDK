@@ -64,6 +64,13 @@ class EEGViewController: UITableViewController {
             .observeOn(MainScheduler())
             .subscribe(onNext: { [weak self] in
                 self?._wearLabel.text = "wear: \($0)"
+                var wearState: UInt8 = 0
+                if let value = $0.first {
+                    let temp = value / 8
+
+                    print("------- \(temp  & 1), \(temp >> 1 & 1), \(temp >> 2 & 1), \(temp >> 3 & 1)")
+                }
+
             }, onError: { _ in
                 SVProgressHUD.showInfo(withStatus: "Failed to listen wearing state.")
             }).disposed(by: _disposeBag)

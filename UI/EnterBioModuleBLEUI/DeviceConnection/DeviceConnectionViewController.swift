@@ -108,10 +108,16 @@ class DeviceConnectionViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let stateView = BLEConnectTipViewController(index: indexPath.row)
-        stateView.cornerRadius = self.cornerRadius
-        stateView.mainColor = self.mainColor
-        self.navigationController?.pushViewController(stateView, animated: true)
+        if BLEManagerClass.shared.bleList[indexPath.row].state.isConnected {
+            let connectView = BLEStateViewController(index: indexPath.row, cornerRadius, mainColor)
+            self.navigationController?.pushViewController(connectView, animated: true)
+        } else {
+            let stateView = BLEConnectTipViewController(index: indexPath.row)
+            stateView.cornerRadius = self.cornerRadius
+            stateView.mainColor = self.mainColor
+            self.navigationController?.pushViewController(stateView, animated: true)
+        }
+
     }
     
 

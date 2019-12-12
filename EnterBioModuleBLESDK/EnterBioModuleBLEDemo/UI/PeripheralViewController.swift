@@ -71,12 +71,12 @@ class PeripheralViewController: UITableViewController {
                     self.connector.eegService?.notify(characteristic: Characteristic.EEG.contact).subscribe(onNext: {
 //                        let interval = self.lastDate.timeIntervalSinceNow
                         print("contact is \($0.first!) ")
-                    })
+                    }).disposed(by: self.disposeBag)
                     self.connector.commandService?.write(data: Data([0x01]), to: .send)
 
-                    self.connector.eegService?.notify(characteristic: .data).subscribe(onNext: {
-                        print("raw data count is \($0.count)")
-                    })
+                    self.connector.eegService?.notify(characteristic: .data).subscribe(onNext: { (value) in
+                        
+                    }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
                 }
                 dispatch_to_main {
                     self.services = self.connector.allServices
