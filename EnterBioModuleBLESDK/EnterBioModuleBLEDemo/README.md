@@ -23,7 +23,8 @@ Demo使用`Cocopods`管理依赖库，使用前要先对工程主目录运行`po
 
 ### 运行环境
 
-Xcode 11, iOS 11
+- Xcode 11
+- iOS 11
 
 ### 内容
 

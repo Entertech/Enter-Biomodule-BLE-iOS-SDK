@@ -1,6 +1,7 @@
 # SDK 说明
 
 - [SDK 说明](#sdk-%e8%af%b4%e6%98%8e)
+  - [接入环境](接入环境)
   - [快速接入](#%e5%bf%ab%e9%80%9f%e6%8e%a5%e5%85%a5)
     - [蓝牙连接](#%e8%93%9d%e7%89%99%e8%bf%9e%e6%8e%a5)
     - [脑电服务订阅](#%e8%84%91%e7%94%b5%e6%9c%8d%e5%8a%a1%e8%ae%a2%e9%98%85)
@@ -8,7 +9,10 @@
   - [API说明](#api%e8%af%b4%e6%98%8e)
   - [Demo](#demo)
 
+## 接入环境
 
+- Xcode 11
+- Swift 5.0
 
 ## 快速接入
 
@@ -90,4 +94,6 @@ func bleHeartRateDataReceived(data: Data, bleManager: BLEManager){}
 
 ## Demo
 
-请参见[EnterBioModuleBLEDemo](../EnterBioModuleBLEDemo/)
+本sdk请参见[EnterBioModuleBLEDemo](../EnterBioModuleBLEDemo/)
+
+[心流](https://github.com/Entertech/Enter-AffectiveCloud-Demo-iOS.git)  这个演示应用集成了基础蓝牙功能、蓝牙设备管理界面、情感云SDK、以及自定义的数据展示控件，较好的展示了脑波及心率数据从 硬件中采集到上传情感云实时分析最后产生分析报表及数据展示的整个过程。
