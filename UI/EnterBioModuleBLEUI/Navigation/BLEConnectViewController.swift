@@ -56,7 +56,7 @@ public class BLEConnectViewController: UINavigationController, UIGestureRecogniz
     /// 初始化
     /// - Parameter bleManager: 需要连接的BLEManager实例
     public init(bleManager: BLEManager) {
-        let manager = BLEManager()
+        let manager = bleManager
         let isAuth = manager.isBluetoothOpenAndAllow()
         if !isAuth {
             let tipVC = BLETipViewController()
