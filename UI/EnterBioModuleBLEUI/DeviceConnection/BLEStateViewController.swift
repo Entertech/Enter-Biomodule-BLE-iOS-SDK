@@ -469,7 +469,12 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @objc private func backAction() {
-        self.navigationController?.popToRootViewController(animated: true)
+        if BLEManagerClass.shared.bleList.count > 1 {
+            self.navigationController?.popToRootViewController(animated: true)
+        } else {
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }
+        
         
     }
     
