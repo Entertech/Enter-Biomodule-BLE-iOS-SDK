@@ -56,20 +56,21 @@ public class BLEConnectViewController: UINavigationController, UIGestureRecogniz
     /// 初始化
     /// - Parameter bleManager: 需要连接的BLEManager实例
     public init(bleManager: BLEManager) {
+        super.init(nibName: nil, bundle: nil)
         let manager = bleManager
         let isAuth = manager.isBluetoothOpenAndAllow()
         if !isAuth {
             let tipVC = BLETipViewController()
-            super.init(rootViewController: tipVC)
+            setViewControllers([tipVC], animated: true)
         } else {
             BLEManagerClass.shared.bleList.removeAll()
             BLEManagerClass.shared.bleList.append(bleManager)
             if manager.state.isConnected {
                 let bleView = BLEStateViewController(index: 0, cornerRadius, mainColor)
-                super.init(rootViewController: bleView)
+                setViewControllers([bleView], animated: true)
             } else {
                 let deviceConnectionVC = BLEConnectTipViewController(index: 0)
-                super.init(rootViewController: deviceConnectionVC)
+                setViewControllers([deviceConnectionVC], animated: true)
             }
 
         }
@@ -80,15 +81,16 @@ public class BLEConnectViewController: UINavigationController, UIGestureRecogniz
     /// 初始化
     /// - Parameter bleManager: 需要连接的BLEManager实例数组，最大为4个
     public init(bleManagers: [BLEManager]) {
+        super.init(nibName: nil, bundle: nil)
         let manager = BLEManager()
         let isAuth = manager.isBluetoothOpenAndAllow()
         if !isAuth {
             let tipVC = BLETipViewController()
-            super.init(rootViewController: tipVC)
+            setViewControllers([tipVC], animated: true)
         } else {
             BLEManagerClass.shared.bleList.removeAll()
             let deviceConnectionVC = DeviceConnectionViewController(bleArray: bleManagers)
-            super.init(rootViewController: deviceConnectionVC)
+            setViewControllers([deviceConnectionVC], animated: true)
         }
         self.interactivePopGestureRecognizer?.delegate = self
         self.modalPresentationStyle = .fullScreen
