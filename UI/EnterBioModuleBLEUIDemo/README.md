@@ -2,8 +2,8 @@
 
 - [蓝牙UI Demo](#%e8%93%9d%e7%89%99ui-demo)
   - [简介](#%e7%ae%80%e4%bb%8b)
-  - [依赖库](#%e4%be%9d%e8%b5%96%e5%ba%93)
   - [工程说明](#%e5%b7%a5%e7%a8%8b%e8%af%b4%e6%98%8e)
+    - [依赖库](#%e4%be%9d%e8%b5%96%e5%ba%93)
     - [运行环境](#%e8%bf%90%e8%a1%8c%e7%8e%af%e5%a2%83)
     - [内容](#%e5%86%85%e5%ae%b9)
     - [硬件使用](#%e7%a1%ac%e4%bb%b6%e4%bd%bf%e7%94%a8)
@@ -14,13 +14,13 @@
 
 本工程主要集成了`EnterBioModuleBLEUI`的UI库，展示UI库的集成方式。
 
-## 依赖库
+## 工程说明
 
-UI SDK请参见[EnterBioModuleBLEUI](../EnterBioModuleBLEUI/)
+### 依赖库
+
+UI SDK请参见[EnterBioModuleBLEUI](../EnterBioModuleBLEUI/)。
 
 Demo使用`Cocopods`管理依赖库，使用前要先对工程主目录运行`pod install`。
-
-## 工程说明
 
 ### 运行环境
 

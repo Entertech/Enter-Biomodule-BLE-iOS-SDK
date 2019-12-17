@@ -4,16 +4,16 @@
   - [Demo](#demo)
   - [连接UI](#%e8%bf%9e%e6%8e%a5ui)
     - [属性](#%e5%b1%9e%e6%80%a7)
-    - [集成方式](#%e9%9b%86%e6%88%90%e6%96%b9%e5%bc%8f)
+    - [接入方式](#%e6%8e%a5%e5%85%a5%e6%96%b9%e5%bc%8f)
     - [图示](#%e5%9b%be%e7%a4%ba)
   - [固件升级UI](#%e5%9b%ba%e4%bb%b6%e5%8d%87%e7%ba%a7ui)
     - [属性](#%e5%b1%9e%e6%80%a7-1)
-    - [集成方式](#%e9%9b%86%e6%88%90%e6%96%b9%e5%bc%8f-1)
+    - [接入方式](#%e6%8e%a5%e5%85%a5%e6%96%b9%e5%bc%8f-1)
     - [图示](#%e5%9b%be%e7%a4%ba-1)
 
 ## Demo
 
-本SDK请参见[EnterBioModuleBLEUIDemo](../EnterBioModuleBLEDemo/)
+本SDK请参见[EnterBioModuleBLEUIDemo](../EnterBioModuleBLEDemo/)。
 
 [心流App](https://github.com/Entertech/Enter-AffectiveCloud-Demo-iOS.git) 这个演示应用集成了基础蓝牙功能、蓝牙设备管理界面、情感云SDK、以及自定义的数据展示控件，较好的展示了脑波及心率数据从 硬件中采集到上传情感云实时分析最后产生分析报表及数据展示的整个过程。
 
@@ -29,7 +29,7 @@
 | mainColor      | UIColor | #0064FF | 主色调                                                     |
 | isConnectByMac | Bool    | false   | true时, 第一次连接设备会记录mac地址,后续连接会判断是否匹配 |
 
-### 集成方式
+### 接入方式
 
 ~~~swift
 let connection = BLEConnectViewController(bleManager: manager) // manager 请看下面说明
@@ -47,7 +47,7 @@ self.present(connection, animated: true, completion: nil)
 | bleManager  | BLEManager      | 蓝牙管理模块的实例 |
 | bleManagers | BLEManager 数组 | 蓝牙管理模块的实例数组，用于多设备连接     |
 
-`BLEManager`在蓝牙基础模块SDK中，请参见[EnterBioModuleBLESDK](../../EnterBioModuleBLESDK/EnterBioModuleBLE/)
+`BLEManager`在蓝牙基础模块SDK中，请参见[EnterBioModuleBLESDK](../../EnterBioModuleBLESDK/EnterBioModuleBLE/)。
 
 ### 图示
 
@@ -65,7 +65,7 @@ self.present(connection, animated: true, completion: nil)
 | firmwareURL       | URL    | nil     | 放入沙盒的固件位置                                    |
 | firmwareUpdateLog | String | ""      | 更新内容说明                                          |
 
-### 集成方式
+### 接入方式
 
 ```swift
 // let connection = BLEConnectViewController(bleManager: manager) 在蓝牙连接UI集成时添加下列参数

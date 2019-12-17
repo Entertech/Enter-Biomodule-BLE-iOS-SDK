@@ -15,7 +15,7 @@
 
 <img src="https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK/blob/master/img/2.png" width="500">
 
-- 查看蓝牙管理UI SDK请点击此处[标准蓝牙连接管理UI SDK](EnterBioModuleBLEUI/)
-- 查看Demo请点击此处[UIDemo](EnterBioModuleBLEUIDemo/)
+- 查看蓝牙管理UI SDK请点击此处[标准蓝牙连接管理UI SDK](EnterBioModuleBLEUI/)。
+- 查看Demo请点击此处[UIDemo](EnterBioModuleBLEUIDemo/)。
 
-我们还提供了一个心流演示应用，其集成了蓝牙SDK，蓝牙设备管理SDK，情感云SDK等功能，详细请查看[心流App](https://github.com/Entertech/Enter-AffectiveCloud-Demo-iOS.git)
+我们还提供了一个心流演示应用，其集成了蓝牙SDK，蓝牙设备管理SDK，情感云SDK等功能，详细请查看[心流App](https://github.com/Entertech/Enter-AffectiveCloud-Demo-iOS.git)。

@@ -324,9 +324,9 @@ public class BLEManager {
     }
     
     // https://shimo.im/docs/80f5ce5b32ee49eb/read
-    /*************o表示***********************************/
+    /************************************************/
     /**********四个电极从左至右分别对应的未接触数据为***********/
-    /*******0x10,  0x08,  0x20, 0x40***********************/
+    /*******0x08,  0x10,  0x40, 0x20***********************/
     /*******如第1,2个未接触为 xxoo = 0x18***************/
     /// This service tell us if the device is wore
     private func listenWear() {
@@ -334,11 +334,11 @@ public class BLEManager {
             .subscribe(onNext: { [unowned self] in
                 guard let value = $0.first, self.state.isConnected else { return }
                 // 因为数据不是从左到右显示,为了方便理解数据,这里除以8,以二进制1111进行表示
-                // 比如xoox转化为 1001 , 实际返回数据为9
+                // 比如xoox转化为 1001 , 实际返回数据为5
                 var wearState: UInt8 = 0
                 let temp = value / 8
-                wearState = temp >> 3 & 1 == 1 ? 1 : 0
-                wearState = temp >> 2 & 1 == 1 ? wearState | 2 : wearState
+                wearState = temp >> 2 & 1 == 1 ? 1 : 0
+                wearState = temp >> 3 & 1 == 1 ? wearState | 2 : wearState
                 wearState = temp >> 1 & 1 == 1 ? wearState | 4 : wearState
                 wearState = temp == 1 ? wearState | 8 : wearState
                 self.state = .connected(wearState)
