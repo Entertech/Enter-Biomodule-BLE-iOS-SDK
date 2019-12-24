@@ -90,7 +90,7 @@ func bleHeartRateDataReceived(data: Data, bleManager: BLEManager){}
 
 ## API说明
 
-请参见[EnterrBioModuleBLE API说明](../../APIDocuments/)
+请参见[EnterrBioModuleBLE API说明](../../APIDocuments/API.md)
 
 ## Demo
 
