@@ -114,13 +114,13 @@ class BatteryView: UIView {
 
         _powerIcon?.image = { () -> UIImage in
             switch percent {
-            case 0..<0.1:
+            case 0..<10:
                 return UIImage.loadImage(name: "icon_battery_10_white", any: classForCoder)!
-            case 0.1..<0.4:
+            case 10..<40:
                 return UIImage.loadImage(name: "icon_battery_40_white", any: classForCoder)!
-            case 0.4..<0.6:
+            case 40..<60:
                 return UIImage.loadImage(name: "icon_battery_60_white", any: classForCoder)!
-            case 0.6..<0.8:
+            case 60..<80:
                 return UIImage.loadImage(name: "icon_battery_80_white", any: classForCoder)!
             default:
                 return UIImage.loadImage(name: "icon_battery_100_white", any: classForCoder)!

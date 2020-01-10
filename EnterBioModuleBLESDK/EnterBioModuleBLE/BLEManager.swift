@@ -340,7 +340,7 @@ public class BLEManager {
                 wearState = temp >> 2 & 1 == 1 ? 1 : 0
                 wearState = temp >> 3 & 1 == 1 ? wearState | 2 : wearState
                 wearState = temp >> 1 & 1 == 1 ? wearState | 4 : wearState
-                wearState = temp == 1 ? wearState | 8 : wearState
+                wearState = temp & 1 == 1 ? wearState | 8 : wearState
                 self.state = .connected(wearState)
             })
     }

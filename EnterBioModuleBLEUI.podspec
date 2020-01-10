@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'EnterBioModuleBLEUI'
-    s.version          = '1.2.5'
+    s.version          = '1.2.6'
     s.summary          = 'EnterBioModuleBLE 通信库UI'
     s.description      = <<-DESC
   EnterBioModuleBLE 通信库UI库
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     s.swift_version = '5'
     s.source_files = 'UI/EnterBioModuleBLEUI/**/*.swift'
     s.resources = "UI/EnterBioModuleBLEUI/**/*.{xcassets,gif}"
-    s.dependency 'EnterBioModuleBLE', '1.2.5'
+    s.dependency 'EnterBioModuleBLE', '1.2.6'
     s.dependency 'SnapKit'
  
   
