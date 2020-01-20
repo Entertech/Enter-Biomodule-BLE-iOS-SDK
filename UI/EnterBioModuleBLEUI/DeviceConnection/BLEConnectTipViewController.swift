@@ -131,7 +131,8 @@ class BLEConnectTipViewController: UIViewController {
         self.view.addSubview(nextBtn!)
         nextBtn?.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
         nextBtn?.snp.makeConstraints {
-            $0.centerY.equalToSuperview().multipliedBy(1.1)
+            $0.top.greaterThanOrEqualTo(textLabel!.snp.bottom).offset(30).priority(.required)
+            $0.centerY.equalToSuperview().multipliedBy(1.1).priority(.high)
             $0.left.equalToSuperview().offset(16)
             $0.right.equalToSuperview().offset(-16)
             $0.height.equalTo(45)
