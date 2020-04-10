@@ -70,9 +70,12 @@ public class BLEManager {
     public required init() {
     }
     
+    private var lastState: BLEConnectionState = .disconnected
     /// connection state
     public private(set) var state: BLEConnectionState = .disconnected {
         didSet {
+            guard lastState != self.state else {return}
+            lastState = self.state
             delegate?.bleConnectionStateChanged(state: self.state, bleManager: self)
             var value = 0
             switch state {
