@@ -70,7 +70,7 @@ public class BLEManager {
     public required init() {
     }
     
-    private var lastState: BLEConnectionState = .disconnected
+    private var lastState: BLEConnectionState = .searching
     /// connection state
     public private(set) var state: BLEConnectionState = .disconnected {
         didSet {
@@ -86,7 +86,7 @@ public class BLEManager {
             case .connecting:
                 value = 2
             case .connected(_):
-                value =  3
+                value = 3
             }
             NotificationCenter.default.post(name: NSNotification.Name("BLEConnectionStateNotify"), object: nil, userInfo: ["value":value])
         }
