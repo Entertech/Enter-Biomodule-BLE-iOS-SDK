@@ -65,8 +65,8 @@ extension BLEConnectionState: Equatable {
         switch (lhs, rhs) {
         case (.disconnected, .disconnected), (.searching, .searching), (.connecting, .connecting):
             return true
-        case (let .connected(wear1), let .connected(wear2)):
-            return wear1 == wear2
+        case ( .connected(_), .connected(_)):
+            return true
         default:
             return false
         }
