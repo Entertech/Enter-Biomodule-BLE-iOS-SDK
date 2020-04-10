@@ -70,7 +70,7 @@ public class BLEManager {
     public required init() {
     }
     
-    private var lastState: BLEConnectionState = .searching
+    private var lastState: BLEConnectionState = .connecting
     /// connection state
     public private(set) var state: BLEConnectionState = .disconnected {
         didSet {
