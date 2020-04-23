@@ -293,7 +293,7 @@ public class BLEManager {
         let promise = Promise<Void> { seal in
             connector!.tryConnect()
                 .done {
-                    self.readBattery()
+                    //self.readBattery()
                     self.readDeviceInfo()
                     self.state = .connected(0x0f)
                     self.listenBattery()
