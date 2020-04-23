@@ -224,7 +224,7 @@ public class BLEManager {
         let group = DispatchGroup.init()
         
         for e in peripherals {
-            var sameAndConnect: (Bool, Bool) = (false, false)
+            var sameAndConnect: (Bool, Bool) = (false, false) //0,是否读取到信息 1,是否连接
             self.connector?.cancel()
             self.connector = Connector(peripheral: e.peripheral)
             self.connector!.tryConnect().done(on: DispatchQueue.init(label: "connect")) {
@@ -244,9 +244,12 @@ public class BLEManager {
             group.enter()
             DispatchQueue.global().async {
                 var sleepCount = 0
-                while (!sameAndConnect.1 && sleepCount < 10) {
+                while (!sameAndConnect.1) {//如果没有连接成功，则循环
                     Thread.sleep(forTimeInterval: 0.2)
                     sleepCount += 1
+                    if sleepCount > 5 {
+                        break
+                    }
                 }
                 group.leave()
                 
