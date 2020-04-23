@@ -49,7 +49,7 @@ public protocol Notifiable: Service {
 // MARK: - ability
 
 public extension Readable where Self: BLEService {
-    public func read(characteristic: ReadType) -> Promise<Data> {
+    func read(characteristic: ReadType) -> Promise<Data> {
         let promise = Promise<Data> {[weak self] seal in
             guard let `self` = self else { return }
             _ = self.rxService.characteristics?.first(where: { $0.uuid == characteristic.uuid })?.readValue().subscribe(onSuccess: {
@@ -65,7 +65,7 @@ public extension Readable where Self: BLEService {
 }
 
 public extension Writable where Self: BLEService {
-    public func write(data: Data, to characteristic: WriteType) -> Promise<Void> {
+    func write(data: Data, to characteristic: WriteType) -> Promise<Void> {
         let promise = Promise<Void> { seal in
             _ = self.rxService.characteristics?.first(where: { $0.uuid == characteristic.uuid })?
                 .writeValue(data, type: .withResponse)
