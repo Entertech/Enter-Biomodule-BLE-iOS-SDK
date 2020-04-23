@@ -115,6 +115,7 @@ public class BLEManager {
     /// connector
     public var connector: Connector?
     private var disposalbe: Disposable?
+    private var bleListenerQueue: DispatchQueue = DispatchQueue(label: "com.entertech.EnterBioModuleBLE.listener")
     
     // MARK: - connect logic
     /// Scan peripheral with 3 second and connect
@@ -292,13 +293,12 @@ public class BLEManager {
         let promise = Promise<Void> { seal in
             connector!.tryConnect()
                 .done {
-                    DLog("connected")
                     self.readBattery()
-//                    self.readDeviceInfo()
-//                    self.state = .connected(0x0f)
-//                    self.listenConnection()
-//                    self.listenWear()
-//                    self.listenBattery()
+                    self.readDeviceInfo()
+                    self.state = .connected(0x0f)
+                    self.listenConnection()
+                    self.listenBattery()
+                    self.listenWear()
                     seal.fulfill(())
                 }.catch { (error) in
                     self.state = .disconnected
@@ -312,9 +312,11 @@ public class BLEManager {
     
     /// Peripheral listener
     private func listenConnection() {
+        DLog("start listen connection")
         observers.connection = connector?.peripheral.observeConnection()
-            .observeOn(MainScheduler.instance)
+            .observeOn(ConcurrentDispatchQueueScheduler.init(queue: bleListenerQueue))
             .subscribe(onNext: { [weak self] isConnected in
+                DLog("listening connection")
                 guard let `self` = self else { return }
                 self.state = isConnected ? .connected(0x0f) : .disconnected
                 if !isConnected {
@@ -338,9 +340,11 @@ public class BLEManager {
     /*******如第1,2个未接触为 xxoo = 0x18***************/
     /// This service tell us if the device is wore
     private func listenWear() {
-        observers.wearing = connector?.eegService?.notify(characteristic: .contact)
+        DLog("start listen sensor")
+        observers.wearing = connector?.eegService?.notify(characteristic: .contact).observeOn(ConcurrentDispatchQueueScheduler.init(queue: bleListenerQueue))
             .subscribe(onNext: { [unowned self] in
                 guard let value = $0.first, self.state.isConnected else { return }
+                DLog("listening sensor")
                 // 因为数据不是从左到右显示,为了方便理解数据,这里除以8,以二进制1111进行表示
                 // 比如xoox转化为 1001 , 实际返回数据为5
                 var wearState: UInt8 = 0
@@ -362,29 +366,33 @@ public class BLEManager {
     /// Read device's battery
     private func readBattery() {
         DLog("start read battery")
-        delay(seconds: 0.1) { [weak self] in
-            self?.connector?.batteryService?.read(characteristic: .battery)
-                .done { [weak self] in
-                    DLog("read battery")
-                    guard let value = $0.copiedBytes.first else { return }
-                    self?.battery = self?.battery(from: value)
-                }.catch { _ in
-                    //
-            }
-        }
+        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now()+0.1, execute: {
+             [weak self] in
+            guard let self = self else {return}
+            self.connector?.batteryService?.read(characteristic: .battery)
+               .done { [weak self] in
+                   DLog("end read battery")
+                   guard let value = $0.copiedBytes.first else { return }
+                   self?.battery = self?.battery(from: value)
+               }.catch { _ in
+                   //
+           }
+        })
+
     }
     
     /// Battery listenner
     private func listenBattery() {
         DLog("start listen battery")
-        delay(seconds: 0.2) { [weak self] in
-            self?.observers.battery = self?.connector?.batteryService?.notify(characteristic: .battery)
-                .subscribe(onNext: { [weak self] in
-                    DLog("listen battery")
-                    guard let value = $0.first else { return }
-                    self?.battery = self?.battery(from: value)
-                })
-        }
+        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now()+0.2, execute: {[weak self] in
+            guard let self = self else {return}
+                self.observers.battery = self.connector?.batteryService?.notify(characteristic: .battery).observeOn(ConcurrentDispatchQueueScheduler.init(queue: self.bleListenerQueue))
+            .subscribe(onNext: { [weak self] in
+                DLog("listening battery")
+                guard let value = $0.first else { return }
+                self?.battery = self?.battery(from: value)
+            })
+        })
     }
     
     private func unlistenBattery() {
