@@ -294,11 +294,11 @@ public class BLEManager {
                 .done {
                     DLog("connected")
                     self.readBattery()
-                    self.readDeviceInfo()
-                    self.state = .connected(0x0f)
-                    self.listenConnection()
-                    self.listenWear()
-                    self.listenBattery()
+//                    self.readDeviceInfo()
+//                    self.state = .connected(0x0f)
+//                    self.listenConnection()
+//                    self.listenWear()
+//                    self.listenBattery()
                     seal.fulfill(())
                 }.catch { (error) in
                     self.state = .disconnected
