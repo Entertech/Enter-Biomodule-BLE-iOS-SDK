@@ -99,8 +99,9 @@ public class BLEManager {
                                                                        mac: "00.00.00.00.00.00")
     ///battery
     public private(set) var battery: Battery? = nil {
-        didSet {
-            guard let battery = self.battery else {
+        willSet {
+            DLog("batter send \(newValue?.percentage ?? 0)")
+            guard let battery = newValue else {
                 return
             }
             delegate?.bleBatteryReceived(battery: battery, bleManager: self)
@@ -247,7 +248,7 @@ public class BLEManager {
                 while (!sameAndConnect.1) {//如果没有连接成功，则循环
                     Thread.sleep(forTimeInterval: 0.2)
                     sleepCount += 1
-                    if sleepCount > 5 {
+                    if sleepCount > 10 {
                         break
                     }
                 }
@@ -291,6 +292,7 @@ public class BLEManager {
         let promise = Promise<Void> { seal in
             connector!.tryConnect()
                 .done {
+                    DLog("connected")
                     self.readBattery()
                     self.readDeviceInfo()
                     self.state = .connected(0x0f)
@@ -359,9 +361,11 @@ public class BLEManager {
     
     /// Read device's battery
     private func readBattery() {
+        DLog("start read battery")
         delay(seconds: 0.1) { [weak self] in
             self?.connector?.batteryService?.read(characteristic: .battery)
                 .done { [weak self] in
+                    DLog("read battery")
                     guard let value = $0.copiedBytes.first else { return }
                     self?.battery = self?.battery(from: value)
                 }.catch { _ in
@@ -372,9 +376,11 @@ public class BLEManager {
     
     /// Battery listenner
     private func listenBattery() {
+        DLog("start listen battery")
         delay(seconds: 0.2) { [weak self] in
             self?.observers.battery = self?.connector?.batteryService?.notify(characteristic: .battery)
                 .subscribe(onNext: { [weak self] in
+                    DLog("listen battery")
                     guard let value = $0.first else { return }
                     self?.battery = self?.battery(from: value)
                 })
@@ -389,6 +395,7 @@ public class BLEManager {
     
     ///
     private func readDeviceInfo() {
+        DLog("start read info")
         connector?.deviceInfoService?.read(characteristic: .hardwareRevision).done { [weak self] in
             self?.deviceInfo.hardware = String(data: $0, encoding: .utf8) ?? ""
             }.catch { _ in }
@@ -400,6 +407,7 @@ public class BLEManager {
             self?.deviceInfo.mac = mac
             }.catch { _ in }
         self.deviceInfo.name = connector?.peripheral.peripheral.name ?? ""
+        DLog("End read info")
     }
     
     

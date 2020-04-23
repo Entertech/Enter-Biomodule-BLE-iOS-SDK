@@ -13,6 +13,12 @@ public protocol UUIDType {
     var uuid: String { get }
 }
 
+func DLog(_ items: Any...) {
+    #if DEBUG
+    print("[BLE DEBUG \(Date())]: \(items)")
+    #endif
+}
+
 let UUID_BLE_DEVICE = "0000FF10-1212-ABCD-1523-785FEABCD123"
 
 enum ServiceUUID: String, UUIDType {
