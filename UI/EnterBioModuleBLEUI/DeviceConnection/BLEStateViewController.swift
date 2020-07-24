@@ -506,12 +506,14 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     @objc func batteryNotification(_ notification: Notification) {
         if let data = notification.userInfo!["value"] as? Battery {
             print(data)
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5, execute: {
                 self.showBattery()
                 self.tableView?.reloadData()
-            }
-            mac = ble?.deviceInfo.mac
-            NotificationCenter.default.removeObserver(self, name: NSNotification.Name("BatteryNotify"), object: nil)
+                self.mac = self.ble?.deviceInfo.mac
+                NotificationCenter.default.removeObserver(self, name: NSNotification.Name("BatteryNotify"), object: nil)
+            })
+            
+            
         }
     }
     

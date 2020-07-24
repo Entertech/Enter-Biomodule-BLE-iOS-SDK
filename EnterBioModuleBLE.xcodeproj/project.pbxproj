@@ -45,9 +45,7 @@
 		B4DD2927050BB6EF9B6462E0 /* Pods_EnterBioModuleBLEUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49557575913A371A89AB9A5 /* Pods_EnterBioModuleBLEUI.framework */; };
 		B6DFB7872B10D055A10A5FA6 /* Pods_EnterBioModuleBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E82A8D3E89789C64C91059 /* Pods_EnterBioModuleBLE.framework */; };
 		B70965DC2227BEB000C6EE51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B70965DB2227BEB000C6EE51 /* Assets.xcassets */; };
-		B75785592015E13B0039B2FC /* DFU1.0.0.zip in Resources */ = {isa = PBXBuildFile; fileRef = B75785582015E13B0039B2FC /* DFU1.0.0.zip */; };
 		B75901891FE0FF2A00F0890E /* DFUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75901881FE0FF2A00F0890E /* DFUViewController.swift */; };
-		B79493E22020702D004166E3 /* V1.0.1-120.zip in Resources */ = {isa = PBXBuildFile; fileRef = B79493E12020702D004166E3 /* V1.0.1-120.zip */; };
 		B79493E420209D26004166E3 /* DFUPacketFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79493E320209D26004166E3 /* DFUPacketFilesViewController.swift */; };
 		B79B1FAF221BB7E1007C78C8 /* HeartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B1FAE221BB7E1007C78C8 /* HeartService.swift */; };
 		B79B1FB2221BD23F007C78C8 /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79B1FB0221BD11B007C78C8 /* Instruction.swift */; };
@@ -87,6 +85,7 @@
 		FABA6298234DBC6300CFFD91 /* BLETipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA6296234DBC6300CFFD91 /* BLETipViewController.swift */; };
 		FABA62A1234DC33200CFFD91 /* BLEConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA62A0234DC33200CFFD91 /* BLEConnectViewController.swift */; };
 		FABA62A6234DC44800CFFD91 /* EnterBioModuleBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */; };
+		FABC05E924CAC096000C16C9 /* firmware_1.1.0.zip in Resources */ = {isa = PBXBuildFile; fileRef = FABC05E824CAC096000C16C9 /* firmware_1.1.0.zip */; };
 		FAEB170023137AD2002CEAC1 /* SDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB16FF23137AD2002CEAC1 /* SDKService.swift */; };
 /* End PBXBuildFile section */
 
@@ -195,9 +194,7 @@
 		99660090545FD7A566A318C5 /* Pods-EnterBioModuleBLEUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterBioModuleBLEUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-EnterBioModuleBLEUI/Pods-EnterBioModuleBLEUI.release.xcconfig"; sourceTree = "<group>"; };
 		B70965DB2227BEB000C6EE51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B71AB32E03095AAA9C34C4F8 /* Pods_BluetoothConnectingUIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluetoothConnectingUIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B75785582015E13B0039B2FC /* DFU1.0.0.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = DFU1.0.0.zip; sourceTree = "<group>"; };
 		B75901881FE0FF2A00F0890E /* DFUViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFUViewController.swift; sourceTree = "<group>"; };
-		B79493E12020702D004166E3 /* V1.0.1-120.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "V1.0.1-120.zip"; sourceTree = "<group>"; };
 		B79493E320209D26004166E3 /* DFUPacketFilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFUPacketFilesViewController.swift; sourceTree = "<group>"; };
 		B79B1FAE221BB7E1007C78C8 /* HeartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartService.swift; sourceTree = "<group>"; };
 		B79B1FB0221BD11B007C78C8 /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
@@ -237,6 +234,7 @@
 		FABA6291234DB61000CFFD91 /* DeviceConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConnectionViewController.swift; sourceTree = "<group>"; };
 		FABA6296234DBC6300CFFD91 /* BLETipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLETipViewController.swift; sourceTree = "<group>"; };
 		FABA62A0234DC33200CFFD91 /* BLEConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEConnectViewController.swift; sourceTree = "<group>"; };
+		FABC05E824CAC096000C16C9 /* firmware_1.1.0.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = firmware_1.1.0.zip; sourceTree = "<group>"; };
 		FAEB16FF23137AD2002CEAC1 /* SDKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -356,8 +354,6 @@
 			children = (
 				B70965DB2227BEB000C6EE51 /* Assets.xcassets */,
 				6C1CE81C1FB9A1F4003D4EB5 /* 1-minute-of-silence.mp3 */,
-				B79493E12020702D004166E3 /* V1.0.1-120.zip */,
-				B75785582015E13B0039B2FC /* DFU1.0.0.zip */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -455,6 +451,7 @@
 		FA8D5B0D235E969E0075892F /* EnterBioModuleBLEUIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FABC05E824CAC096000C16C9 /* firmware_1.1.0.zip */,
 				FA7724032373B844003A11F2 /* dfutest1.zip */,
 				FA8D5B0E235E969E0075892F /* AppDelegate.swift */,
 				FA8D5B10235E969E0075892F /* SceneDelegate.swift */,
@@ -710,8 +707,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C1643091FA03B09002C1438 /* LaunchScreen.storyboard in Resources */,
-				B79493E22020702D004166E3 /* V1.0.1-120.zip in Resources */,
-				B75785592015E13B0039B2FC /* DFU1.0.0.zip in Resources */,
 				6C1643041FA03B09002C1438 /* Main.storyboard in Resources */,
 				B70965DC2227BEB000C6EE51 /* Assets.xcassets in Resources */,
 				6C1CE81D1FB9A1F4003D4EB5 /* 1-minute-of-silence.mp3 in Resources */,
@@ -742,6 +737,7 @@
 			files = (
 				FA8D5B07235DB5450075892F /* Assets.xcassets in Resources */,
 				FA3E7A13235FFE8100AD6397 /* loading.gif in Resources */,
+				FABC05E924CAC096000C16C9 /* firmware_1.1.0.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

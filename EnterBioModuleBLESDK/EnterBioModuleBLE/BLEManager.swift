@@ -242,6 +242,7 @@ public class BLEManager {
             self.connector?.cancel()
             self.connector = Connector(peripheral: e.peripheral)
             self.connector!.tryConnect().done(on: DispatchQueue.init(label: "connect")) {
+                
                 self.connector!.deviceInfoService?.read(characteristic: .mac).done(on:DispatchQueue.init(label: "connect")) { data -> Void in
                 let macRead = data.copiedBytes.reversed().map { String(format: "%02X", $0) }.joined(separator: ":")
                     if macRead == mac {
@@ -305,8 +306,8 @@ public class BLEManager {
         let promise = Promise<Void> { seal in
             connector!.tryConnect()
                 .done {
-                    self.readBattery()
                     self.readDeviceInfo()
+                    self.readBattery()
                     self.state = .connected(0x0f)
                     self.listenBattery()
                     self.listenConnection()
