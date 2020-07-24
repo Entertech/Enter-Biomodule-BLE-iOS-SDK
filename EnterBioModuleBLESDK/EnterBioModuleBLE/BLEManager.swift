@@ -62,7 +62,19 @@ public class BLEManager {
     private var observers: Observers = Observers()
     public weak var delegate: BLEStateDelegate?
     public weak var dataSource: BLEBioModuleDataSource?
-    
+    public var uploadCycle: UInt = 3 {
+        willSet {
+            if newValue != 0 {
+                _eegBufferSize = 20 * minCycleEeg * Int(uploadCycle)
+                _hrBufferSize = minCycleHr * Int(uploadCycle)
+            } else {
+                _eegBufferSize = 600
+                _hrBufferSize = 2
+            }
+        }
+    }
+    private var minCycleEeg = 50
+    private var minCycleHr = 3
     
     /// init method
     ///
@@ -450,13 +462,13 @@ public class BLEManager {
     
     //MARK: - EEG Service
     
-    
     /// Start EEG Service
     public func startEEG() {
         observers.eeg = connector?.eegService?
             .notify(characteristic: .data)
             .subscribe(onNext: { [weak self] bytes in
                 autoreleasepool {
+                    
                     self?.handleBrainData(bytes: bytes)
                 }
                 }, onError: {
@@ -474,7 +486,7 @@ public class BLEManager {
     
     /// Brain data buffer
     private var _eegBuffer: [UInt8] = []
-    private let _eegBufferSize: Int = 600
+    private var _eegBufferSize: Int = 3000
     private let _eegLock = NSLock()
     
     /// Send brain data to delegate
@@ -508,7 +520,7 @@ public class BLEManager {
     // MARK: - Heart Rate Service
     /// Heart Rate buffer
     private var _hrBuffer: [UInt8] = []
-    private let _hrBufferSize: Int = 2
+    private var _hrBufferSize: Int = 9
     private let _hrLock = NSLock()
     /// start heart rate and start notify
     public func startHeartRate() {
@@ -661,3 +673,6 @@ class ExtensionService: NSObject {
     static let bleStateChanged = NSNotification.Name(rawValue: "dfuStateChanged")
 
 }
+
+
+

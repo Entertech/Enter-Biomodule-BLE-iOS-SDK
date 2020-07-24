@@ -68,7 +68,7 @@ class EEGViewController: UITableViewController {
                 if let value = $0.first {
                     let temp = value / 8
 
-                    print("------- \(temp  & 1), \(temp >> 1 & 1), \(temp >> 2 & 1), \(temp >> 3 & 1)")
+                    //print("------- \(temp  & 1), \(temp >> 1 & 1), \(temp >> 2 & 1), \(temp >> 3 & 1)")
                 }
 
             }, onError: { _ in
@@ -160,6 +160,8 @@ class EEGViewController: UITableViewController {
         if type != .heart  {
             _eegDisposable = self.eegService.notify(characteristic: .data)
                 .subscribe(onNext: { [weak self] in
+
+                    //print("-----------------\(Date().milliStamp)")
                     var received = $0
                     self?.saveToFile(data: Data(received))
                     received.removeFirst(2)
@@ -172,7 +174,7 @@ class EEGViewController: UITableViewController {
                         .observeOn(MainScheduler.asyncInstance)
                         .subscribe(onSuccess: { sig in
                             self._rssiLabel.text = "rssi: \(sig.1)"
-                            print("111")
+                            
                         }, onError: { e in
                             print("e: \(e)")
                         }).disposed(by: self._disposeBag)
@@ -261,4 +263,14 @@ class EEGViewController: UITableViewController {
 
 class EEGCell: UITableViewCell {
     @IBOutlet weak var dataLabel: UILabel!
+}
+
+
+extension Date {
+    /// 获取当前 毫秒级 时间戳 - 13位
+    var milliStamp : String {
+        let timeInterval: TimeInterval = self.timeIntervalSince1970
+        let millisecond = CLongLong(round(timeInterval*1000))
+        return "\(millisecond)"
+    }
 }

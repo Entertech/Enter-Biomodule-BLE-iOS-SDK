@@ -48,7 +48,7 @@ class DFUPacketFilesViewController: UIViewController, UITableViewDataSource, UIT
         do {
             try files = FileManager.default.contentsOfDirectory(at: URL(string: path!)!, includingPropertiesForKeys: [], options: .skipsHiddenFiles)
             for file in files {
-                print("-----------\(file.absoluteString)")
+                //print("-----------\(file.absoluteString)")
             }
         } catch {
             print("Error \(error)")
