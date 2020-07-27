@@ -322,7 +322,6 @@ public class BLEManager {
     }
     
     
-    
     /// Peripheral listener
     private func listenConnection() {
         DLog("start listen connection")
@@ -587,10 +586,10 @@ public class BLEManager {
         return isOpenAndAllow
     }
     
-    // MARK: - DFU
-    private lazy var dfu: DFU = {
-        return DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.manager)
-    }()
+//    // MARK: - DFU
+//    private lazy var dfu: DFU = {
+//        return DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.manager)
+//    }()
     
     /// DFU 方法
     ///
@@ -598,7 +597,7 @@ public class BLEManager {
     /// - Throws: 如果设备未连接会抛出错误
     public func dfu(fileURL: URL) throws {
         guard self.connector?.peripheral != nil else { throw BLEError.invalid(message: "设备未连接") }
-        
+        let dfu = DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.manager)
         dfu.fileURL = fileURL
         dfu.fire()
     }
@@ -624,9 +623,11 @@ public class DFU: DFUServiceDelegate, DFUProgressDelegate {
     private (set) var state: DFUState = .none {
         didSet {
             //NotificationName.dfuStateChanged.emit([NotificationKey.dfuStateKey.rawValue: state])
-            NotificationCenter.default.post(name: ExtensionService.bleStateChanged, object: nil, userInfo: ["dfuStateKey":state])
+            NotificationCenter.default.post(name: ExtensionService.bleStateChanged, object: nil, userInfo: ["dfuStateKey":state, "msg":errorMsg])
         }
     }
+    
+    private var errorMsg = ""
 
     public func fire() {
         let initiator = DFUServiceInitiator(centralManager: manager, target: peripheral)
@@ -642,15 +643,15 @@ public class DFU: DFUServiceDelegate, DFUProgressDelegate {
         print("dfu state: \(state.description())")
         switch state {
         case .connecting:
-            self.state = .prepared
+            self.state = .connecting
         case .starting:
-            self.state = .prepared
+            self.state = .starting
         case .enablingDfuMode:
-            self.state = .prepared
+            self.state = .enablingDfuMode
         case .uploading:
-            self.state = .prepared
+            self.state = .uploading
         case .validating:
-            self.state = .prepared
+            self.state = .validating
         case .disconnecting:
             break
         case .completed:
@@ -661,6 +662,7 @@ public class DFU: DFUServiceDelegate, DFUProgressDelegate {
     }
 
     public func dfuError(_ error: DFUError, didOccurWithMessage message: String) {
+        self.errorMsg = message
         self.state = .failed
     }
 

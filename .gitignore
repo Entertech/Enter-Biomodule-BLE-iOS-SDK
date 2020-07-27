@@ -28,3 +28,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 RxSwift
 dfutest1.zip
+firmware_1.1.0.zip

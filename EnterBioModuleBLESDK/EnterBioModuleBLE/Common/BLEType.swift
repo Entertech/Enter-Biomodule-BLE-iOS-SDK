@@ -43,8 +43,12 @@ extension BLEConnectionState {
 ///// - failed: 升级失败
 public enum DFUState {
     case none
-    case prepared
+    case connecting
+    case starting
+    case enablingDfuMode
+    case validating
     case upgrading(progress: UInt8)
+    case uploading
     case succeeded
     case failed
 }
