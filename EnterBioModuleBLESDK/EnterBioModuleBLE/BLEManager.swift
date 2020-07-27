@@ -586,10 +586,10 @@ public class BLEManager {
         return isOpenAndAllow
     }
     
-//    // MARK: - DFU
-//    private lazy var dfu: DFU = {
-//        return DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.manager)
-//    }()
+    // MARK: - DFU
+    private lazy var dfu: DFU = {
+        return DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.manager)
+    }()
     
     /// DFU 方法
     ///
@@ -597,7 +597,7 @@ public class BLEManager {
     /// - Throws: 如果设备未连接会抛出错误
     public func dfu(fileURL: URL) throws {
         guard self.connector?.peripheral != nil else { throw BLEError.invalid(message: "设备未连接") }
-        let dfu = DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.manager)
+        //let dfu = DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.manager)
         dfu.fileURL = fileURL
         dfu.fire()
     }
