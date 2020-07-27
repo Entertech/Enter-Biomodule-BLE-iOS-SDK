@@ -227,16 +227,17 @@ class FirmwareUpdateViewController: UIViewController {
     @objc private func didFirmwareUpdateStateChanged(_ notification: Notification) {
         if let info = notification.userInfo,
             let state = info["dfuStateKey"] as? DFUState {
-
+            let msg = info["msg"] as? String
             switch state {
 
             case .none:
                 break
             case .upgrading(let progress):
-                break
+                print("DFU upgrading: \(progress)")
             case .succeeded:
                 setUpdateViewState(state: 4)
             case .failed:
+                print("DFU error: \(msg)")
                 setUpdateViewState(state: 2)
 
             case .connecting:
