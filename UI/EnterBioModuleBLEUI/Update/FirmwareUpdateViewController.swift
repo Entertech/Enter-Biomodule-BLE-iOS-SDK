@@ -232,8 +232,6 @@ class FirmwareUpdateViewController: UIViewController {
 
             case .none:
                 break
-            case .prepared:
-                break
             case .upgrading(let progress):
                 break
             case .succeeded:
@@ -241,6 +239,16 @@ class FirmwareUpdateViewController: UIViewController {
             case .failed:
                 setUpdateViewState(state: 2)
 
+            case .connecting:
+                break
+            case .starting:
+                break
+            case .enablingDfuMode:
+                break
+            case .validating:
+                break
+            case .uploading:
+                break
             }
         }
 
