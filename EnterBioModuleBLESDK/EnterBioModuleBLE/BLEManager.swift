@@ -46,7 +46,7 @@ extension  BLEBioModuleDataSource {
 
 
 public class BLEManager {
-    
+
     struct Observers {
         var eeg: Disposable?
         /// 设备连接状态监听
@@ -608,7 +608,7 @@ public class BLEManager {
 
 
 // Device Firmware Upgrade
-public class DFU: DFUServiceDelegate, DFUProgressDelegate {
+public class DFU: DFUServiceDelegate, DFUProgressDelegate, LoggerDelegate{
 
     public var fileURL: URL!
 
@@ -634,6 +634,8 @@ public class DFU: DFUServiceDelegate, DFUProgressDelegate {
         initiator.delegate = self
         initiator.progressDelegate = self
         initiator.enableUnsafeExperimentalButtonlessServiceInSecureDfu = true
+        initiator.forceScanningForNewAddressInLegacyDfu = true
+        //initiator.logger = self
         let firmware = DFUFirmware(urlToZipFile: fileURL, type: .application)
 
         _ = initiator.with(firmware: firmware!).start()
@@ -668,6 +670,10 @@ public class DFU: DFUServiceDelegate, DFUProgressDelegate {
 
     public func dfuProgressDidChange(for part: Int, outOf totalParts: Int, to progress: Int, currentSpeedBytesPerSecond: Double, avgSpeedBytesPerSecond: Double) {
         self.state = .upgrading(progress: UInt8(progress))
+    }
+    
+    public func logWith(_ level: LogLevel, message: String) {
+        print(": - \(message)")
     }
 }
 

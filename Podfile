@@ -3,9 +3,9 @@ source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
-target 'BLETool' do
+target 'EnterBioModuleBLEDemo' do
     pod 'Then'
-    pod 'FixedDFUService'
+    pod 'FixedDFUService', :git => "https://github.com/Entertech/IOS-Pods-DFU-Library.git"
     pod 'SnapKit'
     pod 'SVProgressHUD', '~> 2.2'
     pod 'RxCocoa', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
@@ -16,7 +16,7 @@ target 'BLETool' do
 end
 
 target 'EnterBioModuleBLE' do
-    pod 'FixedDFUService'
+    pod 'FixedDFUService', :git => "https://github.com/Entertech/IOS-Pods-DFU-Library.git"
     pod 'RxSwift', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
     pod 'RxBluetoothKit', '~> 5.3.0'
     pod 'PromiseKit'
@@ -34,14 +34,14 @@ target 'BluetoothConnectingUIDemo' do
 end
 
 
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        if ['iOSDFULibrary'].include? "#{target}"
-            target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '4.0'
-            end
-        end
-    end
+#post_install do |installer|
+#    installer.pods_project.targets.each do |target|
+#        if ['iOSDFULibrary'].include? "#{target}"
+#            target.build_configurations.each do |config|
+#                config.build_settings['SWIFT_VERSION'] = '4.0'
+#            end
+#        end
+#    end
 #    installer.pods_project.targets.each do |target|
 #        if ['SnapKit'].include? "#{target}"
 #            target.build_configurations.each do |config|
@@ -56,5 +56,5 @@ post_install do |installer|
 #            end
 #        end
 #    end
-end
+#end
 

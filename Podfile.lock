@@ -1,7 +1,7 @@
 PODS:
   - Files (2.2.1)
-  - FixedDFUService (4.1.2):
-    - Zip (~> 1.0)
+  - FixedDFUService (4.7.2):
+    - ZIPFoundation (= 0.9.11)
   - PromiseKit (6.11.0):
     - PromiseKit/CorePromise (= 6.11.0)
     - PromiseKit/Foundation (= 6.11.0)
@@ -23,11 +23,11 @@ PODS:
   - SVProgressHUD (2.2.5)
   - SwiftyTimer (2.1.0)
   - Then (2.6.0)
-  - Zip (1.1.0)
+  - ZIPFoundation (0.9.11)
 
 DEPENDENCIES:
   - Files (~> 2.2.1)
-  - FixedDFUService
+  - FixedDFUService (from `https://github.com/Entertech/IOS-Pods-DFU-Library.git`)
   - PromiseKit
   - RxBluetoothKit (~> 5.3.0)
   - "RxCocoa (from `git@github.com:ReactiveX/RxSwift.git`, branch `master`)"
@@ -38,9 +38,8 @@ DEPENDENCIES:
   - Then
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - Files
-    - FixedDFUService
     - PromiseKit
     - RxBluetoothKit
     - RxRelay
@@ -48,9 +47,11 @@ SPEC REPOS:
     - SVProgressHUD
     - SwiftyTimer
     - Then
-    - Zip
+    - ZIPFoundation
 
 EXTERNAL SOURCES:
+  FixedDFUService:
+    :git: https://github.com/Entertech/IOS-Pods-DFU-Library.git
   RxCocoa:
     :branch: master
     :git: "git@github.com:ReactiveX/RxSwift.git"
@@ -59,6 +60,9 @@ EXTERNAL SOURCES:
     :git: "git@github.com:ReactiveX/RxSwift.git"
 
 CHECKOUT OPTIONS:
+  FixedDFUService:
+    :commit: f8bdf0afc2647861a1a47f1f86b4ba81788e9698
+    :git: https://github.com/Entertech/IOS-Pods-DFU-Library.git
   RxCocoa:
     :commit: 9b31a15520306b073cb9d46456f64826c1d6dcab
     :git: "git@github.com:ReactiveX/RxSwift.git"
@@ -68,7 +72,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Files: 18a88ede4f1e339a73adaca7272af15fa32ba69f
-  FixedDFUService: 5ef0cf653c846c5784c2d6e29e2c35b3820a6672
+  FixedDFUService: 95e0b3449f486516063f615082afdf0026161fb8
   PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
   RxBluetoothKit: 0e781978e8a0df70ac3c611dcf44800b76c69f8a
   RxCocoa: dcceba42244a647ac976575f1b85b48030478ef1
@@ -78,8 +82,8 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
-  Zip: 8877eede3dda76bcac281225c20e71c25270774c
+  ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: d94f617a0bfafc3e78f3fb5415fc53cf616538d1
+PODFILE CHECKSUM: 118d25d6a7c23a5d375759ef5b3f993210568cd7
 
 COCOAPODS: 1.8.3
