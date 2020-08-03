@@ -599,7 +599,12 @@ public class BLEManager {
         guard self.connector?.peripheral != nil else { throw BLEError.invalid(message: "设备未连接") }
         //let dfu = DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.manager)
         dfu.fileURL = fileURL
-        dfu.fire()
+        if let ver = Int(self.deviceInfo.firmware.replacingOccurrences(of: ".", with: "")) {
+            if ver >= 100 {
+                dfu.fire(currentVersion: ver)
+            }
+        }
+        
     }
     
 }
@@ -629,12 +634,19 @@ public class DFU: DFUServiceDelegate, DFUProgressDelegate, LoggerDelegate{
     
     private var errorMsg = ""
 
-    public func fire() {
+    
+    
+    /// 开始升级
+    /// - Parameter currentVersion: 因为1.1.0版本开始固件有新的数据
+    public func fire(currentVersion: Int) {
         let initiator = DFUServiceInitiator(centralManager: manager, target: peripheral)
         initiator.delegate = self
         initiator.progressDelegate = self
+        if currentVersion > 100 {
+            initiator.forceScanningForNewAddressInLegacyDfu = true
+        }
         initiator.enableUnsafeExperimentalButtonlessServiceInSecureDfu = true
-        initiator.forceScanningForNewAddressInLegacyDfu = true
+        
         //initiator.logger = self
         let firmware = DFUFirmware(urlToZipFile: fileURL, type: .application)
 
