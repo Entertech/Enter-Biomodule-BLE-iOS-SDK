@@ -642,7 +642,7 @@ public class DFU: DFUServiceDelegate, DFUProgressDelegate, LoggerDelegate{
         let initiator = DFUServiceInitiator(centralManager: manager, target: peripheral)
         initiator.delegate = self
         initiator.progressDelegate = self
-        if currentVersion > 100 {
+        if currentVersion > 110 {
             initiator.forceScanningForNewAddressInLegacyDfu = true
         }
         initiator.enableUnsafeExperimentalButtonlessServiceInSecureDfu = true
