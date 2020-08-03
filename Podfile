@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'EnterBioModuleBLEDemo' do
     pod 'Then'
-    pod 'FixedDFUService', :git => "https://github.com/Entertech/IOS-Pods-DFU-Library.git"
+    pod 'FixedDFUService', '~> 4.7'
     pod 'SnapKit'
     pod 'SVProgressHUD', '~> 2.2'
     pod 'RxCocoa', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
@@ -16,7 +16,7 @@ target 'EnterBioModuleBLEDemo' do
 end
 
 target 'EnterBioModuleBLE' do
-    pod 'FixedDFUService', :git => "https://github.com/Entertech/IOS-Pods-DFU-Library.git"
+    pod 'FixedDFUService', '~> 4.7'
     pod 'RxSwift', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
     pod 'RxBluetoothKit', '~> 5.3.0'
     pod 'PromiseKit'
