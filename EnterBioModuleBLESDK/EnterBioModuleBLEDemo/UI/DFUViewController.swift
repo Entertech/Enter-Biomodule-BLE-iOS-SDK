@@ -60,6 +60,7 @@ class DFUViewController: UIViewController, DFUServiceDelegate, DFUProgressDelega
         initiator.delegate = self
         initiator.progressDelegate = self
         initiator.enableUnsafeExperimentalButtonlessServiceInSecureDfu = true
+        initiator.forceScanningForNewAddressInLegacyDfu = true
         if let url = self.firmwareFileURL {
             let firmware = DFUFirmware(urlToZipFile: url, type: DFUFirmwareType.application)
             let _ = initiator.with(firmware: firmware!).start()
