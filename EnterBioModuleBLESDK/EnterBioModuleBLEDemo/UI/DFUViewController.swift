@@ -18,6 +18,7 @@ class DFUViewController: UIViewController, DFUServiceDelegate, DFUProgressDelega
     var peripheral: CBPeripheral!
     private var firmwareFileURL: URL?
 
+    @IBOutlet weak var coreTypeSwitch: UISwitch!
     @IBOutlet weak var peripheralName: UILabel!
     @IBOutlet weak var fileName: UILabel!
     @IBOutlet weak var fileSize: UILabel!
@@ -60,7 +61,10 @@ class DFUViewController: UIViewController, DFUServiceDelegate, DFUProgressDelega
         initiator.delegate = self
         initiator.progressDelegate = self
         initiator.enableUnsafeExperimentalButtonlessServiceInSecureDfu = true
-        initiator.forceScanningForNewAddressInLegacyDfu = true
+        if coreTypeSwitch.isOn {
+            
+            initiator.forceScanningForNewAddressInLegacyDfu = true
+        }
         if let url = self.firmwareFileURL {
             let firmware = DFUFirmware(urlToZipFile: url, type: DFUFirmwareType.application)
             let _ = initiator.with(firmware: firmware!).start()
@@ -76,6 +80,7 @@ class DFUViewController: UIViewController, DFUServiceDelegate, DFUProgressDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        coreTypeSwitch.isOn = false
     }
 
     // dfu service delegate Method
