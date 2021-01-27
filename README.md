@@ -1,17 +1,19 @@
+[English Readme](/README_EN.md)
+
 # Enter Biomodule BLE SDK
 
 # 目录
 
 - [Enter Biomodule BLE SDK](#enter-biomodule-ble-sdk)
-- [目录](#%e7%9b%ae%e5%bd%95)
-  - [介绍](#%e4%bb%8b%e7%bb%8d)
-  - [Demo演示](#demo%e6%bc%94%e7%a4%ba)
-  - [开发组件](#%e5%bc%80%e5%8f%91%e7%bb%84%e4%bb%b6)
-    - [BLE基础SDK](#ble%e5%9f%ba%e7%a1%80sdk)
-    - [蓝牙UI](#%e8%93%9d%e7%89%99ui)
-  - [安装集成](#%e5%ae%89%e8%a3%85%e9%9b%86%e6%88%90)
-    - [环境要求](#%e7%8e%af%e5%a2%83%e8%a6%81%e6%b1%82)
-    - [集成方式](#%e9%9b%86%e6%88%90%e6%96%b9%e5%bc%8f)
+- [目录](#目录)
+  - [介绍](#介绍)
+  - [Demo演示](#demo演示)
+  - [开发组件](#开发组件)
+    - [BLE基础SDK](#ble基础sdk)
+    - [蓝牙UI](#蓝牙ui)
+  - [安装集成](#安装集成)
+    - [环境要求](#环境要求)
+    - [集成方式](#集成方式)
 
 ## 介绍
 

@@ -1,8 +1,10 @@
 # BLE基础SDK
 
-- [BLE基础SDK](#ble%e5%9f%ba%e7%a1%80sdk)
-  - [简介](#%e7%ae%80%e4%bb%8b)
-  - [组件](#%e7%bb%84%e4%bb%b6)
+[English Readme](/README_EN.md)
+
+- [BLE基础SDK](#ble基础sdk)
+  - [简介](#简介)
+  - [组件](#组件)
 
 ## 简介
 
