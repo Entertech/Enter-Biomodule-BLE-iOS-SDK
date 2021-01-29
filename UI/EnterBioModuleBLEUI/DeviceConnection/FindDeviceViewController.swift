@@ -38,7 +38,7 @@ class FindDeviceViewController: UIViewController {
         contentLabel.textAlignment = .left
         contentLabel.lineBreakMode = .byWordWrapping
         contentLabel.numberOfLines = 0
-        let attributedText = NSMutableAttributedString(string:"1. 若长按按键时间大于 2 秒钟仍旧没有灯亮，请先给设备充电。充电 10 分钟后再尝试。\n\n2. 确保设备在手机附近。如果周围还有其他蓝牙设备，请把他们拿开。\n\n3. 查看系统设置中的蓝牙状态，确保蓝牙是打开的。\n\n4. 如果蓝牙已经打开，请关闭后再打开。\n\n5. 如果依旧无法连接，请重启手机后尝试。")
+        let attributedText = NSMutableAttributedString(string:lang("1. 若长按按键时间大于 2 秒钟仍旧没有灯亮，请先给设备充电。充电 10 分钟后再尝试。\n\n2. 确保设备在手机附近。如果周围还有其他蓝牙设备，请把他们拿开。\n\n3. 查看系统设置中的蓝牙状态，确保蓝牙是打开的。\n\n4. 如果蓝牙已经打开，请关闭后再打开。\n\n5. 如果依旧无法连接，请重启手机后尝试。"))
         let style = NSMutableParagraphStyle()
         style.alignment = .left
         style.lineSpacing = 5

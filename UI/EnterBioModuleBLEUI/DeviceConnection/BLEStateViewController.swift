@@ -456,7 +456,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 1 && ble!.state.isConnected {
-            return "点击后已连接的设备指示灯将会闪烁 2 次。"
+            return lang("点击后已连接的设备指示灯将会闪烁 2 次。")
         }
         return ""
     }
@@ -465,7 +465,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     private func setNavigationItem() {
         let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back", any: self.classForCoder), style: .plain, target: self, action: #selector(backAction))
         self.navigationItem.leftBarButtonItem = backItem
-        self.navigationItem.title = "设备连接"
+        self.navigationItem.title = lang("设备连接")
     }
     
     @objc private func backAction() {

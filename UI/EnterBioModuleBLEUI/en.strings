@@ -36,3 +36,4 @@
 "删除设备" = "Delete device";
 "查看已连接的设备" = "View connected devices";
 "1. 若长按按键时间大于 2 秒钟仍旧没有灯亮，请先给设备充电。充电 10 分钟后再尝试。\n\n2. 确保设备在手机附近。如果周围还有其他蓝牙设备，请把他们拿开。\n\n3. 查看系统设置中的蓝牙状态，确保蓝牙是打开的。\n\n4. 如果蓝牙已经打开，请关闭后再打开。\n\n5. 如果依旧无法连接，请重启手机后尝试。" = "1. If there is no light after pressing the button for more than 2 seconds, please charge the device first. Try again after 10 minutes of charging. \n\n2. Make sure the device is near the phone. If there are other Bluetooth devices around, please take them away. \n\n3. Check the Bluetooth status in the system settings and make sure that Bluetooth is turned on. \n\n4. If Bluetooth is already turned on, please turn it off and then on again. \n\n5. If you still cannot connect, please restart your phone and try.";
+"点击后已连接的设备指示灯将会闪烁 2 次。" = "After clicking, the indicator of the connected device will flash twice." ;
