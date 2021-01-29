@@ -97,11 +97,11 @@ class DeviceConnectionViewController: UIViewController, UITableViewDelegate, UIT
         } else {
             cell = UITableViewCell(style: .value1, reuseIdentifier: identifier)
         }
-        cell.textLabel?.text = "设备\(indexPath.row+1)"
+        cell.textLabel?.text = "\(lang("设备"))\(indexPath.row+1)"
         if BLEManagerClass.shared.bleList[indexPath.row].state.isConnected {
-            cell.detailTextLabel?.text = "已连接"
+            cell.detailTextLabel?.text = lang("已连接")
         } else {
-            cell.detailTextLabel?.text = "未连接"
+            cell.detailTextLabel?.text = lang("未连接")
         }
         
         return cell
@@ -125,7 +125,7 @@ class DeviceConnectionViewController: UIViewController, UITableViewDelegate, UIT
     private func setNavigationItem() {
         let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back", any: classForCoder), style: .plain, target: self, action: #selector(backAction))
         self.navigationItem.leftBarButtonItem = backItem
-        self.navigationItem.title = "设备连接"
+        self.navigationItem.title = lang("设备连接")
     }
     
     @objc private func backAction() {

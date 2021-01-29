@@ -57,6 +57,8 @@
 		FA3E7A162360607000AD6397 /* FirmwareUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E7A152360607000AD6397 /* FirmwareUpdateViewController.swift */; };
 		FA6F56A6230A59C800B39D3B /* EnterBioModuleBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */; };
 		FA6F56A7230A59C800B39D3B /* EnterBioModuleBLE.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA849A0F25C3AADE00CBC971 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA849A0E25C3AADE00CBC971 /* en.strings */; };
+		FA849A1125C3AB2200CBC971 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA849A1025C3AB2200CBC971 /* Language.swift */; };
 		FA8D5B07235DB5450075892F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8D5B06235DB5450075892F /* Assets.xcassets */; };
 		FA8D5B0F235E969E0075892F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B0E235E969E0075892F /* AppDelegate.swift */; };
 		FA8D5B11235E969E0075892F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D5B10235E969E0075892F /* SceneDelegate.swift */; };
@@ -211,6 +213,8 @@
 		FA3E7A10235FFACB00AD6397 /* BatteryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
 		FA3E7A12235FFE8100AD6397 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		FA3E7A152360607000AD6397 /* FirmwareUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirmwareUpdateViewController.swift; sourceTree = "<group>"; };
+		FA849A0E25C3AADE00CBC971 /* en.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
+		FA849A1025C3AB2200CBC971 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		FA8D5B06235DB5450075892F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA8D5B0C235E969E0075892F /* BluetoothConnectingUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothConnectingUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8D5B0E235E969E0075892F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -505,6 +509,8 @@
 				FABA6276234DB3CF00CFFD91 /* Info.plist */,
 				FA3E7A12235FFE8100AD6397 /* loading.gif */,
 				FA8D5B06235DB5450075892F /* Assets.xcassets */,
+				FA849A1025C3AB2200CBC971 /* Language.swift */,
+				FA849A0E25C3AADE00CBC971 /* en.strings */,
 			);
 			path = EnterBioModuleBLEUI;
 			sourceTree = "<group>";
@@ -738,6 +744,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA849A0F25C3AADE00CBC971 /* en.strings in Resources */,
 				FA8D5B07235DB5450075892F /* Assets.xcassets in Resources */,
 				FA3E7A13235FFE8100AD6397 /* loading.gif in Resources */,
 			);
@@ -989,6 +996,7 @@
 				FA923192236ACEB200A50C64 /* FindDeviceViewController.swift in Sources */,
 				FA9231902362881500A50C64 /* CenterTableViewCell.swift in Sources */,
 				FA8D5B2A235F053D0075892F /* BLEConnectTipViewController.swift in Sources */,
+				FA849A1125C3AB2200CBC971 /* Language.swift in Sources */,
 				FABA6293234DB61000CFFD91 /* DeviceConnectionViewController.swift in Sources */,
 				FABA62A1234DC33200CFFD91 /* BLEConnectViewController.swift in Sources */,
 			);
@@ -1255,7 +1263,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.entertech.EnterBioModuleBLE;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1291,7 +1299,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.entertech.EnterBioModuleBLE;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1364,7 +1372,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 2.0.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.entertech.EnterBioModuleBLEUI;
@@ -1399,7 +1407,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 2.0.1;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.entertech.EnterBioModuleBLEUI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

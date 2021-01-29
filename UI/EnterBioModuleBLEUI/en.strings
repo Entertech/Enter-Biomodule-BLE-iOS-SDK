@@ -1,0 +1,38 @@
+/* 
+  en.strings
+  EnterBioModuleBLE
+
+  Created by Enter on 2021/1/29.
+  Copyright © 2021 EnterTech. All rights reserved.
+*/
+
+"固件升级" = "Firmware Upgrade";
+"开始升级" = "Start Upgrade";
+"升级失败" = "Upgrade failed";
+"请返回重新连接设备后再次尝试" = "Please go back and try again after reconnecting the device ";
+"固件升级需要一些时间，请保持设备在手机附近。" = "The firmware upgrade takes some time, please keep the device near the phone. ";
+"升级中..." = "During upgrade...";
+"返回上层页面重新连接" = "Return to the upper page to reconnect";
+"升级成功" = "Upgrade successed";
+"打开蓝牙以连接设备" = "Changed the real-time biodata from values to line graphs to visualize the changes.";
+"1.检查控制中心的蓝牙开关是否打开？" = "1.Check if the Bluetooth switch of the control center is turned on";
+"2.检查设置应用中的蓝牙开关是否打开？" = "2.Check if the Bluetooth switch in the settings app is turned on";
+"去设置" = "Go to set";
+"剩余" = "";
+"小时电量" = "hours of battery remaining";
+"设备" = "Device";
+"已连接" = "Connected";
+"未连接" = "Not Connected";
+"设备连接" = "Device Connection";
+"长按设备按键直至灯亮。如果设备指示灯没有亮，先给设备充电，10 分钟之后再尝试。" = "Press and hold the device button until the light turns on. If the device indicator does not light up, charge the device first and try again after 10 minutes. ";
+"下一步" = "Next";
+"连接中..." = "Connecting";
+"未找到设备" = "Device not found";
+"重新连接" = "Restore";
+"无法连接设备？" = "Can't connect to the device?";
+"硬件版本" = "Hardware version";
+"固件版本" = "Firmware version";
+"蓝牙地址" = "Bluetooth address";
+"删除设备" = "Delete device";
+"查看已连接的设备" = "View connected devices";
+"1. 若长按按键时间大于 2 秒钟仍旧没有灯亮，请先给设备充电。充电 10 分钟后再尝试。\n\n2. 确保设备在手机附近。如果周围还有其他蓝牙设备，请把他们拿开。\n\n3. 查看系统设置中的蓝牙状态，确保蓝牙是打开的。\n\n4. 如果蓝牙已经打开，请关闭后再打开。\n\n5. 如果依旧无法连接，请重启手机后尝试。" = "1. If there is no light after pressing the button for more than 2 seconds, please charge the device first. Try again after 10 minutes of charging. \n\n2. Make sure the device is near the phone. If there are other Bluetooth devices around, please take them away. \n\n3. Check the Bluetooth status in the system settings and make sure that Bluetooth is turned on. \n\n4. If Bluetooth is already turned on, please turn it off and then on again. \n\n5. If you still cannot connect, please restart your phone and try.";

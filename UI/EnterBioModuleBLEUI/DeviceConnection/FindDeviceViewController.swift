@@ -30,7 +30,7 @@ class FindDeviceViewController: UIViewController {
          
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        titleLabel.text = "未找到设备"
+        titleLabel.text = lang("未找到设备")
         titleLabel.textAlignment = .center
         
         let contentLabel = UILabel()

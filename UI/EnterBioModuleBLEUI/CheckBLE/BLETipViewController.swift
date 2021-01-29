@@ -21,7 +21,7 @@ class BLETipViewController: UIViewController {
     private func setUI() {
         self.view.backgroundColor = UIColor.white
         let titleLabel = UILabel()
-        titleLabel.text = "打开蓝牙以连接设备"
+        titleLabel.text = lang("打开蓝牙以连接设备")
         titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         titleLabel.textAlignment = .center
         self.view.addSubview(titleLabel)
@@ -32,7 +32,7 @@ class BLETipViewController: UIViewController {
         
         
         let firstLabel = UILabel()
-        firstLabel.text = "1.检查控制中心的蓝牙开关是否打开？"
+        firstLabel.text = lang("1.检查控制中心的蓝牙开关是否打开？")
         firstLabel.font = UIFont.systemFont(ofSize: 16)
         firstLabel.textAlignment = .left
         self.view.addSubview(firstLabel)
@@ -54,7 +54,7 @@ class BLETipViewController: UIViewController {
         
         
         let secondLabel = UILabel()
-        secondLabel.text = "2.检查设置应用中的蓝牙开关是否打开？"
+        secondLabel.text = lang("2.检查设置应用中的蓝牙开关是否打开？")
         secondLabel.font = UIFont.systemFont(ofSize: 16)
         secondLabel.textAlignment = .left
         self.view.addSubview(secondLabel)
@@ -65,7 +65,7 @@ class BLETipViewController: UIViewController {
         
         
         let toSetting = UIButton()
-        toSetting.setTitle("去设置", for: .normal)
+        toSetting.setTitle(lang("去设置"), for: .normal)
         toSetting.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         toSetting.titleLabel?.textAlignment = .left
         toSetting.setTitleColor(.blue, for: .normal)

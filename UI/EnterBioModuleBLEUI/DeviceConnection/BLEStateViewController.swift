@@ -113,7 +113,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
         animationView?.animationRepeatCount = Int.max
         
         connectingLabel = UILabel()
-        connectingLabel?.text = "连接中..."
+        connectingLabel?.text = lang("连接中...")
         connectingLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         connectingLabel?.textColor = .white
         
@@ -135,7 +135,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
         reconnectView?.backgroundColor = UIColor(white: 0, alpha: 0.5)
         
         reconnectLabel = UILabel()
-        reconnectLabel?.text = "未找到设备"
+        reconnectLabel?.text = lang("未找到设备")
         reconnectLabel?.textColor = .white
         reconnectLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         reconnectView?.addSubview(reconnectLabel!)
@@ -144,7 +144,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         reconnectBtn = UIButton()
-        reconnectBtn?.setTitle("重新连接", for: .normal)
+        reconnectBtn?.setTitle(lang("重新连接"), for: .normal)
         reconnectBtn?.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         reconnectBtn?.setTitleColor(.black, for: .normal)
         reconnectBtn?.backgroundColor = .white
@@ -306,7 +306,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
             switch (indexPath.section, indexPath.row) {
             case (0, 0):
                 cell.backgroundColor = UIColor.colorFromInt(r: 255, g: 72, b: 82, alpha: 1)
-                cell.textLabel?.text = "无法连接设备？"
+                cell.textLabel?.text = lang("无法连接设备？")
                 cell.detailTextLabel?.text = ""
                 cell.accessoryType = .disclosureIndicator
             case (0, 1):
@@ -314,23 +314,23 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
                     tipLabel.snp.removeConstraints()
                     tipLabel.removeFromSuperview()
                 }
-                cell.textLabel?.text = "硬件版本"
+                cell.textLabel?.text = lang("硬件版本")
                 cell.detailTextLabel?.text = "0.0.0"
                 cell.detailTextLabel?.textColor = .lightGray
                 cell.accessoryType = .none
             case (0, 2):
-                cell.textLabel?.text = "固件版本"
+                cell.textLabel?.text = lang("固件版本")
                 cell.detailTextLabel?.text = "0.0.0"
                 cell.detailTextLabel?.textColor = .lightGray
                 cell.accessoryType = .none
             case (0, 3):
-                cell.textLabel?.text = "蓝牙地址"
+                cell.textLabel?.text = lang("蓝牙地址")
                 cell.accessoryType = .none
                 cell.detailTextLabel?.text = "00.00.00.00.00.00"
                 cell.detailTextLabel?.textColor = .lightGray
             case (1, 0):
                 cell.textLabel?.textColor = .red
-                cell.textLabel?.text = "删除设备"
+                cell.textLabel?.text = lang("删除设备")
                 cell.textLabel?.textAlignment = .center
             default:
                 break
@@ -338,7 +338,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
         } else if ble!.state == .searching || ble!.state == .connecting {
             switch (indexPath.section, indexPath.row) {
             case (0, 0):
-                cell.textLabel?.text = "硬件版本"
+                cell.textLabel?.text = lang("硬件版本")
                 cell.detailTextLabel?.text = "0.0.0"
                 cell.detailTextLabel?.textColor = .lightGray
                 cell.accessoryType = .none
@@ -347,12 +347,12 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
                     tipLabel.snp.removeConstraints()
                     tipLabel.removeFromSuperview()
                 }
-                cell.textLabel?.text = "固件版本"
+                cell.textLabel?.text = lang("固件版本")
                 cell.detailTextLabel?.text = "0.0.0"
                 cell.detailTextLabel?.textColor = .lightGray
                 cell.accessoryType = .none
             case (0, 2):
-                cell.textLabel?.text = "蓝牙地址"
+                cell.textLabel?.text = lang("蓝牙地址")
                 cell.accessoryType = .none
                 cell.detailTextLabel?.text = "00.00.00.00.00.00"
                 cell.detailTextLabel?.textColor = .lightGray
@@ -362,12 +362,12 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
         } else  {
             switch (indexPath.section, indexPath.row) {
             case (0, 0):
-                cell.textLabel?.text = "硬件版本"
+                cell.textLabel?.text = lang("硬件版本")
                 cell.detailTextLabel?.text = ble!.deviceInfo.hardware
                 cell.detailTextLabel?.textColor = .lightGray
                 cell.accessoryType = .none
             case (0, 1):
-                cell.textLabel?.text = "固件版本"
+                cell.textLabel?.text = lang("固件版本")
                 cell.detailTextLabel?.text = ble!.deviceInfo.firmware
                 cell.detailTextLabel?.textColor = .lightGray
                 cell.accessoryType = .none
@@ -390,7 +390,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                 }
             case (0, 2):
-                cell.textLabel?.text = "蓝牙地址"
+                cell.textLabel?.text = lang("蓝牙地址")
                 cell.accessoryType = .none
                 cell.detailTextLabel?.text = ble!.deviceInfo.mac
                 cell.detailTextLabel?.textColor = .lightGray
@@ -403,10 +403,10 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
             switch (indexPath.section, indexPath.row) {
             case (1, 0):
                 cell.textLabel?.textColor = mainColor
-                cell.textLabel?.text = "查看已连接的设备"
+                cell.textLabel?.text = lang("查看已连接的设备")
             case (2, 0):
                 cell.textLabel?.textColor = .red
-                cell.textLabel?.text = "删除设备"
+                cell.textLabel?.text = lang("删除设备")
                 cell.textLabel?.textAlignment = .center
             default:
                 break

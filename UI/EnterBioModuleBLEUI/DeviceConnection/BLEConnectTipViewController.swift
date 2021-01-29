@@ -101,7 +101,7 @@ class BLEConnectTipViewController: UIViewController {
         }
         
         textLabel = UILabel()
-        let attributedText = NSMutableAttributedString(string:"长按设备按键直至灯亮。如果设备指示灯没有亮，先给设备充电，10 分钟之后再尝试。")
+        let attributedText = NSMutableAttributedString(string:lang("长按设备按键直至灯亮。如果设备指示灯没有亮，先给设备充电，10 分钟之后再尝试。"))
         let style = NSMutableParagraphStyle()
         style.alignment = .left
         style.lineSpacing = 5
@@ -125,7 +125,7 @@ class BLEConnectTipViewController: UIViewController {
         nextBtn = UIButton()
         nextBtn?.layer.cornerRadius = self.cornerRadius
         nextBtn?.layer.masksToBounds = true
-        nextBtn?.setTitle("下一步", for: .normal)
+        nextBtn?.setTitle(lang("下一步"), for: .normal)
         nextBtn?.setTitleColor(.white, for: .normal)
         nextBtn?.backgroundColor = mainColor
         self.view.addSubview(nextBtn!)
@@ -147,7 +147,7 @@ class BLEConnectTipViewController: UIViewController {
     private func setNavigationItem() {
         let backItem = UIBarButtonItem(image: UIImage.loadImage(name: "icon_back", any: self.classForCoder), style: .plain, target: self, action: #selector(backAction))
         self.navigationItem.leftBarButtonItem = backItem
-        self.navigationItem.title = "设备连接"
+        self.navigationItem.title = lang("设备连接")
     }
     
     @objc private func backAction() {

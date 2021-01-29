@@ -99,7 +99,7 @@ class BatteryView: UIView {
     private func updatePower(from: Battery?, to: Battery?) {
         if let to = to {
             _powerLabel.text = String(format: "%d%%", Int(to.percentage))
-            _continuousLabel.text = String(format: "剩余 %d 小时电量", to.remain)
+            _continuousLabel.text = String(format: "\(lang("剩余")) %d \("小时电量")", to.remain)
             _circleForeLayer.strokeEnd = CGFloat(to.percentage / 100)
         }
 

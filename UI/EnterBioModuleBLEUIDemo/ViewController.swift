@@ -18,22 +18,22 @@ class ViewController: UIViewController {
 
     @IBAction func showNavigation(_ sender: Any) {
         let ble = BLEManager()
-        //单个蓝牙连接
+        //Single connection
         let connection = BLEConnectViewController(bleManager: ble)
         
-        //多个蓝牙连接
+        //multi connection
 //        let ble2 = BLEManager()
 //        let connection = BLEConnectViewController(bleManagers: [ble, ble2])
         
         connection.cornerRadius = 6
         connection.mainColor = UIColor(red: 0, green: 100.0/255.0, blue: 1, alpha: 1)
         
-        // 固件更新
+        // Firmware Update
         connection.firmwareVersion  = "2.2.2"
         connection.firmwareURL = Bundle.main.url(forResource: "dfutest0730", withExtension: "zip")
-        connection.firmwareUpdateLog = "1.请在此输入日志信息。\n2.更新内容1。\n3.更新内容2。"
+        connection.firmwareUpdateLog = "1.Log"
         
-        // mac地址连接
+        //mac address
         connection.isConnectByMac = false
         
         

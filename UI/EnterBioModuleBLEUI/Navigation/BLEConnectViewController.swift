@@ -57,6 +57,7 @@ public class BLEConnectViewController: UINavigationController, UIGestureRecogniz
     /// - Parameter bleManager: 需要连接的BLEManager实例
     public init(bleManager: BLEManager) {
         super.init(nibName: nil, bundle: nil)
+        Language.initLocale()
         let manager = bleManager
         let isAuth = manager.isBluetoothOpenAndAllow()
         if !isAuth {
@@ -82,6 +83,7 @@ public class BLEConnectViewController: UINavigationController, UIGestureRecogniz
     /// - Parameter bleManager: 需要连接的BLEManager实例数组，最大为4个
     public init(bleManagers: [BLEManager]) {
         super.init(nibName: nil, bundle: nil)
+        Language.initLocale()
         let manager = BLEManager()
         let isAuth = manager.isBluetoothOpenAndAllow()
         if !isAuth {
