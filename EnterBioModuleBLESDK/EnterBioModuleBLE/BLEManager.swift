@@ -441,8 +441,9 @@ public class BLEManager {
         let b3: Float = 3.813
         let c3: Float = 0.09208
         
-        let q = a1 * exp(-pow((voltage-b1)/c1, 2)) + a2 * exp(-pow((voltage-b2)/c2, 2)) + a3 * exp(-pow((voltage-b3)/c3, 2))
-        let remain = (4.52 * q) / 60
+        var q = a1 * exp(-pow((voltage-b1)/c1, 2)) + a2 * exp(-pow((voltage-b2)/c2, 2)) + a3 * exp(-pow((voltage-b3)/c3, 2))
+        q = q*1.13-5
+        let remain = (3.84 * q) / 60
         let percentage = max(min(q, 100), 0)
         return Battery(voltage: voltage, remain: Int(remain), percentage: percentage)
     }
