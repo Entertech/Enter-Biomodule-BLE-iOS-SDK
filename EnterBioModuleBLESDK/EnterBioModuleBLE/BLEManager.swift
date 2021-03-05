@@ -238,7 +238,7 @@ public class BLEManager {
         let group = DispatchGroup.init()
         
         for e in peripherals {
-            var sameAndConnect: (Bool, Bool) = (false, false) //0,是否读取到信息 1,是否连接
+            var sameAndConnect: (Bool, Bool) = (false, false)
             self.connector?.cancel()
             self.connector = Connector(peripheral: e.peripheral)
             self.connector!.tryConnect().done(on: DispatchQueue.init(label: "connect")) {
@@ -259,7 +259,7 @@ public class BLEManager {
             group.enter()
             DispatchQueue.global().async {
                 var sleepCount = 0
-                while (!sameAndConnect.1) {//如果没有连接成功，则循环
+                while (!sameAndConnect.1) {//loop
                     Thread.sleep(forTimeInterval: 0.2)
                     sleepCount += 1
                     if sleepCount > 10 {
@@ -347,16 +347,12 @@ public class BLEManager {
     
     // https://shimo.im/docs/80f5ce5b32ee49eb/read
     /************************************************/
-    /**********四个电极从左至右分别对应的未接触数据为***********/
     /*******0x08,  0x10,  0x40, 0x20***********************/
-    /*******如第1,2个未接触为 xxoo = 0x18***************/
     /// This service tell us if the device is wore
     private func listenWear() {
         observers.wearing = connector?.eegService?.notify(characteristic: .contact).observeOn(ConcurrentDispatchQueueScheduler.init(queue: bleQueue))
             .subscribe(onNext: { [unowned self] in
                 guard let value = $0.first, self.state.isConnected else { return }
-                // 因为数据不是从左到右显示,为了方便理解数据,这里除以8,以二进制1111进行表示
-                // 比如xoox转化为 1001 , 实际返回数据为5
                 var wearState: UInt8 = 0
                 let temp = value / 8
                 wearState = temp >> 2 & 1 == 1 ? 1 : 0
@@ -475,8 +471,8 @@ public class BLEManager {
                 }, onError: {
                     print("eeg notify error: \($0)")
             })
-        // 开始指令
         
+        // start eeg service
         _ = connector?.commandService?.write(data: Data([0x05]), to: .send)
         
     }
@@ -508,9 +504,9 @@ public class BLEManager {
     
     /// stop EEG
     public func stopEEG() {
-        // 结束指令
+        // end service
         _ = connector?.commandService?.write(data: Data([0x06]), to: .send)
-        // 结束脑波监听
+
         observers.eeg?.dispose()
         observers.eeg = nil
         _eegLock.lock()
@@ -594,8 +590,8 @@ public class BLEManager {
     
     /// DFU 方法
     ///
-    /// - Parameter fileURL: 固件文件 URL，必须是本地 URL
-    /// - Throws: 如果设备未连接会抛出错误
+    /// - Parameter fileURL: local url
+    /// - Throws: error
     public func dfu(fileURL: URL) throws {
         guard self.connector?.peripheral != nil else { throw BLEError.invalid(message: "设备未连接") }
         //let dfu = DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.manager)
@@ -637,7 +633,7 @@ public class DFU: DFUServiceDelegate, DFUProgressDelegate, LoggerDelegate{
 
     
     
-    /// 开始升级
+    /// update firmware
     /// - Parameter currentVersion: 因为1.1.0版本开始固件有新的数据
     public func fire(currentVersion: Int) {
         let initiator = DFUServiceInitiator(centralManager: manager, target: peripheral)

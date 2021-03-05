@@ -32,9 +32,9 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     private var reconnectBtn: UIButton?
     private var batteryView: BatteryView?
     private let tipLabel = UILabel()
-    private var index: Int = 0 //蓝牙数组里的第几个对象
+    private var index: Int = 0 //BLE Array index
     
-    /// 是否通过mac地址连接
+    /// use mac address
     private var mac:String?{
         get {
             return UserDefaults.standard.string(forKey: "MacAdderss\(index)")
