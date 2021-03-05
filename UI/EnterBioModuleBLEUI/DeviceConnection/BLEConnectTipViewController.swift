@@ -101,25 +101,17 @@ class BLEConnectTipViewController: UIViewController {
         }
         
         textLabel = UILabel()
-        let attributedText = NSMutableAttributedString(string:lang("长按设备按键直至灯亮。如果设备指示灯没有亮，先给设备充电，10 分钟之后再尝试。"))
-        let style = NSMutableParagraphStyle()
-        style.alignment = .left
-        style.lineSpacing = 5
-        attributedText.addAttribute(
-            kCTParagraphStyleAttributeName as NSAttributedString.Key,
-            value: style,
-            range: NSMakeRange(0, attributedText.length))
+       
         textLabel?.textAlignment = .left
         textLabel?.lineBreakMode = .byWordWrapping
         textLabel?.numberOfLines  = 0
         textLabel?.font = UIFont.systemFont(ofSize: 16)
-        textLabel?.attributedText = attributedText
+        textLabel?.text = lang("长按设备按键直至灯亮。如果设备指示灯没有亮，先给设备充电，10 分钟之后再尝试。")
         self.view.addSubview(textLabel!)
         textLabel?.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
             $0.right.equalToSuperview().offset(-16)
             $0.top.equalTo(self.imageBackground!.snp.bottom).offset(16)
-            $0.height.equalTo(50)
         }
         
         nextBtn = UIButton()
@@ -132,7 +124,6 @@ class BLEConnectTipViewController: UIViewController {
         nextBtn?.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
         nextBtn?.snp.makeConstraints {
             $0.top.greaterThanOrEqualTo(textLabel!.snp.bottom).offset(30).priority(.required)
-            $0.centerY.equalToSuperview().multipliedBy(1.1).priority(.high)
             $0.left.equalToSuperview().offset(16)
             $0.right.equalToSuperview().offset(-16)
             $0.height.equalTo(45)

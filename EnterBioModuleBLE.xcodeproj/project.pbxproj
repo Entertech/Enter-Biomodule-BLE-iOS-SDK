@@ -88,6 +88,9 @@
 		FABA6298234DBC6300CFFD91 /* BLETipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA6296234DBC6300CFFD91 /* BLETipViewController.swift */; };
 		FABA62A1234DC33200CFFD91 /* BLEConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA62A0234DC33200CFFD91 /* BLEConnectViewController.swift */; };
 		FABA62A6234DC44800CFFD91 /* EnterBioModuleBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C71131C1FA9755B0093099D /* EnterBioModuleBLE.framework */; };
+		FABFA45E25F23A70009C929C /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA849A0E25C3AADE00CBC971 /* en.strings */; };
+		FABFA46125F23A71009C929C /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA849A0E25C3AADE00CBC971 /* en.strings */; };
+		FABFA46225F23A72009C929C /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA849A0E25C3AADE00CBC971 /* en.strings */; };
 		FAEB170023137AD2002CEAC1 /* SDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB16FF23137AD2002CEAC1 /* SDKService.swift */; };
 /* End PBXBuildFile section */
 
@@ -717,6 +720,7 @@
 				6C1643091FA03B09002C1438 /* LaunchScreen.storyboard in Resources */,
 				6C1643041FA03B09002C1438 /* Main.storyboard in Resources */,
 				B70965DC2227BEB000C6EE51 /* Assets.xcassets in Resources */,
+				FABFA46125F23A71009C929C /* en.strings in Resources */,
 				FA9A248324D3BFB6009EDE2D /* dfutest0730.zip in Resources */,
 				6C1CE81D1FB9A1F4003D4EB5 /* 1-minute-of-silence.mp3 in Resources */,
 			);
@@ -726,6 +730,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABFA46225F23A72009C929C /* en.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,6 +742,7 @@
 				FA8D5B1B235E969F0075892F /* LaunchScreen.storyboard in Resources */,
 				FA8D5B18235E969F0075892F /* Assets.xcassets in Resources */,
 				FA8D5B16235E969E0075892F /* Main.storyboard in Resources */,
+				FABFA45E25F23A70009C929C /* en.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

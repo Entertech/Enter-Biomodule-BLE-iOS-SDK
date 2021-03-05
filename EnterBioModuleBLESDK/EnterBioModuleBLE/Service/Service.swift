@@ -57,7 +57,7 @@ public extension Readable where Self: BLEService {
                     seal.fulfill(data)
                 }
             }, onError: { error in
-                _ = seal.reject(error)
+                seal.reject(error)
             })
         }
         return promise
@@ -80,7 +80,7 @@ public extension Writable where Self: BLEService {
 }
 
 public extension Notifiable where Self: BLEService {
-    public func notify(characteristic: NotifyType) -> Observable<Bytes> {
+    func notify(characteristic: NotifyType) -> Observable<Bytes> {
         if let char =
             self.rxService.characteristics?.first(where: { $0.uuid == characteristic.uuid }) {
             return char.observeValueUpdateAndSetNotification().map {

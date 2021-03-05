@@ -47,6 +47,7 @@ class BLEStateViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK:- Method
     init(index: Int, _ corner: CGFloat = 8, _ mainColor: UIColor = UIColor.colorFromInt(r: 0, g: 100, b: 255, alpha: 1)) {
         super.init(nibName: nil, bundle: nil)
+        Language.initLocale()
         ble = BLEManagerClass.shared.bleList[index]
         self.mainColor = mainColor
         self.cornerRadius = corner
