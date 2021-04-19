@@ -174,7 +174,7 @@ public class BLEManager {
             self.state = .searching
             self.disposalbe?.dispose()
             self.disposalbe = scanner.scan()
-                .buffer(timeSpan: 3.0, count: 10, scheduler: MainScheduler.asyncInstance)
+                .buffer(timeSpan: RxTimeInterval.milliseconds(3000), count: 10, scheduler: MainScheduler.asyncInstance)
                 .subscribe(onNext: { (peripherals) in
                     self.state = .connecting
                     
@@ -205,7 +205,7 @@ public class BLEManager {
             self.state = .searching
             self.disposalbe?.dispose()
             self.disposalbe = scanner.scan()
-                .buffer(timeSpan: 3.0, count: 10, scheduler: MainScheduler.asyncInstance)
+                .buffer(timeSpan: RxTimeInterval.milliseconds(3000), count: 10, scheduler: MainScheduler.asyncInstance)
                 .subscribe(onNext: { (peripherals) in
                     self.state = .connecting
                     let min = peripherals.min(by: { (temp, next) -> Bool in
@@ -647,7 +647,7 @@ public class DFU: DFUServiceDelegate, DFUProgressDelegate, LoggerDelegate{
         //initiator.logger = self
         let firmware = DFUFirmware(urlToZipFile: fileURL, type: .application)
 
-        _ = initiator.with(firmware: firmware!).start()
+        _ = initiator.with(firmware: firmware!).start(target: peripheral)
     }
 
     public func dfuStateDidChange(to state: FixedDFUService.DFUState) {

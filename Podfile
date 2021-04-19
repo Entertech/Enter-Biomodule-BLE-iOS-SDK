@@ -1,4 +1,4 @@
-source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org/'
 
 platform :ios, '9.0'
 use_frameworks!
@@ -8,8 +8,8 @@ target 'EnterBioModuleBLEDemo' do
     pod 'FixedDFUService', '~> 4.7'
     pod 'SnapKit'
     pod 'SVProgressHUD', '~> 2.2'
-    pod 'RxCocoa', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
-    pod 'RxSwift', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
+    pod 'RxCocoa'
+    pod 'RxSwift'
     pod 'SwiftyTimer', '~> 2.0'
     pod 'Files', '~> 2.2.1'
     pod 'PromiseKit'
@@ -17,8 +17,8 @@ end
 
 target 'EnterBioModuleBLE' do
     pod 'FixedDFUService', '~> 4.7'
-    pod 'RxSwift', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
-    pod 'RxBluetoothKit', '~> 5.3.0'
+    pod 'RxSwift'
+    pod 'RxBluetoothKit', '~> 6.0.0'
     pod 'PromiseKit'
 end
 
@@ -28,8 +28,8 @@ end
 
 target 'BluetoothConnectingUIDemo' do
     pod 'SnapKit'
-    pod 'RxSwift', :git => "git@github.com:ReactiveX/RxSwift.git", :branch  => "master"
-    pod 'RxBluetoothKit', '~> 5.3.0'
+    pod 'RxSwift'
+    pod 'RxBluetoothKit', '~> 6.0.0'
     pod 'PromiseKit'
 end
 
