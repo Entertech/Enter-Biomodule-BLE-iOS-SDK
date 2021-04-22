@@ -62,19 +62,6 @@ public class BLEManager {
     private var observers: Observers = Observers()
     public weak var delegate: BLEStateDelegate?
     public weak var dataSource: BLEBioModuleDataSource?
-    public var uploadCycle: UInt = 3 {
-        willSet {
-            if newValue != 0 {
-                _eegBufferSize = 20 * minCycleEeg * Int(uploadCycle)
-                _hrBufferSize = minCycleHr * Int(uploadCycle)
-            } else {
-                _eegBufferSize = 600
-                _hrBufferSize = 2
-            }
-        }
-    }
-    private var minCycleEeg = 50
-    private var minCycleHr = 3
     
     /// init method
     ///
@@ -481,24 +468,11 @@ public class BLEManager {
         _ = self.connector?.commandService?.write(data: Data([0x79]), to: .send)
     }
     
-    /// Brain data buffer
-    private var _eegBuffer: [UInt8] = []
-    private var _eegBufferSize: Int = 3000
-    private let _eegLock = NSLock()
-    
     /// Send brain data to delegate
     ///
     /// - Parameter bytes: brain data
     private func handleBrainData(bytes: [UInt8]) {
-        _eegLock.lock()
-        _eegBuffer.append(contentsOf: bytes)
-        if _eegBuffer.count < _eegBufferSize {
-            _eegLock.unlock()
-            return
-        }
-        let data = Data(_eegBuffer)
-        _eegBuffer.removeAll()
-        _eegLock.unlock()
+        let data = Data(bytes)
         dataSource?.bleBrainwaveDataReceived(data: data, bleManager: self)
     }
     
@@ -509,16 +483,9 @@ public class BLEManager {
 
         observers.eeg?.dispose()
         observers.eeg = nil
-        _eegLock.lock()
-        _eegBuffer.removeAll()
-        _eegLock.unlock()
     }
     
     // MARK: - Heart Rate Service
-    /// Heart Rate buffer
-    private var _hrBuffer: [UInt8] = []
-    private var _hrBufferSize: Int = 9
-    private let _hrLock = NSLock()
     /// start heart rate and start notify
     public func startHeartRate() {
         observers.heart = self.connector?.heartService?
@@ -540,9 +507,6 @@ public class BLEManager {
         
         observers.heart?.dispose()
         observers.heart = nil
-        _hrLock.lock()
-        _hrBuffer.removeAll()
-        _hrLock.unlock()
     }
     
     
@@ -550,15 +514,7 @@ public class BLEManager {
     ///
     /// - Parameter bytes: heart rate data
     private func handleHeartRateData(bytes: [UInt8]) {
-        _hrLock.lock()
-        _hrBuffer.append(contentsOf: bytes)
-        if _hrBuffer.count < _hrBufferSize {
-            _hrLock.unlock()
-            return
-        }
-        let data = Data(_hrBuffer)
-        _hrBuffer.removeAll()
-        _hrLock.unlock()
+        let data = Data(bytes)
         dataSource?.bleHeartRateDataReceived(data: data, bleManager: self)
     }
     
