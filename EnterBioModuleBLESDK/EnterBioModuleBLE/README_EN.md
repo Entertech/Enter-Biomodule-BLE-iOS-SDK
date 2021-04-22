@@ -23,7 +23,6 @@
 ~~~swift
 // Scan the surrounding devices for 3 seconds, connect with the one with the strongest signal, and turn on the battery service
 let manager = BLEManager()
-manager.uploadCycle = 3 // The upload cycle required by Emotion Cloud, the default value is 3, and the upload cycle is 0.6*3=1.8 seconds. Please check Emotion Cloud documentation for details
 manager.scanAndConnect { completed in
     // your code
 }

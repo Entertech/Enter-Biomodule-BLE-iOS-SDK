@@ -25,7 +25,6 @@
 ~~~swift
 // 扫描周围设备3秒，取信号最强的一个进行连接, 同时将开启电量服务
 let manager = BLEManager()
-manager.uploadCycle = 3 //情感云所需上传周期，默认值为3，上传周期为0.6*3=1.8秒，详细请查看情感云文档
 manager.scanAndConnect { completed in
     // your code
 }
