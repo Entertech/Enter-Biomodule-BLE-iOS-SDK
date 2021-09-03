@@ -23,7 +23,7 @@ class ScanViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableHeader()
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableView.automaticDimension
@@ -82,7 +82,7 @@ class ScanViewController: UITableViewController {
     }
 
     private func updatePeripheralIfNeeded(_ peripheral: CBPeripheral) {
-        if let index = self.peripheralList.index(where: { $0.peripheral.identifier == peripheral.identifier }) {
+        if let index = self.peripheralList.firstIndex(where: { $0.peripheral.identifier == peripheral.identifier }) {
             let indexPath = IndexPath(row: index, section: 0)
             dispatch_to_main {
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
@@ -90,11 +90,27 @@ class ScanViewController: UITableViewController {
         }
     }
     private let sanner: EnterBioModuleBLE.Scanner = Scanner()
-
+    private var textField: UITextField?
+    private func tableHeader() {
+        /// 今天的数据
+        let tableviewHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30))
+        let uuidLabel = UILabel(frame: CGRect.init(x: 20, y: 3, width: 50, height: 24))
+        uuidLabel.text = "UUID:"
+        tableviewHeaderView.addSubview(uuidLabel)
+        textField = UITextField(frame: CGRect.init(x: 80, y: 3, width: UIScreen.main.bounds.width-100, height: 24))
+        textField?.placeholder = "FF10"
+        textField?.text = "FF10"
+        textField?.borderStyle = .roundedRect
+        textField?.returnKeyType = .done
+        tableviewHeaderView.addSubview(textField!)
+        tableView.tableHeaderView = tableviewHeaderView
+    }
+    private var scannerUUID = "-1212-ABCD-1523-785FEABCD123"
     private func startScan() {
         clear()
-
-        sanner.scan()
+        let uniqueKey = textField?.text ?? "FF10"
+        let uuid = "0000" + uniqueKey + scannerUUID
+        sanner.scan(uuid: uuid)
             .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] (peripheral) in
                 guard let `self` = self else { return }

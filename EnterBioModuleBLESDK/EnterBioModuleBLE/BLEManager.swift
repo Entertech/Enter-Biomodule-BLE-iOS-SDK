@@ -367,6 +367,7 @@ public class BLEManager {
         }.catch { _ in
             //
         }
+        self.connector?.peripheral.maximumWriteValueLength(for: .withResponse)
     }
     
     /// Battery listenner

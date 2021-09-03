@@ -52,6 +52,26 @@ public final class Scanner {
             return self._disposable!
         }
     }
+    
+    public func scan(uuid: String) -> Observable<ScannedPeripheral> {
+
+        return Observable<ScannedPeripheral>.create { [unowned self] (observer) -> Disposable in
+
+            let disposable = self.manager.scanForPeripherals(withServices: [CBUUID(string: uuid)])
+                .subscribe(onNext: {
+                    observer.onNext($0)
+                }, onError: {
+                    observer.onError($0)
+                }, onCompleted: {
+                    observer.onCompleted()
+                })
+            disposable.disposed(by: self._disposeBag)
+            self._disposable = Disposables.create {
+                disposable.dispose()
+            }
+            return self._disposable!
+        }
+    }
 
     public func stop() {
         _disposable?.dispose()
