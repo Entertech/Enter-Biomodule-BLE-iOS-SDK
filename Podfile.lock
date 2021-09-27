@@ -1,6 +1,6 @@
 PODS:
   - Files (2.2.1)
-  - FixedDFUService (4.7.2):
+  - FixedDFUService (4.11.0):
     - ZIPFoundation (= 0.9.11)
   - PromiseKit (6.13.1):
     - PromiseKit/CorePromise (= 6.13.1)
@@ -11,14 +11,14 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.13.1):
     - PromiseKit/CorePromise
-  - RxBluetoothKit (6.0.0):
-    - RxSwift (~> 5.1)
-  - RxCocoa (5.1.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxRelay (5.1.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.1.2)
+  - RxBluetoothKit (7.0.0):
+    - RxSwift (~> 6.0)
+  - RxCocoa (6.0.0):
+    - RxRelay (= 6.0.0)
+    - RxSwift (= 6.0.0)
+  - RxRelay (6.0.0):
+    - RxSwift (= 6.0.0)
+  - RxSwift (6.0.0)
   - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
   - SwiftyTimer (2.1.0)
@@ -27,11 +27,11 @@ PODS:
 
 DEPENDENCIES:
   - Files (~> 2.2.1)
-  - FixedDFUService (~> 4.7)
+  - FixedDFUService (~> 4.11)
   - PromiseKit
-  - RxBluetoothKit (~> 6.0.0)
-  - RxCocoa
-  - RxSwift
+  - RxBluetoothKit (from `https://github.com/i-mobility/RxBluetoothKit.git`, tag `7.0.2`)
+  - RxCocoa (= 6.0)
+  - RxSwift (= 6.0)
   - SnapKit
   - SVProgressHUD (~> 2.2)
   - SwiftyTimer (~> 2.0)
@@ -42,7 +42,6 @@ SPEC REPOS:
     - Files
     - FixedDFUService
     - PromiseKit
-    - RxBluetoothKit
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -52,20 +51,30 @@ SPEC REPOS:
     - Then
     - ZIPFoundation
 
+EXTERNAL SOURCES:
+  RxBluetoothKit:
+    :git: https://github.com/i-mobility/RxBluetoothKit.git
+    :tag: 7.0.2
+
+CHECKOUT OPTIONS:
+  RxBluetoothKit:
+    :git: https://github.com/i-mobility/RxBluetoothKit.git
+    :tag: 7.0.2
+
 SPEC CHECKSUMS:
   Files: 18a88ede4f1e339a73adaca7272af15fa32ba69f
-  FixedDFUService: a7768eab3e7a2d7c712f5aca4c7de03c6ff6fc93
+  FixedDFUService: e543f30f301a692d3acf7ae16571ef953b17b044
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
-  RxBluetoothKit: dad22912b15b74a40df8f60057f218d4e851746d
-  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
-  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
-  RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
+  RxBluetoothKit: be7acb92b3eaaa3a15c3813c2c12648ad7f49010
+  RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
+  RxRelay: 8d593be109c06ea850df027351beba614b012ffb
+  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: 258195b2f6bc400bc146e27393b7c774e0005a6b
+PODFILE CHECKSUM: 77d1e28cdba5b7c01d08e5e06edbbf5bf46d310c
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.11.2
