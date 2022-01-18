@@ -16,11 +16,11 @@ import CoreBluetooth
 
 public typealias Bytes = [UInt8]
 
-public protocol Service {
+public protocol ServiceProtocol {
     init(rxService: RxBluetoothKit.Service)
 }
 
-public class BLEService: NSObject, Service {
+public class BLEService: NSObject, ServiceProtocol {
 
     public let rxService: RxBluetoothKit.Service
 
@@ -31,17 +31,17 @@ public class BLEService: NSObject, Service {
 
 // MARK: - Capability Protocol
 
-public protocol Readable: Service {
+public protocol Readable: ServiceProtocol {
     associatedtype ReadType: CharacteristicReadType
     func read(characteristic: ReadType) -> Promise<Data>
 }
 
-public protocol Writable: Service {
+public protocol Writable: ServiceProtocol {
     associatedtype WriteType: CharacteristicWriteType
     func write(data: Data, to characteristic: WriteType) -> Promise<Void>
 }
 
-public protocol Notifiable: Service {
+public protocol Notifiable: ServiceProtocol {
     associatedtype NotifyType: CharacteristicNotifyType
     func notify(characteristic: NotifyType) -> Observable<Bytes>
 }

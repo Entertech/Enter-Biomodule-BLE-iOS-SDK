@@ -61,6 +61,7 @@ class DFUViewController: UIViewController, DFUServiceDelegate, DFUProgressDelega
         initiator.delegate = self
         initiator.progressDelegate = self
         initiator.enableUnsafeExperimentalButtonlessServiceInSecureDfu = true
+        initiator.logger = self
         if coreTypeSwitch.isOn {
             
             initiator.forceScanningForNewAddressInLegacyDfu = true
@@ -113,5 +114,11 @@ class DFUViewController: UIViewController, DFUServiceDelegate, DFUProgressDelega
     // dfu progress delegate Method
     func dfuProgressDidChange(for part: Int, outOf totalParts: Int, to progress: Int, currentSpeedBytesPerSecond: Double, avgSpeedBytesPerSecond: Double) {
         self.updatingPercentage.text = String("\(progress)% (\(part)/\(totalParts))")
+    }
+}
+
+extension DFUViewController: LoggerDelegate {
+    func logWith(_ level: LogLevel, message: String) {
+        print(message)
     }
 }

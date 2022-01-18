@@ -1,6 +1,6 @@
 PODS:
   - Files (2.2.1)
-  - FixedDFUService (4.11.0):
+  - FixedDFUService (4.11.2):
     - ZIPFoundation (= 0.9.11)
   - PromiseKit (6.13.1):
     - PromiseKit/CorePromise (= 6.13.1)
@@ -11,8 +11,6 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.13.1):
     - PromiseKit/CorePromise
-  - RxBluetoothKit (7.0.0):
-    - RxSwift (~> 6.0)
   - RxCocoa (6.0.0):
     - RxRelay (= 6.0.0)
     - RxSwift (= 6.0.0)
@@ -28,10 +26,10 @@ PODS:
 DEPENDENCIES:
   - Files (~> 2.2.1)
   - FixedDFUService (~> 4.11)
+  - FixedDFUService (~> 4.11.2)
   - PromiseKit
-  - RxBluetoothKit (from `https://github.com/i-mobility/RxBluetoothKit.git`, tag `7.0.2`)
-  - RxCocoa (= 6.0)
-  - RxSwift (= 6.0)
+  - RxCocoa (~> 6.0)
+  - RxSwift (~> 6.0)
   - SnapKit
   - SVProgressHUD (~> 2.2)
   - SwiftyTimer (~> 2.0)
@@ -51,21 +49,10 @@ SPEC REPOS:
     - Then
     - ZIPFoundation
 
-EXTERNAL SOURCES:
-  RxBluetoothKit:
-    :git: https://github.com/i-mobility/RxBluetoothKit.git
-    :tag: 7.0.2
-
-CHECKOUT OPTIONS:
-  RxBluetoothKit:
-    :git: https://github.com/i-mobility/RxBluetoothKit.git
-    :tag: 7.0.2
-
 SPEC CHECKSUMS:
   Files: 18a88ede4f1e339a73adaca7272af15fa32ba69f
-  FixedDFUService: e543f30f301a692d3acf7ae16571ef953b17b044
+  FixedDFUService: 7e6c2056df8b4d5e585fb9e012849613f91b6e8f
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
-  RxBluetoothKit: be7acb92b3eaaa3a15c3813c2c12648ad7f49010
   RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
   RxRelay: 8d593be109c06ea850df027351beba614b012ffb
   RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
@@ -75,6 +62,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: 77d1e28cdba5b7c01d08e5e06edbbf5bf46d310c
+PODFILE CHECKSUM: 74ba1149110c36a4fb98e760b01513a0115a10ac
 
 COCOAPODS: 1.11.2

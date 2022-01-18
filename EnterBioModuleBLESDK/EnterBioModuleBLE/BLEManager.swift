@@ -14,13 +14,13 @@ import FixedDFUService
 import CoreBluetooth
 
 
-public protocol BLEStateDelegate: class {
+public protocol BLEStateDelegate: AnyObject {
     func bleConnectionStateChanged(state: BLEConnectionState, bleManager: BLEManager)
     func bleBatteryReceived(battery: Battery, bleManager: BLEManager)
     
 }
 
-public protocol BLEBioModuleDataSource: class {
+public protocol BLEBioModuleDataSource: AnyObject {
     func bleBrainwaveDataReceived(data: Data, bleManager: BLEManager)
     func bleHeartRateDataReceived(data: Data, bleManager: BLEManager)
 }

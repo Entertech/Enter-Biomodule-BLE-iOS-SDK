@@ -8,17 +8,16 @@ target 'EnterBioModuleBLEDemo' do
     pod 'FixedDFUService', '~> 4.11'
     pod 'SnapKit'
     pod 'SVProgressHUD', '~> 2.2'
-    pod 'RxCocoa', '6.0'
-    pod 'RxSwift', '6.0'
+    pod 'RxCocoa', '~> 6.0'
+    pod 'RxSwift', '~> 6.0'
     pod 'SwiftyTimer', '~> 2.0'
     pod 'Files', '~> 2.2.1'
     pod 'PromiseKit'
 end
 
 target 'EnterBioModuleBLE' do
-    pod 'FixedDFUService', '~> 4.11'
-    pod 'RxSwift', '6.0'
-    pod 'RxBluetoothKit', :git => 'https://github.com/i-mobility/RxBluetoothKit.git', :tag => '7.0.2'
+    pod 'FixedDFUService', '~> 4.11.2'
+    pod 'RxSwift', '~> 6.0'
     pod 'PromiseKit'
 end
 
@@ -28,9 +27,12 @@ end
 
 target 'BluetoothConnectingUIDemo' do
     pod 'SnapKit'
-    pod 'RxSwift', '6.0'
-    pod 'RxBluetoothKit', :git => 'https://github.com/i-mobility/RxBluetoothKit.git', :tag => '7.0.2'
+    pod 'RxSwift', '~> 6.0'
     pod 'PromiseKit'
+end
+
+target 'RxBluetoothKit' do
+  pod 'RxSwift', '~> 6.0'
 end
 
 
