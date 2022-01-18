@@ -89,7 +89,7 @@ class ScanViewController: UITableViewController {
             }
         }
     }
-    private let sanner: EnterBioModuleBLE.Scanner = Scanner()
+    private let sanner: EnterBioModuleBLE.EnterScanner = Scanner()
     private var textField: UITextField?
     private func tableHeader() {
         /// 今天的数据

@@ -25,7 +25,7 @@ public protocol CharacteristicWriteType: CharacteristicType {}
 
 public protocol CharacteristicNotifyType: CharacteristicType {}
 
-public enum Characteristic {
+public enum EnterCharacteristic {
     public enum DeviceInfo: String, CharacteristicReadType {
         case mac = "2A24"
         case serial = "2A25"

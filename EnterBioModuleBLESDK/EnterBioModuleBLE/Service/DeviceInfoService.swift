@@ -14,7 +14,7 @@ public class DeviceInfoService: BLEService {
 
 extension DeviceInfoService: Readable {
 
-    public typealias ReadType = Characteristic.DeviceInfo
+    public typealias ReadType = EnterCharacteristic.DeviceInfo
 
 }
 

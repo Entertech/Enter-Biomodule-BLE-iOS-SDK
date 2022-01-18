@@ -12,11 +12,11 @@ public class ConnectService: BLEService {
 }
 
 extension ConnectService: Writable {
-    public typealias WriteType = Characteristic.Connect.Write
+    public typealias WriteType = EnterCharacteristic.Connect.Write
 }
 
 extension ConnectService: Notifiable {
-    public typealias NotifyType = Characteristic.Connect.Notify
+    public typealias NotifyType = EnterCharacteristic.Connect.Notify
 }
 
 extension ConnectService: ServiceTypable {

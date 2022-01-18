@@ -13,5 +13,5 @@ public class HeartService: BLEService {
 }
 
 extension HeartService: Notifiable {
-    public typealias NotifyType = Characteristic.Heart.Notify
+    public typealias NotifyType = EnterCharacteristic.Heart.Notify
 }

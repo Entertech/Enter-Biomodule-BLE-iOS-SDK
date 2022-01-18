@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RxBluetoothKit
 import EnterBioModuleBLE
 
 extension Data {
@@ -87,20 +86,20 @@ extension BLEService: UUIDType {
 //    }
 //}
 
-extension RxBluetoothKit.Characteristic: Displayable {
+extension Characteristic: Displayable {
     var displayName: String {
         switch self.uuid.uuidString {
-        case EnterBioModuleBLE.Characteristic.DeviceInfo.mac.rawValue:
+        case EnterBioModuleBLE.EnterCharacteristic.DeviceInfo.mac.rawValue:
             return "MAC Address"
-        case EnterBioModuleBLE.Characteristic.DeviceInfo.serial.rawValue:
+        case EnterBioModuleBLE.EnterCharacteristic.DeviceInfo.serial.rawValue:
             return "Serial No."
-        case EnterBioModuleBLE.Characteristic.DeviceInfo.firmwareRevision.rawValue:
+        case EnterBioModuleBLE.EnterCharacteristic.DeviceInfo.firmwareRevision.rawValue:
             return "Firmware Version"
-        case EnterBioModuleBLE.Characteristic.DeviceInfo.hardwareRevision.rawValue:
+        case EnterBioModuleBLE.EnterCharacteristic.DeviceInfo.hardwareRevision.rawValue:
             return "Hardware Version"
-        case EnterBioModuleBLE.Characteristic.DeviceInfo.manufacturer.rawValue:
+        case EnterBioModuleBLE.EnterCharacteristic.DeviceInfo.manufacturer.rawValue:
             return "Manufacturer"
-        case EnterBioModuleBLE.Characteristic.Battery.battery.rawValue:
+        case EnterBioModuleBLE.EnterCharacteristic.Battery.battery.rawValue:
             return "Battery"
         default:
             return "Any"

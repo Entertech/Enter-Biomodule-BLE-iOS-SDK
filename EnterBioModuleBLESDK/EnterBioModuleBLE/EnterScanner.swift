@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreBluetooth
-import RxBluetoothKit
 import RxSwift
 import PromiseKit
 
@@ -16,7 +15,7 @@ extension DispatchQueue {
     static let ble: DispatchQueue = DispatchQueue(label: "cn.entertech.EnterBioModuleBLE.BLE")
 }
 
-public final class Scanner {
+public final class EnterScanner {
 
     public var manager: CentralManager
     private let _disposeBag = DisposeBag()

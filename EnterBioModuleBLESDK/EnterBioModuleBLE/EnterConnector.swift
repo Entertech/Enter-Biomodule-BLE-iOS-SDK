@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreBluetooth
-import RxBluetoothKit
 import RxSwift
 import PromiseKit
 
@@ -16,13 +15,16 @@ public protocol DisposeHolder {
     var disposeBag: DisposeBag { get }
 }
 
-extension RxBluetoothKit.Service: Hashable {
-    public var hashValue: Int {
-        return self.uuid.hash
+extension Service: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        self.uuid.hash(into: &hasher)
     }
+//    public var hashValue: Int {
+//        return self.uuid.hash
+//    }
 }
 
-public final class Connector: DisposeHolder {
+public final class EnterConnector: DisposeHolder {
 
     public typealias ConnectResultBlock = ((Bool) -> Void)
     public let peripheral: Peripheral
@@ -54,15 +56,15 @@ public final class Connector: DisposeHolder {
             _disposable = peripheral.establishConnection()
                 .subscribe(onNext: { p in
                     _ = p.discoverServices(nil)
-                        .flatMap { ss -> Single<[RxBluetoothKit.Characteristic]> in
+                        .flatMap { ss -> Single<[Characteristic]> in
                             ss.forEach { s in
                                 print("uuid: \(s.uuid.uuidString)")
                                 guard let `self` = self else { return }
                                 self.assignService(s)
                             }
-                            return Single<[RxBluetoothKit.Characteristic]>.create(subscribe: { event -> Disposable in
+                            return Single<[Characteristic]>.create(subscribe: { event -> Disposable in
                                 var disposes: [Disposable] = []
-                                var allCS: [RxBluetoothKit.Characteristic] = []
+                                var allCS: [Characteristic] = []
                                 ss.enumerated().forEach { (offset, element) in
                                     disposes.append(
                                         element.discoverCharacteristics(nil)
@@ -71,7 +73,7 @@ public final class Connector: DisposeHolder {
                                                 if offset == ss.count - 1 {
                                                     event(.success(allCS))
                                                 }
-                                            }, onError: { e in
+                                            }, onFailure: { e in
                                                 event(.failure(e))
                                             })
                                     )
@@ -85,7 +87,7 @@ public final class Connector: DisposeHolder {
                         }.subscribe(onSuccess: { cs in
                             print("cs: \(cs)")
                             seal.fulfill(())
-                        }, onError: { e in
+                        }, onFailure: { e in
                             seal.reject(e)
                         })
                 }, onError: { e in
@@ -103,7 +105,7 @@ public final class Connector: DisposeHolder {
 
     private var _stateListener: Disposable?
 
-    private func assignService(_ service: RxBluetoothKit.Service) {
+    private func assignService(_ service: Service) {
         guard let `type` = EnterBioModuleBLE.ServiceType(rawValue: service.uuid.uuidString) else { return }
         switch `type` {
         case .command:

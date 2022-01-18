@@ -8,7 +8,6 @@
 
 import Foundation
 import PromiseKit
-import RxBluetoothKit
 import RxSwift
 import FixedDFUService
 import CoreBluetooth
@@ -110,9 +109,9 @@ public class BLEManager {
     }
     
     /// scanner
-    private var scanner = Scanner()
+    private var scanner = EnterScanner()
     /// connector
-    public var connector: Connector?
+    public var connector: EnterConnector?
     private var disposalbe: Disposable?
     private var bleQueue = DispatchQueue(label: "com.entertech.EnterBioModuleBLE.listener")
     
@@ -121,7 +120,7 @@ public class BLEManager {
     ///
     /// - Parameters:
     ///   - completion: complete block
-    public func scanAndConnect(_ mac:String? = nil, completion: Connector.ConnectResultBlock?) throws {
+    public func scanAndConnect(_ mac:String? = nil, completion: EnterConnector.ConnectResultBlock?) throws {
         if self.state.isBusy {
             throw BLEError.busy
         }
@@ -227,7 +226,7 @@ public class BLEManager {
         for e in peripherals {
             var sameAndConnect: (Bool, Bool) = (false, false)
             self.connector?.cancel()
-            self.connector = Connector(peripheral: e.peripheral)
+            self.connector = EnterConnector(peripheral: e.peripheral)
             self.connector!.tryConnect().done(on: DispatchQueue.init(label: "connect")) {
                 
                 self.connector!.deviceInfoService?.read(characteristic: .mac).done(on:DispatchQueue.init(label: "connect")) { data -> Void in
@@ -289,7 +288,7 @@ public class BLEManager {
     /// - Returns: Promise
     private func connect(peripheral: Peripheral) -> Promise<Void> {
         state = .connecting
-        connector = Connector(peripheral: peripheral)
+        connector = EnterConnector(peripheral: peripheral)
         let promise = Promise<Void> { seal in
             connector!.tryConnect()
                 .done {
@@ -313,7 +312,7 @@ public class BLEManager {
     private func listenConnection() {
         DLog("start listen connection")
         observers.connection = connector?.peripheral.observeConnection()
-            .observeOn(ConcurrentDispatchQueueScheduler.init(queue: bleQueue))
+            .observe(on: ConcurrentDispatchQueueScheduler.init(queue: bleQueue))
             .subscribe(onNext: { [weak self] isConnected in
                 guard let `self` = self else { return }
                 DLog("listening connection")
@@ -337,7 +336,7 @@ public class BLEManager {
     /*******0x08,  0x10,  0x40, 0x20***********************/
     /// This service tell us if the device is wore
     private func listenWear() {
-        observers.wearing = connector?.eegService?.notify(characteristic: .contact).observeOn(ConcurrentDispatchQueueScheduler.init(queue: bleQueue))
+        observers.wearing = connector?.eegService?.notify(characteristic: .contact).observe(on: ConcurrentDispatchQueueScheduler.init(queue: bleQueue))
             .subscribe(onNext: { [unowned self] in
                 guard let value = $0.first, self.state.isConnected else { return }
                 var wearState: UInt8 = 0

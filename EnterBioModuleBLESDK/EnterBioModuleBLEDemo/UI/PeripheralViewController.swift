@@ -49,7 +49,7 @@ class PeripheralViewController: UITableViewController {
 
 
     private var lastDate = Date()
-    var connector: Connector!
+    var connector: EnterConnector!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = peripheral.displayName
@@ -61,7 +61,7 @@ class PeripheralViewController: UITableViewController {
 
         SVProgressHUD.show(withStatus: "Connecting:\n \(peripheral.displayName)")
 
-        connector = Connector(peripheral: peripheral)
+        connector = EnterConnector(peripheral: peripheral)
         firstly {
             connector.tryConnect()
             }.done {

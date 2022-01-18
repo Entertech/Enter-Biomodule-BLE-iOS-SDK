@@ -14,7 +14,7 @@ public class EEGService: BLEService {
 
 extension EEGService: Notifiable {
 
-    public typealias NotifyType = Characteristic.EEG
+    public typealias NotifyType = EnterCharacteristic.EEG
 
 }
 

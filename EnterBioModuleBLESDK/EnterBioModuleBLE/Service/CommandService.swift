@@ -17,13 +17,13 @@ public class CommandService: BLEService {
 
 extension CommandService: Writable {
 
-    public typealias WriteType = Characteristic.Command.Write
+    public typealias WriteType = EnterCharacteristic.Command.Write
 
 }
 
 extension CommandService: Notifiable {
 
-    public typealias NotifyType = Characteristic.Command.Notify
+    public typealias NotifyType = EnterCharacteristic.Command.Notify
 
 }
 

@@ -14,11 +14,11 @@ public class BatteryService: BLEService {
 }
 
 extension BatteryService: Readable {
-    public typealias ReadType = Characteristic.Battery
+    public typealias ReadType = EnterCharacteristic.Battery
 }
 
 extension BatteryService: Notifiable {
-    public typealias NotifyType = Characteristic.Battery
+    public typealias NotifyType = EnterCharacteristic.Battery
 }
 
 extension BatteryService: ServiceTypable {
