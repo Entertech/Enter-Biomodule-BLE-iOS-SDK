@@ -55,7 +55,7 @@ public extension Readable where Self: BLEService {
                 if let data = $0.value {
                     seal.fulfill(data)
                 }
-            }, onError: { error in
+            }, onFailure: { error in
                 seal.reject(error)
             })
         }
@@ -70,7 +70,7 @@ public extension Writable where Self: BLEService {
                 .writeValue(data, type: .withResponse)
                 .subscribe(onSuccess: { _ in
                     seal.fulfill(())
-                }, onError: { error in
+                }, onFailure: { error in
                     seal.reject(error)
                 })
         }
