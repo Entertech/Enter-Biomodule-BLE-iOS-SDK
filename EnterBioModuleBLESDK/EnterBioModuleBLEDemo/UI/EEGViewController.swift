@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreBluetooth
-import RxBluetoothKit
 import RxSwift
 import SVProgressHUD
 import SwiftyTimer

@@ -58,10 +58,10 @@ CocoaPods
 ```
 use_frameworks!
 
-pod 'EnterBioModuleBLE'
+pod 'EnterBioModuleBLE', :git => 'https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK.git'
 
 # Add as needed 
-pod 'EnterBioModuleBLEUI' 
+pod 'EnterBioModuleBLEUI', :git => 'https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK.git'
 ```
 
 2. Run `pod install`.

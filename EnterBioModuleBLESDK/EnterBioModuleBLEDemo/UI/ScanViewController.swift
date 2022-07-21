@@ -9,7 +9,6 @@
 import UIKit
 import CoreBluetooth
 import SVProgressHUD
-import RxBluetoothKit
 import RxSwift
 import EnterBioModuleBLE
 
@@ -89,7 +88,7 @@ class ScanViewController: UITableViewController {
             }
         }
     }
-    private let sanner: EnterBioModuleBLE.EnterScanner = Scanner()
+    private let sanner: EnterBioModuleBLE.EnterScanner = EnterScanner()
     private var textField: UITextField?
     private func tableHeader() {
         /// 今天的数据

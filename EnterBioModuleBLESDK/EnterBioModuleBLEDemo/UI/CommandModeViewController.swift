@@ -10,7 +10,6 @@ import UIKit
 import SnapKit
 import Then
 import EnterBioModuleBLE
-import RxBluetoothKit
 import SVProgressHUD
 import RxSwift
 import RxCocoa

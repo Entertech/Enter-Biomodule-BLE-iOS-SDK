@@ -60,10 +60,10 @@ public enum EnterCharacteristic {
         case contact = "0000FF32-1212-ABCD-1523-785FEABCD123"
     }
 
-    public enum DFU: String, CharacteristicWriteType {
-        case control = "0000FF41-1212-ABCD-1523-785FEABCD123"
-        case package = "0000FF42-1212-ABCD-1523-785FEABCD123"
-    }
+//    public enum DFU: String, CharacteristicWriteType {
+//        case control = "0000FF41-1212-ABCD-1523-785FEABCD123"
+//        case package = "0000FF42-1212-ABCD-1523-785FEABCD123"
+//    }
 
     public enum Heart {
         public enum Notify: String, CharacteristicNotifyType {

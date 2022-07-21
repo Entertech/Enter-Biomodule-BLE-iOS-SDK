@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import FixedDFUService
+import iOSDFULibrary
 import CoreBluetooth
-import RxBluetoothKit
 import SVProgressHUD
 
 class DFUViewController: UIViewController, DFUServiceDelegate, DFUProgressDelegate {
@@ -43,7 +42,7 @@ class DFUViewController: UIViewController, DFUServiceDelegate, DFUProgressDelega
     private func setupFileMessage() {
         if let filename = Persistence.shared.dfuPacketName {
             self.fileName.text = filename
-            self.fileType.text = "zip"
+            self.fileType.text = ""
             self.fileSize.text = String(fileSizeWith(name: filename, type: "zip"))
             self.firmwareFileURL = Persistence.shared.dfuPacketURL
             
@@ -55,20 +54,26 @@ class DFUViewController: UIViewController, DFUServiceDelegate, DFUProgressDelega
         let contentDatas = fManager.contents(atPath: Persistence.shared.dfuPacketURL!.path)
         return contentDatas?.count == nil ? 0 : contentDatas!.count
     }
-
+    let dfuQueue = DispatchQueue.init(label: "DFU_Test")
     private func performDFU() {
-        let initiator = DFUServiceInitiator(centralManager: self.cManager, target: self.peripheral)
+        
+        let initiator = DFUServiceInitiator(queue:dfuQueue)
         initiator.delegate = self
         initiator.progressDelegate = self
         initiator.enableUnsafeExperimentalButtonlessServiceInSecureDfu = true
+        initiator.alternativeAdvertisingNameEnabled = false
+        initiator.dataObjectPreparationDelay = 0.4
+        initiator.packetReceiptNotificationParameter = 0
         initiator.logger = self
         if coreTypeSwitch.isOn {
             
             initiator.forceScanningForNewAddressInLegacyDfu = true
         }
         if let url = self.firmwareFileURL {
-            let firmware = DFUFirmware(urlToZipFile: url, type: DFUFirmwareType.application)
-            let _ = initiator.with(firmware: firmware!).start()
+            if let firmware = try? DFUFirmware(urlToZipFile: url, type: DFUFirmwareType.application) {
+                let _ = initiator.with(firmware: firmware).start(target: self.peripheral)
+            }
+            
         } else {
             SVProgressHUD.showInfo(withStatus: "no available files")
         }

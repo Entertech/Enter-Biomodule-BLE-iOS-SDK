@@ -1,6 +1,6 @@
 PODS:
   - Files (2.2.1)
-  - FixedDFUService (4.11.2):
+  - iOSDFULibrary (4.13.0):
     - ZIPFoundation (= 0.9.11)
   - PromiseKit (6.13.1):
     - PromiseKit/CorePromise (= 6.13.1)
@@ -25,8 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - Files (~> 2.2.1)
-  - FixedDFUService (~> 4.11)
-  - FixedDFUService (~> 4.11.2)
+  - iOSDFULibrary
   - PromiseKit
   - RxCocoa (~> 6.0)
   - RxSwift (~> 6.0)
@@ -38,7 +37,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Files
-    - FixedDFUService
+    - iOSDFULibrary
     - PromiseKit
     - RxCocoa
     - RxRelay
@@ -51,7 +50,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Files: 18a88ede4f1e339a73adaca7272af15fa32ba69f
-  FixedDFUService: 7e6c2056df8b4d5e585fb9e012849613f91b6e8f
+  iOSDFULibrary: 3b9de67ed4bfb901b5f09c2fea843f65e152612d
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
   RxRelay: 8d593be109c06ea850df027351beba614b012ffb
@@ -62,6 +61,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: 74ba1149110c36a4fb98e760b01513a0115a10ac
+PODFILE CHECKSUM: 60fb42fccf114dde89ab8751358d9df69fdb0a13
 
 COCOAPODS: 1.11.2

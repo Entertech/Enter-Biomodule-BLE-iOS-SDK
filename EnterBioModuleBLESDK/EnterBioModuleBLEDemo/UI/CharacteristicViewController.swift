@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreBluetooth
-import RxBluetoothKit
 import RxSwift
 import SVProgressHUD
 import EnterBioModuleBLE
@@ -17,7 +16,7 @@ class CharacteristicViewController: UITableViewController {
 
     var service: BLEService!
 
-    private var _characteristics: [RxBluetoothKit.Characteristic] = []
+    private var _characteristics: [Characteristic] = []
 
     let disposeBag: DisposeBag = DisposeBag()
 
@@ -53,7 +52,7 @@ class CharacteristicViewController: UITableViewController {
         return cell
     }
 
-    var _selectedCharacteristic: RxBluetoothKit.Characteristic?
+    var _selectedCharacteristic: Characteristic?
 
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         _selectedCharacteristic = _characteristics[indexPath.row]
@@ -72,7 +71,7 @@ class CharacteristicViewController: UITableViewController {
                 SVProgressHUD.showError(withStatus: "Failed to read value!")
             }
         }
-        if let service = self.service as? DeviceInfoService, let characteristic = Characteristic.DeviceInfo(rawValue: characteristic.uuid.uuidString) {
+        if let service = self.service as? DeviceInfoService, let characteristic = EnterCharacteristic.DeviceInfo(rawValue: characteristic.uuid.uuidString) {
             service.read(characteristic: characteristic).done { data -> Void in
                 if characteristic == .mac {
                     cell?.detailTextLabel?.text = data.hexString

@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'EnterBioModuleBLEDemo' do
     pod 'Then'
-    pod 'FixedDFUService', '~> 4.11'
+    pod 'iOSDFULibrary'
     pod 'SnapKit'
     pod 'SVProgressHUD', '~> 2.2'
     pod 'RxCocoa', '~> 6.0'
@@ -16,7 +16,7 @@ target 'EnterBioModuleBLEDemo' do
 end
 
 target 'EnterBioModuleBLE' do
-    pod 'FixedDFUService', '~> 4.11.2'
+    pod 'iOSDFULibrary'
     pod 'RxSwift', '~> 6.0'
     pod 'PromiseKit'
 end
@@ -30,11 +30,6 @@ target 'BluetoothConnectingUIDemo' do
     pod 'RxSwift', '~> 6.0'
     pod 'PromiseKit'
 end
-
-target 'RxBluetoothKit' do
-  pod 'RxSwift', '~> 6.0'
-end
-
 
 #post_install do |installer|
 #    installer.pods_project.targets.each do |target|

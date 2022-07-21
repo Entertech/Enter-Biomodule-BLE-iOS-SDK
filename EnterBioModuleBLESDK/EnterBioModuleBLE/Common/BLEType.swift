@@ -41,7 +41,7 @@ extension BLEConnectionState {
 ///// - upgrading: 正在升级（含进度）
 ///// - succeeded: 升级成功
 ///// - failed: 升级失败
-public enum DFUState {
+public enum FlowtimeDFUState {
     case none
     case connecting
     case starting

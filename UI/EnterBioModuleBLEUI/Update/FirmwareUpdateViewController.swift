@@ -226,7 +226,7 @@ class FirmwareUpdateViewController: UIViewController {
     //MARK - STATE NOTIFICATION
     @objc private func didFirmwareUpdateStateChanged(_ notification: Notification) {
         if let info = notification.userInfo,
-            let state = info["dfuStateKey"] as? DFUState {
+            let state = info["dfuStateKey"] as? FlowtimeDFUState {
             let msg = info["msg"] as? String
             switch state {
 

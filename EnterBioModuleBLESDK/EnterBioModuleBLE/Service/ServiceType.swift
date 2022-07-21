@@ -16,7 +16,7 @@ public enum ServiceType: String {
     case connect    = "0000FF10-1212-ABCD-1523-785FEABCD123"
     case command    = "0000FF20-1212-ABCD-1523-785FEABCD123"
     case eeg        = "0000FF30-1212-ABCD-1523-785FEABCD123"
-    case dfu        = "0000FF40-1212-ABCD-1523-785FEABCD123"
+    case dfu        = "FE59"
     case heart      = "0000FF50-1212-ABCD-1523-785FEABCD123"
     case deviceInfo = "180A"
     case battery    = "180F"

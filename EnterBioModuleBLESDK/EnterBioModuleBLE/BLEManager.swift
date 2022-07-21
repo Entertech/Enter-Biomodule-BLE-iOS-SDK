@@ -9,7 +9,7 @@
 import Foundation
 import PromiseKit
 import RxSwift
-import FixedDFUService
+import iOSDFULibrary
 import CoreBluetooth
 
 
@@ -552,7 +552,7 @@ public class BLEManager {
         guard self.connector?.peripheral != nil else { throw BLEError.invalid(message: "设备未连接") }
         //let dfu = DFU(peripheral: self.connector!.peripheral.peripheral, manager: self.connector!.peripheral.manager.manager)
         dfu.fileURL = fileURL
-        if let ver = Int(self.deviceInfo.firmware.replacingOccurrences(of: ".", with: "")) {
+        if let ver = Int(self.deviceInfo.hardware.replacingOccurrences(of: ".", with: "")) {
             if ver >= 100 {
                 dfu.fire(currentVersion: ver)
             }
@@ -578,7 +578,7 @@ public class DFU: DFUServiceDelegate, DFUProgressDelegate, LoggerDelegate{
         self.manager = manager
     }
 
-    private (set) var state: DFUState = .none {
+    private (set) var state: FlowtimeDFUState = .none {
         didSet {
             //NotificationName.dfuStateChanged.emit([NotificationKey.dfuStateKey.rawValue: state])
             NotificationCenter.default.post(name: ExtensionService.bleStateChanged, object: nil, userInfo: ["dfuStateKey":state, "msg":errorMsg])
@@ -588,26 +588,40 @@ public class DFU: DFUServiceDelegate, DFUProgressDelegate, LoggerDelegate{
     private var errorMsg = ""
 
     
-    
+    let dfuQueue = DispatchQueue.init(label: "DFU.Flowtime.com")
     /// update firmware
     /// - Parameter currentVersion: 因为1.1.0版本开始固件有新的数据
     public func fire(currentVersion: Int) {
-        let initiator = DFUServiceInitiator(centralManager: manager, target: peripheral)
+        let initiator = DFUServiceInitiator(queue:dfuQueue)
         initiator.delegate = self
         initiator.progressDelegate = self
-        if currentVersion > 110 {
-            initiator.forceScanningForNewAddressInLegacyDfu = true
-        }
+        
         initiator.enableUnsafeExperimentalButtonlessServiceInSecureDfu = true
+        initiator.alternativeAdvertisingNameEnabled = false
+        initiator.dataObjectPreparationDelay = 0.4
+        initiator.packetReceiptNotificationParameter = 0
+        if currentVersion < 200 {
+            initiator.forceScanningForNewAddressInLegacyDfu = true
+            let customUUIDs = [ DFUUuid(withUUID: CBUUID(string: "0000FF40-1212-abcd-1523-785FEABCD123"), forType: .legacyService),
+                                DFUUuid(withUUID: CBUUID(string: "0000FF41-1212-abcd-1523-785FEABCD123"), forType: .legacyControlPoint),
+                                DFUUuid(withUUID: CBUUID(string: "0000FF42-1212-abcd-1523-785FEABCD123"), forType: .legacyPacket),
+                                DFUUuid(withUUID: CBUUID(string: "0000FF44-1212-abcd-1523-785feabcd123"), forType: .legacyVersion),
+                                ]
+            // Set the custom UUDIds
+            initiator.uuidHelper = DFUUuidHelper(customUuids: customUUIDs)
+        }
+
         
         //initiator.logger = self
-        let firmware = DFUFirmware(urlToZipFile: fileURL, type: .application)
+        if let firmware = try? DFUFirmware(urlToZipFile: fileURL, type: .application) {
+            _ = initiator.with(firmware: firmware).start(target: peripheral)
+        }
 
-        _ = initiator.with(firmware: firmware!).start(target: peripheral)
+        
     }
 
-    public func dfuStateDidChange(to state: FixedDFUService.DFUState) {
-        print("dfu state: \(state.description())")
+    public func dfuStateDidChange(to state: DFUState) {
+        print("dfu state: \(state.description)")
         switch state {
         case .connecting:
             self.state = .connecting

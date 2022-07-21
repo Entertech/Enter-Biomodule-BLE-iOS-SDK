@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreBluetooth
-import RxBluetoothKit
 import RxSwift
 import SVProgressHUD
 import EnterBioModuleBLE
@@ -18,7 +17,7 @@ class PeripheralViewController: UITableViewController {
 
     var peripheral: Peripheral!
     var services: [BLEService] = []
-    var characteristics: [CBUUID: [RxBluetoothKit.Characteristic]] = [:]
+    var characteristics: [CBUUID: [Characteristic]] = [:]
 
     let disposeBag: DisposeBag = DisposeBag()
 
@@ -68,7 +67,7 @@ class PeripheralViewController: UITableViewController {
                 SVProgressHUD.showSuccess(withStatus: "connect succeeded")
 
                 dispatch_to_main {
-                    self.connector.eegService?.notify(characteristic: Characteristic.EEG.contact).subscribe(onNext: {
+                    self.connector.eegService?.notify(characteristic: EnterCharacteristic.EEG.contact).subscribe(onNext: {
 //                        let interval = self.lastDate.timeIntervalSinceNow
                         print("contact is \($0.first!) ")
                     }).disposed(by: self.disposeBag)
