@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EnterBioModuleBLE'
-  s.version          = '2.1.0'
+  s.version          = '2.2.0'
   s.summary          = 'EnterBioModuleBLE 通信库'
   s.description      = <<-DESC
 EnterBioModuleBLE 通信库
