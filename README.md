@@ -61,10 +61,10 @@ CocoaPods
 
 ```
 #(蓝牙SDK)
-pod 'EnterBioModuleBLE', :git => 'https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK.git'
+pod 'EnterBioModuleBLE'
 
 #(蓝牙UI库，根据需求添加)
-pod 'EnterBioModuleBLEUI', :git => 'https://github.com/Entertech/Enter-Biomodule-BLE-iOS-SDK.git'
+pod 'EnterBioModuleBLEUI'
 ```
 
 1. 在`Podfile`中添加 `add use_frameworks!`。
