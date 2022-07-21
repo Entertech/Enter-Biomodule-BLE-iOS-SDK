@@ -66,7 +66,13 @@ class DFUViewController: UIViewController, DFUServiceDelegate, DFUProgressDelega
         initiator.packetReceiptNotificationParameter = 0
         initiator.logger = self
         if coreTypeSwitch.isOn {
-            
+            let customUUIDs = [ DFUUuid(withUUID: CBUUID(string: "0000FF40-1212-abcd-1523-785FEABCD123"), forType: .legacyService),
+                                DFUUuid(withUUID: CBUUID(string: "0000FF41-1212-abcd-1523-785FEABCD123"), forType: .legacyControlPoint),
+                                DFUUuid(withUUID: CBUUID(string: "0000FF42-1212-abcd-1523-785FEABCD123"), forType: .legacyPacket),
+                                DFUUuid(withUUID: CBUUID(string: "0000FF44-1212-abcd-1523-785feabcd123"), forType: .legacyVersion),
+                                ]
+            // Set the custom UUDIds
+            initiator.uuidHelper = DFUUuidHelper(customUuids: customUUIDs)
             initiator.forceScanningForNewAddressInLegacyDfu = true
         }
         if let url = self.firmwareFileURL {
