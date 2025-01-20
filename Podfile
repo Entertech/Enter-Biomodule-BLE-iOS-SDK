@@ -12,13 +12,13 @@ target 'EnterBioModuleBLEDemo' do
     pod 'RxSwift', '~> 6.0'
     pod 'SwiftyTimer', '~> 2.0'
     pod 'Files', '~> 2.2.1'
-    pod 'PromiseKit'
+    pod 'PromiseKit', '~> 8.0'
 end
 
 target 'EnterBioModuleBLE' do
     pod 'iOSDFULibrary'
     pod 'RxSwift', '~> 6.0'
-    pod 'PromiseKit'
+    pod 'PromiseKit', '~> 8.0'
 end
 
 target 'EnterBioModuleBLEUI' do
@@ -28,7 +28,7 @@ end
 target 'BluetoothConnectingUIDemo' do
     pod 'SnapKit'
     pod 'RxSwift', '~> 6.0'
-    pod 'PromiseKit'
+    pod 'PromiseKit', '~> 8.0'
 end
 
 post_install do |installer|

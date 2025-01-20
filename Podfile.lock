@@ -2,14 +2,14 @@ PODS:
   - Files (2.2.1)
   - iOSDFULibrary (4.13.0):
     - ZIPFoundation (= 0.9.11)
-  - PromiseKit (6.13.1):
-    - PromiseKit/CorePromise (= 6.13.1)
-    - PromiseKit/Foundation (= 6.13.1)
-    - PromiseKit/UIKit (= 6.13.1)
-  - PromiseKit/CorePromise (6.13.1)
-  - PromiseKit/Foundation (6.13.1):
+  - PromiseKit (8.2.0):
+    - PromiseKit/CorePromise (= 8.2.0)
+    - PromiseKit/Foundation (= 8.2.0)
+    - PromiseKit/UIKit (= 8.2.0)
+  - PromiseKit/CorePromise (8.2.0)
+  - PromiseKit/Foundation (8.2.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.13.1):
+  - PromiseKit/UIKit (8.2.0):
     - PromiseKit/CorePromise
   - RxCocoa (6.0.0):
     - RxRelay (= 6.0.0)
@@ -26,7 +26,7 @@ PODS:
 DEPENDENCIES:
   - Files (~> 2.2.1)
   - iOSDFULibrary
-  - PromiseKit
+  - PromiseKit (~> 8.0)
   - RxCocoa (~> 6.0)
   - RxSwift (~> 6.0)
   - SnapKit
@@ -51,7 +51,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Files: 18a88ede4f1e339a73adaca7272af15fa32ba69f
   iOSDFULibrary: ae1bcb1cb921e6e3ff551755f6fdff1b77e07e15
-  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  PromiseKit: 74e6ab5894856b4762fef547055c809bca91d440
   RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
   RxRelay: 8d593be109c06ea850df027351beba614b012ffb
   RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
@@ -61,6 +61,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: 36e8ef9291c0e776683b807f860d486cd0d1928f
+PODFILE CHECKSUM: f5944f0859ce9a887229ac7726d3793912d0772b
 
 COCOAPODS: 1.16.2
