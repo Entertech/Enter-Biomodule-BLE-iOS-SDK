@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'EnterBioModuleBLEDemo' do
     pod 'Then'
-    pod 'iOSDFULibrary'
+    pod 'iOSDFULibrary', '4.13.0'
     pod 'SnapKit'
     pod 'SVProgressHUD', '~> 2.2'
     pod 'RxCocoa', '~> 6.0'
@@ -16,7 +16,7 @@ target 'EnterBioModuleBLEDemo' do
 end
 
 target 'EnterBioModuleBLE' do
-    pod 'iOSDFULibrary'
+    pod 'iOSDFULibrary', '4.13.0'
     pod 'RxSwift', '~> 6.0'
     pod 'PromiseKit', '~> 8.0'
 end

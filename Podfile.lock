@@ -11,21 +11,23 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (8.2.0):
     - PromiseKit/CorePromise
-  - RxCocoa (6.0.0):
-    - RxRelay (= 6.0.0)
-    - RxSwift (= 6.0.0)
-  - RxRelay (6.0.0):
-    - RxSwift (= 6.0.0)
-  - RxSwift (6.0.0)
-  - SnapKit (4.2.0)
-  - SVProgressHUD (2.2.5)
+  - RxCocoa (6.8.0):
+    - RxRelay (= 6.8.0)
+    - RxSwift (= 6.8.0)
+  - RxRelay (6.8.0):
+    - RxSwift (= 6.8.0)
+  - RxSwift (6.8.0)
+  - SnapKit (5.7.1)
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
   - SwiftyTimer (2.1.0)
-  - Then (2.7.0)
+  - Then (3.0.0)
   - ZIPFoundation (0.9.11)
 
 DEPENDENCIES:
   - Files (~> 2.2.1)
-  - iOSDFULibrary
+  - iOSDFULibrary (= 4.13.0)
   - PromiseKit (~> 8.0)
   - RxCocoa (~> 6.0)
   - RxSwift (~> 6.0)
@@ -52,15 +54,15 @@ SPEC CHECKSUMS:
   Files: 18a88ede4f1e339a73adaca7272af15fa32ba69f
   iOSDFULibrary: ae1bcb1cb921e6e3ff551755f6fdff1b77e07e15
   PromiseKit: 74e6ab5894856b4762fef547055c809bca91d440
-  RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
-  RxRelay: 8d593be109c06ea850df027351beba614b012ffb
-  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
+  RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
+  RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
   SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
-  Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: f5944f0859ce9a887229ac7726d3793912d0772b
+PODFILE CHECKSUM: dddb35422b5d3347ccadfd7c0674c5bad9e9c6e5
 
 COCOAPODS: 1.16.2

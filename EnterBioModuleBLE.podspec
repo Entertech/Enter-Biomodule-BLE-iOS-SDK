@@ -15,5 +15,5 @@ EnterBioModuleBLE 通信库
   s.source_files = 'EnterBioModuleBLESDK/EnterBioModuleBLE/**/*.swift'
   s.dependency 'PromiseKit', '~> 8.0'
   s.dependency 'RxSwift', '~> 6.0'
-  s.dependency 'iOSDFULibrary'
+  s.dependency 'iOSDFULibrary', `4.13.0`
 end
