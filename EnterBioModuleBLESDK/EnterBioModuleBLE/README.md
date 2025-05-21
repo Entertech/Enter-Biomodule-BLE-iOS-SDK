@@ -1,7 +1,6 @@
 # SDK 说明
 
-[English Readme](/EnterBioModuleBLESDK/EnterBioModuleBLE
-/README_EN.md)
+[English Readme](README_EN.md)
 
 - [SDK 说明](#sdk-说明)
   - [接入环境](#接入环境)
